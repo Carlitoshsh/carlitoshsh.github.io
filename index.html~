@@ -1,0 +1,34 @@
+<!--
+	Autor: Carlos Gómez
+	Carrera: Ingeniería de Sistemas y Computación
+	Institución: Universidad Nacional de Colombia
+	Asignatura: Gráfica Interactiva
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Se le indica al archivo la ubicación de los estilos -->
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<!-- Se usa el formato de codificación UTF-8 para que reconozca ciertos simbolos -->
+		<meta charset="UTF-8">
+		<!-- Este es el icono que se muestra en la pestaña del navegador junto con el titulo de la pagina -->
+		<link rel="shortcut icon" type="image/png" href="images/png/ball.png"/>
+		<!-- Titulo de la pagina -->
+		<title> Momentos deportivos </title>
+		<!-- Detecta si es un dispositivo movil y se adapta -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+
+	<h1>What Can JavaScript Do?</h1>
+
+	<p id="holamundo">JavaScript can change HTML content.</p>
+
+	<button type="button"
+	onclick="document.getElementById('holamundo').innerHTML = 'Hello JavaScript!'">
+	Click Me!</button>
+
+	</body>
+</html>
+
