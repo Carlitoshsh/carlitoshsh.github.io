@@ -1,0 +1,111 @@
+<!--
+	Autor: Carlos Gómez
+	Carrera: Ingeniería de Sistemas y Computación
+	Institución: Universidad Nacional de Colombia
+	Asignatura: Gráfica Interactiva
+-->
+<!doctype html>
+<html>
+	<head>
+        <!-- Se le indica al archivo la ubicación de los estilos -->
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <!-- Se usa el formato de codificación UTF-8 para que reconozca ciertos simbolos -->
+        <meta charset="UTF-8">
+        <!-- Este es el icono que se muestra en la pestaña del navegador junto con el titulo de la pagina -->
+        <link rel="shortcut icon" type="image/png" href="images/png/ball.png"/>
+        <!-- Titulo de la pagina -->
+        <title> Momentos deportivos </title>
+        <!-- Detecta si es un dispositivo movil y se adapta -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    </head>
+	<body>
+		<nav class="navegacion">
+			<div id = "titulo">
+				<img src="images/png/titulo.png">
+			</div>
+			<ul>
+				<li><a href="index.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/home-24.png" title="Home" width="30"><br>Inicio</a></li>
+				<li><a href="ciclismo.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/regular_biking-24.png" title="Regular Biking" width="30"><br>Ciclismo</a></li>
+				<li><a href="futbol.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/football_2-24.png" title="Football 2" width="30"><br>Fútbol</a></li>
+				<li><a href="atletismo.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/running-24.png" title="Running" width="30"><br>Atletismo</a></li>
+				<li><a href="otros.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/swimming-24.png" title="Swimming" width="30"><br>Otros</a></li>
+				<li id="acercade"><a class = "active" href="acerca.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/about-24.png" title="About" width="30"><br>Acerca de</a></li>
+			</ul>
+		</nav>
+		<!-- Se crea una sección grupo, que contiene tres secciones: mapa del sitio, fuentes y creditos -->
+		<div class="grupo">
+		<!-- Se crea un encabezado mapa del sitio -->
+			<br>
+			<hr>
+			<h3 align="center">Mapa del sitio</h3>
+			<hr>
+			<br>
+			<!-- Aquí se crea el site map del sitio. Con enlaces a cada una de las secciones -->
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<ul>
+					<li><a href="index.html">Portada</a></li>
+				</ul>
+				<li><a href="ciclismo.html">Ciclismo</a></li>
+				<ul>
+					<li><a href="ciclismo.html">Exponentes actuales</a></li>
+					<li><a href="ciclismo.html">Los que abrieron el camino...</a></li>
+				</ul>
+				<li><a href="futbol.html">Futbol</a></li>
+				<ul>
+					<li><a href="futbol.html">Clubes campeones internacionales</a></li>
+					<li><a href="futbol.html">Jugadores destacados</a></li>
+					<li><a href="futbol.html">Historias en mundiales</a></li>
+				</ul>
+				<li><a href="atletismo.html">Atletismo</a></li>
+				<ul>
+					<li><a href="atletismo.html">A través de la historia</a></li>
+				</ul>
+				<li><a href="otros.html">Otros</a></li>
+				<ul>
+					<li><a href="otros.html">Otras glorias del deporte</a></li>
+				</ul>
+				<li><a  href="acerca.html">Acerca de</a></li>
+				<ul>
+					<li><a href="acerca.html">Mapa del sitio</a></li>
+					<li><a href="acerca.html">Fuentes de información</a></li>
+					<li><a href="acerca.html">Créditos</a></li>
+				</ul>
+			</ul>
+			<!-- Se importa una imagen con el mapa del sitio -->
+			<img id="sitemap" src="images/png/sitemap.png">
+			<br>
+			<!-- Se crea la sección fuentes de información -->
+			<br>
+			<hr>
+			<h3 align="center">Fuentes de información</h3>
+			<hr>
+			<br>
+			<p>Los textos usados en la pagina web adaptaron información de <a href="http://es.wikipedia.org">Wikipedia</a>, al igual que 
+			muchas de las imagenes aquí presentes. En el index, para la sección noticias, se consultaron las paginas: <a href="http://www.revistamundociclistico.com">Revista Mundo Ciclistico</a> y <a href="http://www.elcolombiano.com">El Colombiano</a>.</p>
+			<p>Los iconos son tomados de <a href="https://icons8.com">Icons8</a>, una pagina web dedicada al diseño de los mismos. El uso de estos es gratis siempre y cuando se referencie en el pie de pagina y rediriga a su sitio web.</p>
+			<p>Las imagenes fueron tomadas del <a href = "https://www.google.com.co/imghp?hl=es-419&tab=wi&authuser=0&ei=nzrxVvWBMIm_eKOAiLgG&ved=0EKouCBEoAQ">buscador de imagenes de Google</a> y del sitio web de Wikipedia.</p>
+			<p>Los videos expuestos en este sitio web están alojados en <a href="https://youtube.com">YouTube</a>.</p>
+			<br>
+			<!-- sección Creditos -->
+			<br>
+			<hr>
+			<h3 align="center">Créditos</h3>
+			<hr>
+			<br>
+			<p>Nombre: Carlos Alfonso Gómez Hernández</p>
+			<p>Correo electrónico: <a href="mailto:caragomezher@unal.edu.co">caragomezher@unal.edu.co</a></p>
+			<p>Carrera: Ingeniería de Sistemas y Computación</p>
+			<p>Institución: Universidad Nacional de Colombia</p>
+			<br>
+
+		</div>
+<!-- Este es mi "footer" (fin de pagina). Se agregan reconocimiento a Icons8 por el uso de los iconos y el link al mapa del sitio -->
+    <div class="fin">
+        <br>
+        <p>Los iconos presentes en este sitio web son propiedad de Icons8. <a href="https://icons8.com">Icon pack by Icons8</a>.</p>
+        <p><a href="acerca.html">Mapa del sitio. Glorias del Deporte Colombiano, 2016.</p>
+    </div>
+	</body>
+</html>
