@@ -59,14 +59,15 @@ Asignatura: Gráfica Interactiva
                 game.load.image('tiles', 'images/map/default_tiles_x.png');
 
                 /*Prueba*/
-                game.load.spritesheet('ms', 'images/map/metalslug_mummy37x45.png', 37, 45, 18);
-
+                // game.load.spritesheet('ms', 'images/map/metalslug_mummy37x45.png', 37, 45, 18);
+                game.load.image('car', 'assets/sprites/car90.png');
             }
 
             /* Se crean las variables map (Mapa) y layer (Capa)*/
             var map;
             var layer;
             var sprite;
+            var cursors;
 
             function create() {
                 // Aqui se crean elementos como el personaje, los enemigos, los sonidos, el fondo del juego, etc
@@ -86,22 +87,70 @@ Asignatura: Gráfica Interactiva
                 // Ajusta la imagen al tamaño de la capa
                 layer.resizeWorld();
 
-                /**/
+                /*
                 sprite = game.add.sprite(40, 100, 'ms');
 
                 sprite.animations.add('walk');
 
                 sprite.animations.play('walk', 50, true);
+                */
+
+                sprite = game.add.sprite(450, 80, 'car');
+                sprite.anchor.setTo(0.5, 0.5);
+
+                game.physics.enable(sprite);
+
+                game.camera.follow(sprite);
+
+                cursors = game.input.keyboard.createCursorKeys();
+
+                game.input.onDown.add(fillTiles, this);
+
+
+            }
+
+            function fillTiles() {
+
+                map.fill(31, layer.getTileX(sprite.x), layer.getTileY(sprite.y), 8, 8);
 
             }
 
             function update() {
-    
+                /*
                 if (sprite.x >= 300)
                 {
                     sprite.scale.x += 0.01;
                     sprite.scale.y += 0.01;
                 }
+                */
+
+                game.physics.arcade.collide(sprite, layer);
+
+                sprite.body.velocity.x = 0;
+                sprite.body.velocity.y = 0;
+                sprite.body.angularVelocity = 0;
+
+                if (cursors.left.isDown)
+                {
+                sprite.body.angularVelocity = -200;
+                }
+                else if (cursors.right.isDown)
+                {
+                sprite.body.angularVelocity = 200;
+                }
+
+                if (cursors.up.isDown)
+                {
+                sprite.body.velocity.copyFrom(game.physics.arcade.velocityFromAngle(sprite.angle, 300));
+                }
+
+            }
+
+            function render() {
+
+                game.debug.text('Click to fill tiles', 32, 32, 'rgb(0,0,0)');
+                game.debug.text('Tile X: ' + layer.getTileX(sprite.x), 32, 48, 'rgb(0,0,0)');
+                game.debug.text('Tile Y: ' + layer.getTileY(sprite.y), 32, 64, 'rgb(0,0,0)');
 
             }
         </script>
