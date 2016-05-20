@@ -46,55 +46,43 @@ Asignatura: Gráfica Interactiva
         <hr>
     	<div id="game"></div>
         <script type="text/javascript">
-                        
-            var IDE_HOOK = false;
-            var VERSION = '2.4.8';
 
-                    
+            /* Se inicializa un */
             var game = new Phaser.Game(640, 480, Phaser.AUTO, 'game', { preload: preload, create: create });
 
             function preload() {
+                // Se cargan Imagenes y archivos de recurso
+                /*  Se carga el tilemap (mapa de fondo). El mapa fue realizado en un programa 
+                    llamado Tiled (http://www.mapeditor.org/download.html). */
+                game.load.tilemap('mapa', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
 
-                //  Tilemaps are split into two parts: The actual map data (usually stored in a CSV or JSON file) 
-                //  and the tileset/s used to render the map.
-
-                //  Here we'll load the tilemap data. The first parameter is a unique key for the map data.
-
-                //  The second is a URL to the JSON file the map data is stored in. This is actually optional, you can pass the JSON object as the 3rd
-                //  parameter if you already have it loaded (maybe via a 3rd party source or pre-generated). In which case pass 'null' as the URL and
-                //  the JSON object as the 3rd parameter.
-
-                //  The final one tells Phaser the foramt of the map data, in this case it's a JSON file exported from the Tiled map editor.
-                //  This could be Phaser.Tilemap.CSV too.
-
-                game.load.tilemap('mario', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
-
-                //  Next we load the tileset. This is just an image, loaded in via the normal way we load images:
-
+                /* El tilemap es un archivo que contiene secciones de una imagen, por asi decirlo. 
+                    Esta imagen contiene los patrones presentes en el mapa, por eso debe cargarse */
                 game.load.image('tiles', 'images/map/default_tiles_x.png');
 
             }
 
+            /* Se crean las variables map (Mapa) y layer (Capa)*/
             var map;
             var layer;
 
             function create() {
+                // Aqui se crean elementos como el personaje, los enemigos, los sonidos, el fondo del juego, etc
+                //game.stage.backgroundColor = '#787878';
 
-                game.stage.backgroundColor = '#787878';
+                //  Añade el mapa.
+                map = game.add.tilemap('mapa');
 
-                //  The 'mario' key here is the Loader key given in game.load.tilemap
-                map = game.add.tilemap('mario');
-
-                //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
-                //  The second parameter maps this name to the Phaser.Cache key 'tiles'
+                /* El primer parametro es el nombre de la imagen de donde
+                 se obtuvo el patron que esta presente en el archivo json. El segundo 
+                 es una referencia a la imagen (al archivo) que contiene dicho patron*/
                 map.addTilesetImage("other",'tiles');
                 
-                //  Creates a layer from the World1 layer in the map data.
-                //  A Layer is effectively like a Phaser.Sprite, so is added to the display list.
+                /*Crea una capa a partir del mapa*/
                 layer = map.createLayer('mundo');
 
-                //  This resizes the game world to match the layer dimensions
-                //layer.resizeWorld();
+                // Ajusta la imagen al tamaño de la capa
+                layer.resizeWorld();
 
             }
         </script>
