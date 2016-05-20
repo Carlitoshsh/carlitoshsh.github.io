@@ -82,11 +82,11 @@ Asignatura: Gráfica Interactiva
                 game.stage.backgroundColor = '#787878';
 
                 //  The 'mario' key here is the Loader key given in game.load.tilemap
-                map = game.add.tilemap("SuperMarioBros-World1-1",'mario');
+                map = game.add.tilemap('mario');
 
                 //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
                 //  The second parameter maps this name to the Phaser.Cache key 'tiles'
-                map.addTilesetImage('other','tiles');
+                map.addTilesetImage("SuperMarioBros-World1-1",'tiles');
                 
                 //  Creates a layer from the World1 layer in the map data.
                 //  A Layer is effectively like a Phaser.Sprite, so is added to the display list.
