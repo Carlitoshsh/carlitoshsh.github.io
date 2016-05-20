@@ -17,6 +17,12 @@ Asignatura: Gráfica Interactiva
         <title> Momentos deportivos </title>
         <!-- Detecta si es un dispositivo movil y se adapta -->
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+        <script src="js/phaser.2.4.8.min.js" type="text/javascript"></script>
+        <script src="js/blob.js" type="text/javascript"></script>
+        <script src="js/canvas-to-blob.js" type="text/javascript"></script>
+        <script src="js/filesaver.js" type="text/javascript"></script>
+        <script src="js/embed.js" type="text/javascript"></script>
     </head>
     <body>
         <!-- Aquí se muestra la barra de navegación junto con una barra de titulo. -->
@@ -38,7 +44,6 @@ Asignatura: Gráfica Interactiva
 
 	<div class="grupo">
     	<div id="game"></div>
-        <script src="js/phaser.min.js"></script>
         <script type="text/javascript">
                         
             var IDE_HOOK = false;
@@ -65,7 +70,7 @@ Asignatura: Gráfica Interactiva
 
                 //  Next we load the tileset. This is just an image, loaded in via the normal way we load images:
 
-                game.load.image('tiles', 'images/map/player');
+                game.load.image('tiles', 'images/map/player.png');
 
             }
 
