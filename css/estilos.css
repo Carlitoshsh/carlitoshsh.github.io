@@ -127,6 +127,10 @@ hr {
   margin: 0 auto;
 }
 
+.game {   
+  display : block;
+  margin : auto;}
+
 /*
 	Se define el tipo de letra predeterminado para cada etiqueta que involucra texto.
 	La tipografia predeterminada es Exo 2. Si el navegador no la admite buscara Helvetica, y asi.
