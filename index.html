@@ -49,15 +49,16 @@ Asignatura: Gráfica Interactiva
                 },
                 preload: function () {
                     //Se cargan Imagenes y archivos de recurso
-                    game.load.image('logo', 'phaser.png');
-                    this.load.tilemap('map', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
+                    //game.load.image('logo', 'phaser.png');
+                    game.load.tilemap('map', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
 
                 },
                 create: function () {
                     //Se crea el personaje, los enemigos, los sonidos, el fondo del juego, etc
+                    // Se carga el mapa
                     var map = game.add.tilemap('map');
-                    var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-                    logo.anchor.setTo(0.5, 0.5);
+                    //var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+                    //logo.anchor.setTo(0.5, 0.5);
                 },
                 update: function () {
                     //Logica del Juego como los movimientos, las colisiones, el movimiento del personaje, etc
