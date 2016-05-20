@@ -17,12 +17,7 @@ Asignatura: Gráfica Interactiva
         <title> Momentos deportivos </title>
         <!-- Detecta si es un dispositivo movil y se adapta -->
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
-        <script src="js/phaser.2.4.8.min.js" type="text/javascript"></script>
-        <script src="js/blob.js" type="text/javascript"></script>
-        <script src="js/canvas-to-blob.js" type="text/javascript"></script>
-        <script src="js/filesaver.js" type="text/javascript"></script>
-        <script src="js/embed.js" type="text/javascript"></script>
+        <script src="js/phaser.js" type="text/javascript"></script>
     </head>
     <body>
         <!-- Aquí se muestra la barra de navegación junto con una barra de titulo. -->
@@ -46,8 +41,11 @@ Asignatura: Gráfica Interactiva
         <hr>
     	<div id="game"></div>
         <script type="text/javascript">
+        /* Phaser es una libreria en JavaScript usada para el desarrollo de juegos en web. 
+            Los codigos utilizados aqui hacen parte de la seccion de aprendizaje de Phaser
+            (http://phaser.io/learn) */
 
-            /* Se inicializa un */
+            /* Se crea un nuevo juego*/
             var game = new Phaser.Game(640, 480, Phaser.AUTO, 'game', { preload: preload, create: create });
 
             function preload() {
