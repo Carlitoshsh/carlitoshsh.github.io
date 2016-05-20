@@ -51,12 +51,16 @@ Asignatura: Gráfica Interactiva
                     //Se cargan Imagenes y archivos de recurso
                     //game.load.image('logo', 'phaser.png');
                     game.load.tilemap('map', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
+                    game.load.image('tiles', 'images/map/player.png');
 
                 },
                 create: function () {
                     //Se crea el personaje, los enemigos, los sonidos, el fondo del juego, etc
                     // Se carga el mapa
                     var map = game.add.tilemap('map');
+                    map.addTilesetImage('map', 'tiles');
+                    var layer = map.createLayer('World1');
+                    layer.resizeWorld();
                     //var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
                     //logo.anchor.setTo(0.5, 0.5);
                 },
