@@ -57,9 +57,9 @@ Asignatura: Gráfica Interactiva
                 create: function () {
                     //Se crea el personaje, los enemigos, los sonidos, el fondo del juego, etc
                     // Se carga el mapa
-                    var map = game.add.tilemap('map');
+                    map = game.add.tilemap('map');
                     map.addTilesetImage('tiles');
-                    var layer = map.createLayer('World1');
+                    layer = map.createLayer('World1');
                     layer.resizeWorld();
                     //var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
                     //logo.anchor.setTo(0.5, 0.5);
@@ -81,6 +81,8 @@ Asignatura: Gráfica Interactiva
             };
             //(Ancho, Alto, Renderer WebGL/Canvas/Auto, id elemento donde se creara el lienzo del juego)
             var game = new Phaser.Game(640, 480, Phaser.AUTO, 'game');
+            var map;
+            var layer;
             //Se pueden crear tantos estados del juego como tu quieras
             game.state.add('play', playState);
             //Se inicia un estado del juego
