@@ -62,19 +62,19 @@ PhaserGame.prototype = {
 
     checkKeys: function () {
 
-        if (this.cursors.left.isDown && this.current !== Phaser.LEFT)
+        if (this.cursors.left.isDown)
         {
             this.checkDirection(Phaser.LEFT);
         }
-        else if (this.cursors.right.isDown && this.current !== Phaser.RIGHT)
+        else if (this.cursors.right.isDown)
         {
             this.checkDirection(Phaser.RIGHT);
         }
-        else if (this.cursors.up.isDown && this.current !== Phaser.UP)
+        if (this.cursors.up.isDown)
         {
             this.checkDirection(Phaser.UP);
         }
-        else if (this.cursors.down.isDown && this.current !== Phaser.DOWN)
+        else if (this.cursors.down.isDown)
         {
             this.checkDirection(Phaser.DOWN);
         }
