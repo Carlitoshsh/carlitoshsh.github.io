@@ -40,120 +40,7 @@ Asignatura: Gráfica Interactiva
 	<div class="grupo">
         <hr>
     	<div id="game"></div>
-        <script type="text/javascript">
-        /* Phaser es una libreria en JavaScript usada para el desarrollo de juegos en web. 
-            Los codigos utilizados aqui hacen parte de la seccion de aprendizaje de Phaser
-            (http://phaser.io/learn) */
-
-            /* Se crea un nuevo juego*/
-            var game = new Phaser.Game(640, 480, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
-
-            function preload() {
-                // Se cargan Imagenes y archivos de recurso
-                /*  Se carga el tilemap (mapa de fondo). El mapa fue realizado en un programa 
-                    llamado Tiled (http://www.mapeditor.org/download.html). */
-                game.load.tilemap('mapa', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
-
-                /* El tilemap es un archivo que contiene secciones de una imagen, por asi decirlo. 
-                    Esta imagen contiene los patrones presentes en el mapa, por eso debe cargarse */
-                game.load.image('tiles', 'images/map/default_tiles_x.png');
-
-                /*Prueba*/
-                // game.load.spritesheet('ms', 'images/map/metalslug_mummy37x45.png', 37, 45, 18);
-                game.load.image('car', 'images/map/car90.png');
-            }
-
-            /* Se crean las variables map (Mapa) y layer (Capa)*/
-            var map;
-            var layer;
-            var sprite;
-            var cursors;
-
-            function create() {
-                // Aqui se crean elementos como el personaje, los enemigos, los sonidos, el fondo del juego, etc
-                //game.stage.backgroundColor = '#787878';
-
-                //  Añade el mapa.
-                map = game.add.tilemap('mapa');
-
-                /* El primer parametro es el nombre de la imagen de donde
-                 se obtuvo el patron que esta presente en el archivo json. El segundo 
-                 es una referencia a la imagen (al archivo) que contiene dicho patron*/
-                map.addTilesetImage("other",'tiles');
-                
-                /*Crea una capa a partir del mapa*/
-                layer = map.createLayer('mundo');
-
-                // Ajusta la imagen al tamaño de la capa
-                layer.resizeWorld();
-
-                /*
-                sprite = game.add.sprite(40, 100, 'ms');
-
-                sprite.animations.add('walk');
-
-                sprite.animations.play('walk', 50, true);
-                */
-
-                sprite = game.add.sprite(450, 80, 'car');
-                sprite.anchor.setTo(0.5, 0.5);
-
-                game.physics.enable(sprite);
-
-                game.camera.follow(sprite);
-
-                cursors = game.input.keyboard.createCursorKeys();
-
-                game.input.onDown.add(fillTiles, this);
-
-
-            }
-
-            function fillTiles() {
-
-                map.fill(31, layer.getTileX(sprite.x), layer.getTileY(sprite.y), 8, 8);
-
-            }
-
-            function update() {
-                /*
-                if (sprite.x >= 300)
-                {
-                    sprite.scale.x += 0.01;
-                    sprite.scale.y += 0.01;
-                }
-                */
-
-                game.physics.arcade.collide(sprite, layer);
-
-                sprite.body.velocity.x = 0;
-                sprite.body.velocity.y = 0;
-                sprite.body.angularVelocity = 0;
-
-                if (cursors.left.isDown)
-                {
-                sprite.body.angularVelocity = -200;
-                }
-                else if (cursors.right.isDown)
-                {
-                sprite.body.angularVelocity = 200;
-                }
-
-                if (cursors.up.isDown)
-                {
-                sprite.body.velocity.copyFrom(game.physics.arcade.velocityFromAngle(sprite.angle, 300));
-                }
-
-            }
-
-            function render() {
-
-                game.debug.text('Click to fill tiles', 32, 32, 'rgb(0,0,0)');
-                game.debug.text('Tile X: ' + layer.getTileX(sprite.x), 32, 48, 'rgb(0,0,0)');
-                game.debug.text('Tile Y: ' + layer.getTileY(sprite.y), 32, 64, 'rgb(0,0,0)');
-
-            }
-        </script>
+        <script type="text/javascript" src="states/game.js"></script>
         <br>
 	</div>
 	
@@ -161,7 +48,7 @@ Asignatura: Gráfica Interactiva
 	<div class="fin">
 		<br>
 		<p>Los iconos presentes en este sitio web son propiedad de Icons8. <a href="https://icons8.com">Icon pack by Icons8</a>.</p>
-		<p><a href="acerca.html">Mapa del sitio. Glorias del Deporte Colombiano, 2016.</p>
+		<p><a href="acerca.html">Sobre este sitio. Glorias del Deporte Colombiano, 2016.</p>
 	</div>
 
 	</body>

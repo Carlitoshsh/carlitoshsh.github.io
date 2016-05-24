@@ -11,8 +11,15 @@
 /*Se importa una fuente del sitio Google Fonts*/
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,300,400italic);
 
+/* *********************************** */
+/* Cambios segunda entrega */
+/* *********************************** */
+canvas {
+  display : block; 
+  margin : auto;
+}
 
-/* ****************** */
+/* ****************** 
 /* TITULO Y MENU DE NAVEGACIoN */
 
 /* Elimina las margenes por defecto del navegador */
