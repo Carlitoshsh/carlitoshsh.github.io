@@ -38,8 +38,6 @@ PhaserGame.prototype = {
         this.load.image('tiles', 'images/map/default_tiles_x.png');
         this.load.image('car', 'images/map/car90.png');
 
-        //  Note: Graphics are Copyright 2015 Photon Storm Ltd.
-
     },
 
     create: function () {
@@ -49,7 +47,7 @@ PhaserGame.prototype = {
 
         this.layer = this.map.createLayer('mundo');
 
-        this.map.setCollision(20, true, this.layer);
+        this.map.setCollision(2, true, this.layer);
 
         this.car = this.add.sprite(48, 48, 'car');
         this.car.anchor.set(0.5);
@@ -82,7 +80,7 @@ PhaserGame.prototype = {
         }
         else
         {
-            //  This forces them to hold the key down to turn the corner
+            // Gira hasta que se presione
             this.turning = Phaser.NONE;
         }
 
@@ -92,12 +90,11 @@ PhaserGame.prototype = {
 
         if (this.turning === turnTo || this.directions[turnTo] === null || this.directions[turnTo].index !== this.safetile)
         {
-            //  Invalid direction if they're already set to turn that way
-            //  Or there is no tile there, or the tile isn't index a floor tile
+            //Direccion incorrecta
             return;
         }
 
-        //  Check if they want to turn around and can
+        //  Esquinas adyacentes
         if (this.current === this.opposites[turnTo])
         {
             this.move(turnTo);
@@ -187,7 +184,7 @@ PhaserGame.prototype = {
         this.marker.x = this.math.snapToFloor(Math.floor(this.car.x), this.gridsize) / this.gridsize;
         this.marker.y = this.math.snapToFloor(Math.floor(this.car.y), this.gridsize) / this.gridsize;
 
-        //  Update our grid sensors
+        //  Actualiza los sensores de direcciones 
         this.directions[1] = this.map.getTileLeft(this.layer.index, this.marker.x, this.marker.y);
         this.directions[2] = this.map.getTileRight(this.layer.index, this.marker.x, this.marker.y);
         this.directions[3] = this.map.getTileAbove(this.layer.index, this.marker.x, this.marker.y);
@@ -204,7 +201,7 @@ PhaserGame.prototype = {
 
     render: function () {
 
-        //  Un-comment this to see the debug drawing
+        //  debug
 
         for (var t = 1; t < 5; t++)
         {
