@@ -140,7 +140,7 @@ estudianteEnFinales.prototype = {
 
     /* checkea si el jugador puede moverse a la dirección que indico el usuario */
     esValidoMoverse: function (moverA) {
-        /*Si el movimiento del usuario es contra una pared, llamará a la función mover, para que
+        /*Si el movimiento del usuario actual es contra una pared, llamará a la función move, para que
         examine otros movimientos posibles*/
         if (this.actual === this.opuestos[moverA])
         {
@@ -182,12 +182,14 @@ estudianteEnFinales.prototype = {
 
     move: function (direction) {
         var velocidad = this.velocidad;
-
+        /* Como la velocidad es "negativa" de acuerdo al movimiento izquierda o arriba se actualiza de la siguiente forma
+         para se conserve*/
         if (direction === Phaser.LEFT || direction === Phaser.UP)
         {
             velocidad = -velocidad;
         }
-
+        /* Establece la velocidad (cuando hay un avance) en x (derecha/izquierda)
+          o en y (arriba/abajo) */
         if (direction === Phaser.LEFT || direction === Phaser.RIGHT)
         {
             this.jugador.body.velocity.x = velocidad;
@@ -197,8 +199,10 @@ estudianteEnFinales.prototype = {
             this.jugador.body.velocity.y = velocidad;
         }
 
+        /* Un tween es una función en Phaser que permite modificar algunas propiedades de movimiento
+         en un periodo de tiempo. Aquí se usa para el giro */
         this.add.tween(this.jugador).to( { angle: this.getAngle(direction) }, this.velocidadGiro, "Linear", true);
-
+        /* Actualiza que la direccion indicada por el usuario es la nueva actual  */
         this.actual = direction;
 
     },
@@ -222,9 +226,10 @@ estudianteEnFinales.prototype = {
         return "90";
 
     },
-
+    
+    /* Maneja la logica del juego */
     update: function () {
-      
+       /* Hace colisionar jugador con la capa, mediante la función arcade de Phaser */
         this.physics.arcade.collide(this.jugador, this.capa);
 
         this.marcador.x = this.math.snapToFloor(Math.floor(this.jugador.x), this.dimCuadricula) / this.dimCuadricula;
@@ -313,6 +318,7 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
+        this.game.debug.text("Actual " + this.actual + " girar " + this.girar,0,0);
 
     }
 
