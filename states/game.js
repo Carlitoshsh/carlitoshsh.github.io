@@ -70,7 +70,7 @@ estudianteEnFinales.prototype = {
         /*Importa el archivo de patrones para que el json ubique los elementos usados en el mapa.
         La imagen de patrones contiene elementos del mismo tamaño y permite construir mundos*/
         this.load.image('tiles', 'images/map/default_tiles_x.png');
-        /* Importa la imagen del player */
+        /* Importa la imagen del jugador */
         this.load.image('jugador', 'images/map/car90.png');
         /* Importa la imagen del diploma*/
         this.load.image('diploma', 'images/map/diploma.png');
@@ -93,7 +93,7 @@ estudianteEnFinales.prototype = {
         this.map.setCollision(2, true, this.capa);
         /* Se añade al jugador en el escenario*/
         this.jugador = this.add.sprite(48, 48, 'jugador');
-        /*Se refiere a la rotación de player. 0.5, en la mitad*/
+        /*Se refiere a la rotación de jugador. 0.5, en la mitad*/
         this.jugador.anchor.set(0.5);
         /* Hacemos que jugador sea un objeto con propiedades fisicas,
         con el fin de la colisión.
@@ -102,11 +102,11 @@ estudianteEnFinales.prototype = {
         /* Se añaden los diplomas en el mapa */
         /*Como cada recuadro en el mapa mide 32 e inicia desde cero, así
             se calculo para añadir a la posición: x*cantidad de casillas, y*cantidad de casillas*/
-        diploma1 = game.add.sprite(160,32, 'diploma');
-        diploma2 = game.add.sprite(384,64, 'diploma');
-        diploma3 = game.add.sprite(128,288, 'diploma');
-        diploma4 = game.add.sprite(512,288, 'diploma');
-        diploma5 = game.add.sprite(256,384, 'diploma');
+        this.diploma1 = game.add.sprite(160,32, 'diploma');
+        this.diploma2 = game.add.sprite(384,64, 'diploma');
+        this.diploma3 = game.add.sprite(128,288, 'diploma');
+        this.diploma4 = game.add.sprite(512,288, 'diploma');
+        this.diploma5 = game.add.sprite(256,384, 'diploma');
         /* El movimiento del jugador es manejado por el usuario.
         Se le indica a game que se hará a través del teclado*/
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -243,7 +243,53 @@ estudianteEnFinales.prototype = {
             this.turn();
         }
 
+        this.colisiones();
+
     },
+
+    colisiones: function () {
+        // Colisiones. Resta el valor de x y y de jugador y la diploma, si es menor a 20px destruye el objeto diploma
+        if (Math.abs(this.jugador.x - this.diploma1.x) < 20 && Math.abs(this.jugador.y - this.diploma1.y) < 20){
+            this.diploma1.destroy();
+            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
+            this.diploma1.y = 9999999;
+            this.diploma1.x = 9999999;
+            //total_diplomas += 1;
+        }
+
+        if (Math.abs(this.jugador.x - this.diploma2.x) < 20 && Math.abs(this.jugador.y - this.diploma2.y) < 20){
+            this.diploma2.destroy();
+            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
+            this.diploma2.y = 9999999;
+            this.diploma2.x = 9999999;
+            //total_diplomas += 1;
+        }
+
+        if (Math.abs(this.jugador.x - this.diploma3.x) < 20 && Math.abs(this.jugador.y - this.diploma3.y) < 20){
+            this.diploma3.destroy();
+            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
+            this.diploma3.y = 9999999;
+            this.diploma3.x = 9999999;
+            //total_diplomas += 1;
+        }
+
+        if (Math.abs(this.jugador.x - this.diploma4.x) < 20 && Math.abs(this.jugador.y - this.diploma4.y) < 20){
+            this.diploma4.destroy();
+            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
+            this.diploma4.y = 9999999;
+            this.diploma4.x = 9999999;
+            //total_diplomas += 1;    
+        }
+
+        if (Math.abs(this.jugador.x - this.diploma5.x) < 20 && Math.abs(this.jugador.y - this.diploma5.y) < 20){
+            this.diploma5.destroy();
+            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
+            this.diploma5.y = 9999999;
+            this.diploma5.x = 9999999;
+            //total_keys += 1;    
+        }
+    },
+
 
     render: function () {
 
