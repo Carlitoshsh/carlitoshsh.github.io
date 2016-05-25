@@ -1,174 +1,220 @@
-var game = new Phaser.Game(640, 480, Phaser.CANVAS, 'game');
+/* Se crea una nueva instancia de juego llamada estudianteEnFinales. */
+/* Esta es llamada en el manager */
 
-var PhaserGame = function (game) {
+/* Se siguieron diferentes tutoriales encontrados en la pagina de Phaser */
 
+/* Esta función recibe como parametro "game" -definido en el 
+ manager.js- y le añade las propidades en su interior.*/
+var estudianteEnFinales = function (game) {
+    /* Inicializa el mapa, la capa donde se ubijugadorán los elementos y el jugador*/
+    /*"this" hace referencia al parametro game, y así en las instancias de esta funcion*/
     this.map = null;
-    this.layer = null;
-    this.car = null;
+    this.capa = null;
+    this.jugador = null;
 
-    this.safetile = 1;
-    this.gridsize = 32;
+    /* Se crean los objetos estaticos */
+    this.diploma1  = null;
+    this.diploma2  = null;
+    this.diploma3  = null;
+    this.diploma4  = null;
+    this.diploma5  = null;
 
-    this.speed = 150;
-    this.threshold = 3;
-    this.turnSpeed = 150;
+    /* */
+    //this.safetile = 1;
+    /* Se usara para calcular movimientos */
+    this.dimCuadricula = 32;
 
-    this.marker = new Phaser.Point();
-    this.turnPoint = new Phaser.Point();
+    /* Velocidad controla el movimiento "automatico" del jugador. 
+    La dirección en que se mueva la define el usuario */
+    this.velocidad = 100;
+    //this.threshold = 3;
+    this.velocidadGiro = 150;
 
-    this.directions = [ null, null, null, null, null ];
-    this.opposites = [ Phaser.NONE, Phaser.RIGHT, Phaser.LEFT, Phaser.DOWN, Phaser.UP ];
+    /* Traza el marcador de las paredes */
+    this.marcador = new Phaser.Point();
+    /* Se usará para permitir los giros y ver el ultimo giro realizado*/
+    this.puntoGiro = new Phaser.Point();
 
-    this.current = Phaser.UP;
-    this.turning = Phaser.NONE;
+    /* Se inicializa un vector de direcciones, con eso 
+        sabemos si nuestro jugador puede moverse hacia la 
+        izquierda, derecha, arriba, abajo. El primer elemento se 
+        refiere cuando no realiza movimientos. */
+    this.direcciones = [ null, null, null, null, null ];
+    /* Se crea un arreglo de opuestos de las direcciones anteriores */
+    this.opuestos = [ Phaser.NONE, Phaser.RIGHT, Phaser.LEFT, Phaser.DOWN, Phaser.UP ];
+    /* Guarda la posición actual*/
+    this.actual = Phaser.UP;
+    /* Busca los posibles movimientos, los que son validos para moverse
+        Los que no están obstruidos por una pared */
+    this.girar = Phaser.NONE;
 
 };
 
-PhaserGame.prototype = {
+/* Esta es una instancia de estudianteEnFinales, que contiene las variables contenidas
+    en la función anterior. */
+estudianteEnFinales.prototype = {
 
+    /*Importa la función Physics de Phaser, que le da atributos 
+    de colisiones a los objetos */
     init: function () {
-
         this.physics.startSystem(Phaser.Physics.ARCADE);
-
     },
 
+    /* En esta función se realiza la carga de los archivos que estan
+        presentes en nuestro ambiente o mundo.*/
     preload: function () {
-
+        /* map es un archivo json.*/
+        /* Este archivo contiene la ubicacion de los elementos en el mapa. Es decir, 
+            el toma de una imagen de patrones algunos elementos y construye así el mapa.*/
         this.load.tilemap('map', 'images/map/map.json', null, Phaser.Tilemap.TILED_JSON);
+        /*Importa el archivo de patrones para que el json ubique los elementos usados en el mapa.
+        La imagen de patrones contiene elementos del mismo tamaño y permite construir mundos*/
         this.load.image('tiles', 'images/map/default_tiles_x.png');
-        this.load.image('car', 'images/map/car90.png');
-
+        /* Importa la imagen del player */
+        this.load.image('jugador', 'images/map/car90.png');
+        /* Importa la imagen del diploma*/
+        this.load.image('diploma', 'images/map/diploma.png');
     },
 
+    /* Esta función crea nuestro mundo con los elementos que se cargaron en preload*/
     create: function () {
-
+        /* Añade el mapa al escenario */
         this.map = this.add.tilemap('map');
+        /* Añade los elementos en el json en el escenario. 'other' es el nombre clave
+        con que el json reconoce el archivo de patrones */
         this.map.addTilesetImage('other', 'tiles');
-
-        this.layer = this.map.createLayer('mundo');
-
-        this.map.setCollision(2, true, this.layer);
-
-        this.car = this.add.sprite(48, 48, 'car');
-        this.car.anchor.set(0.5);
-
-        this.physics.arcade.enable(this.car);
-
+        /* 'mundo' hace referencia al mapa creado por medio del archivo de patrones.
+        También esta presente en el archivo de json */
+        this.capa = this.map.createLayer('mundo');
+        /*Añade colisiones con el elemento 2 en el mapa. json llena con numeros el patron construido.
+        Esos numeros representan una imagen dentro del archivo de patrones. Así es como se
+        construye el mapa.*/
+        /*El elemento 2 es una pared */
+        this.map.setCollision(2, true, this.capa);
+        /* Se añade al jugador en el escenario*/
+        this.jugador = this.add.sprite(48, 48, 'jugador');
+        /*Se refiere a la rotación de player. 0.5, en la mitad*/
+        this.jugador.anchor.set(0.5);
+        /* Hacemos que jugador sea un objeto con propiedades fisicas,
+        con el fin de la colisión.
+        Esto se hace gracias a la libreria Phaser*/
+        this.physics.arcade.enable(this.jugador);
+        /* Se añaden los diplomas en el mapa */
+        /*Como cada recuadro en el mapa mide 32 e inicia desde cero, así
+            se calculo para añadir a la posición: x*cantidad de casillas, y*cantidad de casillas*/
+        diploma1 = game.add.sprite(160,32, 'diploma');
+        diploma2 = game.add.sprite(384,64, 'diploma');
+        diploma3 = game.add.sprite(128,288, 'diploma');
+        diploma4 = game.add.sprite(512,288, 'diploma');
+        diploma5 = game.add.sprite(256,384, 'diploma');
+        /* El movimiento del jugador es manejado por el usuario.
+        Se le indica a game que se hará a través del teclado*/
         this.cursors = this.input.keyboard.createCursorKeys();
-
+        /* Inicializa el movimiento, en este caso hacia abajo*/
         this.move(Phaser.DOWN);
 
     },
 
-    checkKeys: function () {
-
+    /* Chequea la tecla presionada y el movimiento*/
+    accionesTeclado: function () {
+        /* Realiza la opción cuando la tecla es presionada */
+        /* Aquí se presentan las 4 direcciones posibles */
         if (this.cursors.left.isDown)
         {
-            this.checkDirection(Phaser.LEFT);
+            this.esValidoMoverse(Phaser.LEFT);
         }
         else if (this.cursors.right.isDown)
         {
-            this.checkDirection(Phaser.RIGHT);
+            this.esValidoMoverse(Phaser.RIGHT);
         }
         if (this.cursors.up.isDown)
         {
-            this.checkDirection(Phaser.UP);
+            this.esValidoMoverse(Phaser.UP);
         }
         else if (this.cursors.down.isDown)
         {
-            this.checkDirection(Phaser.DOWN);
-        }
-        else
-        {
-            // Gira hasta que se presione
-            this.turning = Phaser.NONE;
+            this.esValidoMoverse(Phaser.DOWN);
         }
 
     },
 
-    checkDirection: function (turnTo) {
-
-        if (this.turning === turnTo || this.directions[turnTo] === null || this.directions[turnTo].index !== this.safetile)
+    /* checkea si el jugador puede moverse a la dirección que indico el usuario */
+    esValidoMoverse: function (moverA) {
+        /*Si el movimiento del usuario es contra una pared, llamará a la función mover, para que
+        examine otros movimientos posibles*/
+        if (this.actual === this.opuestos[moverA])
         {
-            //Direccion incorrecta
-            return;
-        }
-
-        //  Esquinas adyacentes
-        if (this.current === this.opposites[turnTo])
-        {
-            this.move(turnTo);
+            this.move(moverA);
         }
         else
         {
-            this.turning = turnTo;
-
-            this.turnPoint.x = (this.marker.x * this.gridsize) + (this.gridsize / 2);
-            this.turnPoint.y = (this.marker.y * this.gridsize) + (this.gridsize / 2);
+            /*Si no hay una casilla que lo obstruya gira a esa dirección*/
+            this.girar = moverA;
+            /*Punto giro es un elemento visual que le indica al usuario cual fue su ultimo giro
+            y esta relacionado con la colision de las paredes. Permite también que el jugador no se salga
+            de las dimensiones del mundo, o aparezca encima de las paredes donde colisiona*/
+            this.puntoGiro.x = (this.marcador.x * this.dimCuadricula) + (this.dimCuadricula / 2);
+            this.puntoGiro.y = (this.marcador.y * this.dimCuadricula) + (this.dimCuadricula / 2);
         }
 
     },
 
+    /*Se define la función de giro*/
     turn: function () {
+        /*Se recupera la posición (coordenada) del jugador, y realiza Math.floor (funcion piso, que es una 
+        aproximación a la parte entera de un numero decimal por debajo)*/
+        var cx = Math.floor(this.jugador.x);
+        var cy = Math.floor(this.jugador.y);
 
-        var cx = Math.floor(this.car.x);
-        var cy = Math.floor(this.car.y);
+        /*Asigna las coordenadas de giro a jugador*/
+        this.jugador.x = this.puntoGiro.x;
+        this.jugador.y = this.puntoGiro.y;
 
-        //  This needs a threshold, because at high speeds you can't turn because the coordinates skip past
-        if (!this.math.fuzzyEqual(cx, this.turnPoint.x, this.threshold) || !this.math.fuzzyEqual(cy, this.turnPoint.y, this.threshold))
-        {
-            return false;
-        }
-
-        this.car.x = this.turnPoint.x;
-        this.car.y = this.turnPoint.y;
-
-        this.car.body.reset(this.turnPoint.x, this.turnPoint.y);
-
-        this.move(this.turning);
-
-        this.turning = Phaser.NONE;
-
+        /* le indica al jugador la posición donde debe efectuar el giro*/
+        this.jugador.body.reset(this.puntoGiro.x, this.puntoGiro.y);
+        /*Habilita hacia donde se puede girar en dicha posicion posbles y luego lo resetea*/
+        this.move(this.girar);
+        this.girar = Phaser.NONE;
+        /* Le indica al que llama a esta función que si es valido el movimiento en la direccion opuesta*/
         return true;
 
     },
 
     move: function (direction) {
-
-        var speed = this.speed;
+        var velocidad = this.velocidad;
 
         if (direction === Phaser.LEFT || direction === Phaser.UP)
         {
-            speed = -speed;
+            velocidad = -velocidad;
         }
 
         if (direction === Phaser.LEFT || direction === Phaser.RIGHT)
         {
-            this.car.body.velocity.x = speed;
+            this.jugador.body.velocity.x = velocidad;
         }
         else
         {
-            this.car.body.velocity.y = speed;
+            this.jugador.body.velocity.y = velocidad;
         }
 
-        this.add.tween(this.car).to( { angle: this.getAngle(direction) }, this.turnSpeed, "Linear", true);
+        this.add.tween(this.jugador).to( { angle: this.getAngle(direction) }, this.velocidadGiro, "Linear", true);
 
-        this.current = direction;
+        this.actual = direction;
 
     },
 
+    // Esta función muestra el cambio en la imagen debido al giro
     getAngle: function (to) {
 
-        //  About-face?
-        if (this.current === this.opposites[to])
+        if (this.actual === this.opuestos[to])
         {
             return "180";
         }
 
-        if ((this.current === Phaser.UP && to === Phaser.LEFT) ||
-            (this.current === Phaser.DOWN && to === Phaser.RIGHT) ||
-            (this.current === Phaser.LEFT && to === Phaser.DOWN) ||
-            (this.current === Phaser.RIGHT && to === Phaser.UP))
+        if ((this.actual === Phaser.UP && to === Phaser.LEFT) ||
+            (this.actual === Phaser.DOWN && to === Phaser.RIGHT) ||
+            (this.actual === Phaser.LEFT && to === Phaser.DOWN) ||
+            (this.actual === Phaser.RIGHT && to === Phaser.UP))
         {
             return "-90";
         }
@@ -179,20 +225,20 @@ PhaserGame.prototype = {
 
     update: function () {
       
-        this.physics.arcade.collide(this.car, this.layer);
+        this.physics.arcade.collide(this.jugador, this.capa);
 
-        this.marker.x = this.math.snapToFloor(Math.floor(this.car.x), this.gridsize) / this.gridsize;
-        this.marker.y = this.math.snapToFloor(Math.floor(this.car.y), this.gridsize) / this.gridsize;
+        this.marcador.x = this.math.snapToFloor(Math.floor(this.jugador.x), this.dimCuadricula) / this.dimCuadricula;
+        this.marcador.y = this.math.snapToFloor(Math.floor(this.jugador.y), this.dimCuadricula) / this.dimCuadricula;
 
         //  Actualiza los sensores de direcciones 
-        this.directions[1] = this.map.getTileLeft(this.layer.index, this.marker.x, this.marker.y);
-        this.directions[2] = this.map.getTileRight(this.layer.index, this.marker.x, this.marker.y);
-        this.directions[3] = this.map.getTileAbove(this.layer.index, this.marker.x, this.marker.y);
-        this.directions[4] = this.map.getTileBelow(this.layer.index, this.marker.x, this.marker.y);
+        this.direcciones[1] = this.map.getTileLeft(this.capa.index, this.marcador.x, this.marcador.y);
+        this.direcciones[2] = this.map.getTileRight(this.capa.index, this.marcador.x, this.marcador.y);
+        this.direcciones[3] = this.map.getTileAbove(this.capa.index, this.marcador.x, this.marcador.y);
+        this.direcciones[4] = this.map.getTileBelow(this.capa.index, this.marcador.x, this.marcador.y);
 
-        this.checkKeys();
+        this.accionesTeclado();
 
-        if (this.turning !== Phaser.NONE)
+        if (this.girar !== Phaser.NONE)
         {
             this.turn();
         }
@@ -205,30 +251,23 @@ PhaserGame.prototype = {
 
         for (var t = 1; t < 5; t++)
         {
-            if (this.directions[t] === null)
+            if (this.direcciones[t] === null)
             {
                 continue;
             }
 
             var color = 'rgba(0,255,0,0.3)';
 
-            if (this.directions[t].index !== this.safetile)
+            if (t === this.actual)
             {
-                color = 'rgba(255,0,0,0.3)';
+                color = 'rgba(0,255,255,0.3)';
             }
 
-            if (t === this.current)
-            {
-                color = 'rgba(255,255,255,0.3)';
-            }
-
-            this.game.debug.geom(new Phaser.Rectangle(this.directions[t].worldX, this.directions[t].worldY, 32, 32), color, true);
+            this.game.debug.geom(new Phaser.Rectangle(this.direcciones[t].worldX, this.direcciones[t].worldY, 32, 32), color, true);
         }
 
-        this.game.debug.geom(this.turnPoint, '#ffff00');
+        this.game.debug.geom(this.puntoGiro, '#ffff00');
 
     }
 
 };
-
-game.state.add('Game', PhaserGame, true);
