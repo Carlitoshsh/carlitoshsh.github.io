@@ -11,6 +11,7 @@ var estudianteEnFinales = function (game) {
     this.map = null;
     this.capa = null;
     this.jugador = null;
+    this.unal = null;
 
     /* Se crean los objetos estaticos */
     this.diploma1  = null;
@@ -74,6 +75,8 @@ estudianteEnFinales.prototype = {
         this.load.image('jugador', 'images/map/car90.png');
         /* Importa la imagen del diploma*/
         this.load.image('diploma', 'images/map/diploma.png');
+        /* Importa el logo de la UN */
+        this.load.image('un', 'images/map/un.png');
     },
 
     /* Esta función crea nuestro mundo con los elementos que se cargaron en preload*/
@@ -107,6 +110,8 @@ estudianteEnFinales.prototype = {
         this.diploma3 = game.add.sprite(128,288, 'diploma');
         this.diploma4 = game.add.sprite(512,288, 'diploma');
         this.diploma5 = game.add.sprite(256,384, 'diploma');
+
+        this.unal = game.add.sprite(384,384, 'un');
         /* El movimiento del jugador es manejado por el usuario.
         Se le indica a game que se hará a través del teclado*/
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -318,7 +323,7 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        this.game.debug.text("Actual " + this.actual + " girar " + this.girar, 132, 132);
+        //this.game.debug.text("Actual " + this.actual + " girar " + this.girar, 132, 132);
 
     }
 
