@@ -318,7 +318,7 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        this.game.debug.text("Actual " + this.actual + " girar " + this.girar,0,0);
+        this.game.debug.text("Actual " + this.actual + " girar " + this.girar, 32, 32);
 
     }
 
