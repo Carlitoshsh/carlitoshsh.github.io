@@ -48,7 +48,7 @@ canvas {
 /*Fixed nos permite dejar la barra fija al hacer scroll en la pagina*/
 .navegacion {
 	list-style-type: none;
-	position: fixed;
+	position: inline;
 	text-align: center;
 	top: 0;
 	left: 0;
@@ -152,10 +152,10 @@ p {
 	color: #838383;
 }
 
-/* Grupo de bloques en la pagina. Con margin-top le indico que se ubique a 200px del inicio de la pantalla.
+/* Grupo de bloques en la pagina. Con margin-top le indico que se ubique a 10px del inicio de la pantalla.
    Esto se realiza con el fin de que no se muestre encima de la barra de navegacion */
 .grupo {
-	margin-top: 200px;
+	margin-top: 10px;
   margin-left: 30px;
   margin-right: 30px;
 }

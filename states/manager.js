@@ -1,4 +1,4 @@
-alert("El juego no se ejecuta de modo local en Chrome.\nSe recomienda usar Firefox para ejecutarlo localmente.\nSe subió a un servidor para ejecutarlo en cualquier navegador,\nesto puede verse en la sección ¿Como jugar?. Ahí aparece el enlace.");
+alert("El juego no se ejecuta de modo local en Chrome.\nSe recomienda usar Firefox para ejecutarlo localmente.\nSe subió a un servidor para ejecutarlo en cualquier navegador,\nesto puede verse en la sección -¿Como jugar?-. Ahí aparece el enlace.");
 /* Este es el manejador de mis archivos Javascript 
 	y que utiliza funcionalidad de Phaser */
 
