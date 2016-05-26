@@ -107,10 +107,11 @@ estudianteEnFinales.prototype = {
         this.jugador = this.add.sprite(48, 48, 'jugador');
         /*Se refiere a la rotación de jugador. 0.5, en la mitad*/
         this.jugador.anchor.set(0.5);
-        /* Hacemos que jugador sea un objeto con propiedades fisicas,
+        /* Hacemos que jugador y el enemigo sean objetos con propiedades fisicas,
         con el fin de la colisión.
         Esto se hace gracias a la libreria Phaser*/
         this.physics.arcade.enable(this.jugador);
+        this.physics.arcade.enable(this.distraccion);
         /* Se añaden los diplomas en el mapa */
         /*Como cada recuadro en el mapa mide 32 e inicia desde cero, así
             se calculo para añadir a la posición: x*cantidad de casillas, y*cantidad de casillas*/
@@ -124,7 +125,14 @@ estudianteEnFinales.prototype = {
         this.cursors = this.input.keyboard.createCursorKeys();
         /* Inicializa el movimiento, en este caso hacia abajo*/
         this.move(Phaser.DOWN);
+        // Realiza los movimientos de las distracciones
+        this.moverEnemigo();
 
+    },
+
+    moverEnemigo: function() {
+        this.distraccion.body.velocity.x = 100;
+        this.distraccion.body.bounce.setTo(1, 1);
     },
 
     /* Chequea la tecla presionada y el movimiento*/
@@ -148,6 +156,12 @@ estudianteEnFinales.prototype = {
             this.esValidoMoverse(Phaser.DOWN);
         }
 
+    },
+
+
+    perdiste: function(){
+        if(this.jugador.x == (this.distraccion.x+16) && this.jugador.y == (this.distraccion.y+16))
+            game.state.start('iniciar');
     },
 
     /* checkea si el jugador puede moverse a la dirección que indico el usuario */
@@ -270,6 +284,8 @@ estudianteEnFinales.prototype = {
 
         this.ganaste();
 
+        this.perdiste();
+
     },
 
 
@@ -356,7 +372,7 @@ estudianteEnFinales.prototype = {
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
         this.game.debug.text("Jugador x: " + this.jugador.x + " y: " + this.jugador.y, 32, 32);
-        this.game.debug.text("Salida x: " + this.diploma1.x + " y: " + this.diploma1.y, 32, 64);
+        this.game.debug.text("Salida x: " + this.distraccion.x + " y: " + this.distraccion.y, 32, 64);
         this.game.debug.text("Contador: " + total_diplomas, 32, 128);
 
     }
