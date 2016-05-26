@@ -1,12 +1,15 @@
 /* Se crea una nueva instancia de juego llamada estudianteEnFinales. */
 /* Esta es llamada en el manager */
 
+/* Se añade una variable que cuente el total de diplomas que lleva el usuario*/
+var total_diplomas = 0;
+
 /* Se siguieron diferentes tutoriales encontrados en la pagina de Phaser */
 
 /* Esta función recibe como parametro "game" -definido en el 
  manager.js- y le añade las propidades en su interior.*/
 var estudianteEnFinales = function (game) {
-    /* Inicializa el mapa, la capa donde se ubijugadorán los elementos y el jugador*/
+    /* Inicializa el mapa, la capa donde se ubicarán los elementos y el jugador*/
     /*"this" hace referencia al parametro game, y así en las instancias de esta funcion*/
     this.map = null;
     this.capa = null;
@@ -20,7 +23,6 @@ var estudianteEnFinales = function (game) {
     this.diploma3  = null;
     this.diploma4  = null;
     this.diploma5  = null;
-    this.total_diplomas = 0;
     /* */
     //this.safetile = 1;
     /* Se usara para calcular movimientos */
@@ -273,52 +275,57 @@ estudianteEnFinales.prototype = {
 
     colisiones: function () {
         // Colisiones. Resta el valor de x y y de jugador y la diploma, si es menor a 20px destruye el objeto diploma
-        if (Math.abs(this.jugador.x - this.diploma1.x) < 20 && Math.abs(this.jugador.y - this.diploma1.y) < 20){
+        if (this.jugador.x == (this.diploma1.x + 16) && this.jugador.y == (this.diploma1.y+16)){
             this.diploma1.destroy();
-            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
-            this.diploma1.y = 9999999;
-            this.diploma1.x = 9999999;
-            this.total_diplomas += 1;
+            /* Se cambian los valores de x y y para que no entre de nuevo al if */
+            this.diploma1.y = 0;
+            this.diploma1.x = 0;
+            total_diplomas += 1;
         }
 
-        if (Math.abs(this.jugador.x - this.diploma2.x) < 20 && Math.abs(this.jugador.y - this.diploma2.y) < 20){
+        if (this.jugador.x == (this.diploma2.x + 16) && this.jugador.y == (this.diploma2.y+16)){
             this.diploma2.destroy();
-            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
-            this.diploma2.y = 9999999;
-            this.diploma2.x = 9999999;
-            this.total_diplomas += 1;
+            /* Se cambian los valores de x y y para que no entre de nuevo al if */
+            this.diploma2.y = 0;
+            this.diploma2.x = 0;
+            total_diplomas += 1;
         }
 
-        if (Math.abs(this.jugador.x - this.diploma3.x) < 20 && Math.abs(this.jugador.y - this.diploma3.y) < 20){
+        if (this.jugador.x == (this.diploma3.x + 16) && this.jugador.y == (this.diploma3.y+16)){
             this.diploma3.destroy();
-            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
-            this.diploma3.y = 9999999;
-            this.diploma3.x = 9999999;
-            this.total_diplomas += 1;
+            /* Se cambian los valores de x y y para que no entre de nuevo al if */
+            this.diploma3.y = 0;
+            this.diploma3.x = 0;
+            total_diplomas += 1;
         }
 
-        if (Math.abs(this.jugador.x - this.diploma4.x) < 20 && Math.abs(this.jugador.y - this.diploma4.y) < 20){
+        if (this.jugador.x == (this.diploma4.x + 16) && this.jugador.y == (this.diploma4.y+16)){
             this.diploma4.destroy();
-            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
-            this.diploma4.y = 9999999;
-            this.diploma4.x = 9999999;
-            this.total_diplomas += 1;    
+            /* Se cambian los valores de x y y para que no entre de nuevo al if */
+            this.diploma4.y = 0;
+            this.diploma4.x = 0;
+            total_diplomas += 1;    
         }
 
-        if (Math.abs(this.jugador.x - this.diploma5.x) < 20 && Math.abs(this.jugador.y - this.diploma5.y) < 20){
+        if (this.jugador.x == (this.diploma5.x + 16) && this.jugador.y == (this.diploma5.y+16)){
             this.diploma5.destroy();
-            // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
-            this.diploma5.y = 9999999;
-            this.diploma5.x = 9999999;
-            this.total_diplomas+= 1;    
+            /* Se cambian los valores de x y y para que no entre de nuevo al if */
+            this.diploma5.y = 0;
+            this.diploma5.x = 0;
+            total_diplomas+= 1;    
         }
     },
 
     ganaste: function () {
         /* Si el total de diplomas es 5 puede ir a la puerta y ganar */
-        if (this.total_diplomas == 5) {
-            game.state.start("ganar");
+        /* Como la posición de jugador se refiere al punto de giro, se suma 16 (ya que es la mitad del jugador)
+         a la posición unal*/
+        if(this.jugador.x == (this.unal.x+16) && this.jugador.y == (this.unal.y+16)){
+            if (total_diplomas == 5) {
+                game.state.start("ganar");
+            }
         }
+            
     },
 
 
@@ -348,8 +355,11 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        this.game.debug.text(this.total_diplomas, 0, 0);
+        this.game.debug.text("Jugador x: " + this.jugador.x + " y: " + this.jugador.y, 32, 32);
+        this.game.debug.text("Salida x: " + this.diploma1.x + " y: " + this.diploma1.y, 32, 64);
+        this.game.debug.text("Contador: " + total_diplomas, 32, 128);
 
     }
 
 };
+

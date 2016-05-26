@@ -13,10 +13,13 @@ var ganaste = {
         
         // Cuando presiona se cambia a esa acción
         enter.onDown.addOnce(this.start, this);
+
+        /* Resetea la cantidad de diplomas en cada juego */
+        total_diplomas = 0;
     },
     
     // reinicia el juego   
     start: function () {
-        game.state.start('juego');    
+        game.state.start('iniciar');    
     }	
 }
