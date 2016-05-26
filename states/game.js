@@ -12,14 +12,15 @@ var estudianteEnFinales = function (game) {
     this.capa = null;
     this.jugador = null;
     this.unal = null;
+    this.distraccion = null;
 
-    /* Se crean los objetos estaticos */
+    /* Se crean los objetos estaticos diplomas */
     this.diploma1  = null;
     this.diploma2  = null;
     this.diploma3  = null;
     this.diploma4  = null;
     this.diploma5  = null;
-
+    this.total_diplomas = 0;
     /* */
     //this.safetile = 1;
     /* Se usara para calcular movimientos */
@@ -77,6 +78,8 @@ estudianteEnFinales.prototype = {
         this.load.image('diploma', 'images/map/diploma.png');
         /* Importa el logo de la UN */
         this.load.image('un', 'images/map/un.png');
+        /* Importa el enemigo */
+        this.load.image('enemigo', 'images/map/fb.png');
     },
 
     /* Esta función crea nuestro mundo con los elementos que se cargaron en preload*/
@@ -94,6 +97,10 @@ estudianteEnFinales.prototype = {
         construye el mapa.*/
         /*El elemento 2 es una pared */
         this.map.setCollision(2, true, this.capa);
+        // Se incluye el logo en el escenario
+        this.unal = game.add.sprite(384,384, 'un');
+        /* se incluye al enemigo en el escenario */
+        this.distraccion = game.add.sprite(128,128, 'enemigo');
         /* Se añade al jugador en el escenario*/
         this.jugador = this.add.sprite(48, 48, 'jugador');
         /*Se refiere a la rotación de jugador. 0.5, en la mitad*/
@@ -110,8 +117,6 @@ estudianteEnFinales.prototype = {
         this.diploma3 = game.add.sprite(128,288, 'diploma');
         this.diploma4 = game.add.sprite(512,288, 'diploma');
         this.diploma5 = game.add.sprite(256,384, 'diploma');
-
-        this.unal = game.add.sprite(384,384, 'un');
         /* El movimiento del jugador es manejado por el usuario.
         Se le indica a game que se hará a través del teclado*/
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -236,7 +241,10 @@ estudianteEnFinales.prototype = {
     update: function () {
        /* Hace colisionar jugador con la capa, mediante la función arcade de Phaser */
         this.physics.arcade.collide(this.jugador, this.capa);
+        /*También hace que el enemigo colisione*/
+        this.physics.arcade.collide(this.distraccion, this.capa);
 
+        /*El marcador indica donde se ubico el jugador por ultima vez antes de realizar un giro*/
         this.marcador.x = this.math.snapToFloor(Math.floor(this.jugador.x), this.dimCuadricula) / this.dimCuadricula;
         this.marcador.y = this.math.snapToFloor(Math.floor(this.jugador.y), this.dimCuadricula) / this.dimCuadricula;
 
@@ -246,16 +254,22 @@ estudianteEnFinales.prototype = {
         this.direcciones[3] = this.map.getTileAbove(this.capa.index, this.marcador.x, this.marcador.y);
         this.direcciones[4] = this.map.getTileBelow(this.capa.index, this.marcador.x, this.marcador.y);
 
+        /* Permite que el usuario cambie el movimiento */
         this.accionesTeclado();
 
+        /*Si puede girar llamara a la función que evalua giros */
         if (this.girar !== Phaser.NONE)
         {
             this.turn();
         }
 
+        /* Y buscará los diplomas */
         this.colisiones();
 
+        this.ganaste();
+
     },
+
 
     colisiones: function () {
         // Colisiones. Resta el valor de x y y de jugador y la diploma, si es menor a 20px destruye el objeto diploma
@@ -264,7 +278,7 @@ estudianteEnFinales.prototype = {
             // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
             this.diploma1.y = 9999999;
             this.diploma1.x = 9999999;
-            //total_diplomas += 1;
+            this.total_diplomas += 1;
         }
 
         if (Math.abs(this.jugador.x - this.diploma2.x) < 20 && Math.abs(this.jugador.y - this.diploma2.y) < 20){
@@ -272,7 +286,7 @@ estudianteEnFinales.prototype = {
             // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
             this.diploma2.y = 9999999;
             this.diploma2.x = 9999999;
-            //total_diplomas += 1;
+            this.total_diplomas += 1;
         }
 
         if (Math.abs(this.jugador.x - this.diploma3.x) < 20 && Math.abs(this.jugador.y - this.diploma3.y) < 20){
@@ -280,7 +294,7 @@ estudianteEnFinales.prototype = {
             // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
             this.diploma3.y = 9999999;
             this.diploma3.x = 9999999;
-            //total_diplomas += 1;
+            this.total_diplomas += 1;
         }
 
         if (Math.abs(this.jugador.x - this.diploma4.x) < 20 && Math.abs(this.jugador.y - this.diploma4.y) < 20){
@@ -288,7 +302,7 @@ estudianteEnFinales.prototype = {
             // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
             this.diploma4.y = 9999999;
             this.diploma4.x = 9999999;
-            //total_diplomas += 1;    
+            this.total_diplomas += 1;    
         }
 
         if (Math.abs(this.jugador.x - this.diploma5.x) < 20 && Math.abs(this.jugador.y - this.diploma5.y) < 20){
@@ -296,34 +310,45 @@ estudianteEnFinales.prototype = {
             // Se asigna un valor muy grande a las coordenadas de diploma para que no vuelva a entrar al if
             this.diploma5.y = 9999999;
             this.diploma5.x = 9999999;
-            //total_keys += 1;    
+            this.total_diplomas+= 1;    
+        }
+    },
+
+    ganaste: function () {
+        /* Si el total de diplomas es 5 puede ir a la puerta y ganar */
+        if (this.total_diplomas == 5) {
+            game.state.start("ganar");
         }
     },
 
 
     render: function () {
 
-        //  debug
+        //  Render permite añadir texto o colores sobre el juego
 
+        /* Recorre todas las posibles direcciones */
         for (var t = 1; t < 5; t++)
         {
+            // Cuando no se le indica dirección que continue
             if (this.direcciones[t] === null)
             {
                 continue;
             }
 
+            // Se crea un color por defecto : verde
             var color = 'rgba(0,255,0,0.3)';
 
+            // Si la direccion t corresponde con la del usuario la coloca en azul la celda adyacente, con trasparencia
             if (t === this.actual)
             {
                 color = 'rgba(0,255,255,0.3)';
             }
-
+            // Esto crea un cuadrado que rellena la celda adyacente con el color deseado y su transparencia
             this.game.debug.geom(new Phaser.Rectangle(this.direcciones[t].worldX, this.direcciones[t].worldY, 32, 32), color, true);
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        //this.game.debug.text("Actual " + this.actual + " girar " + this.girar, 132, 132);
+        this.game.debug.text(this.total_diplomas, 0, 0);
 
     }
 
