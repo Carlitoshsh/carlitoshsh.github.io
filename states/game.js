@@ -16,6 +16,9 @@ var estudianteEnFinales = function (game) {
     this.jugador = null;
     this.unal = null;
     this.distraccion = null;
+    this.twitter = null;
+    this.pareja = null;
+    this.tv = null;
 
     /* Se crean los objetos estaticos diplomas */
     this.diploma1  = null;
@@ -82,6 +85,12 @@ estudianteEnFinales.prototype = {
         this.load.image('un', 'images/map/un.png');
         /* Importa el enemigo */
         this.load.image('enemigo', 'images/map/fb.png');
+        /* Importa el otro enemigo */
+        this.load.image('twitter', 'images/map/tw.png');
+        /* Y mas...*/
+        this.load.image('couple', 'images/map/par.png');
+        /* Y mas...*/
+        this.load.image('tv', 'images/map/tv.png');
     },
 
     /* Esta función crea nuestro mundo con los elementos que se cargaron en preload*/
@@ -103,6 +112,9 @@ estudianteEnFinales.prototype = {
         this.unal = game.add.sprite(384,384, 'un');
         /* se incluye al enemigo en el escenario */
         this.distraccion = game.add.sprite(128,128, 'enemigo');
+        this.twitter = game.add.sprite(224,128, 'twitter');
+        this.pareja = game.add.sprite(576,128, 'couple');
+        this.tv = game.add.sprite(96,384, 'tv');
         /* Se añade al jugador en el escenario*/
         this.jugador = this.add.sprite(48, 48, 'jugador');
         /*Se refiere a la rotación de jugador. 0.5, en la mitad*/
@@ -112,6 +124,9 @@ estudianteEnFinales.prototype = {
         Esto se hace gracias a la libreria Phaser*/
         this.physics.arcade.enable(this.jugador);
         this.physics.arcade.enable(this.distraccion);
+        this.physics.arcade.enable(this.twitter);
+        this.physics.arcade.enable(this.pareja);
+        this.physics.arcade.enable(this.tv);
         /* Se añaden los diplomas en el mapa */
         /*Como cada recuadro en el mapa mide 32 e inicia desde cero, así
             se calculo para añadir a la posición: x*cantidad de casillas, y*cantidad de casillas*/
@@ -130,9 +145,20 @@ estudianteEnFinales.prototype = {
 
     },
 
+    /* Contiene todos los movimientos de los enemigos en el mundo */
     moverEnemigo: function() {
+        /* Se define el movimiento en x o en y; con bounce se da el efecto de rebote*/
         this.distraccion.body.velocity.x = 100;
         this.distraccion.body.bounce.setTo(1, 1);
+
+        this.twitter.body.velocity.y = 100;
+        this.twitter.body.bounce.setTo(1, 1);
+
+        this.pareja.body.velocity.y = 100;
+        this.pareja.body.bounce.setTo(1, 1);
+
+        this.tv.body.velocity.y = 100;
+        this.tv.body.bounce.setTo(1, 1);
     },
 
     /* Chequea la tecla presionada y el movimiento*/
@@ -156,12 +182,6 @@ estudianteEnFinales.prototype = {
             this.esValidoMoverse(Phaser.DOWN);
         }
 
-    },
-
-
-    perdiste: function(){
-        if(this.jugador.x == (this.distraccion.x+16) && this.jugador.y == (this.distraccion.y+16))
-            game.state.start('iniciar');
     },
 
     /* checkea si el jugador puede moverse a la dirección que indico el usuario */
@@ -259,6 +279,9 @@ estudianteEnFinales.prototype = {
         this.physics.arcade.collide(this.jugador, this.capa);
         /*También hace que el enemigo colisione*/
         this.physics.arcade.collide(this.distraccion, this.capa);
+        this.physics.arcade.collide(this.twitter, this.capa);
+        this.physics.arcade.collide(this.pareja, this.capa);
+        this.physics.arcade.collide(this.tv, this.capa);
 
         /*El marcador indica donde se ubico el jugador por ultima vez antes de realizar un giro*/
         this.marcador.x = this.math.snapToFloor(Math.floor(this.jugador.x), this.dimCuadricula) / this.dimCuadricula;
@@ -284,8 +307,11 @@ estudianteEnFinales.prototype = {
 
         this.ganaste();
 
-        this.perdiste();
-
+        /* Si se sobrepone con los enemigos el jugador pierde */
+        this.physics.arcade.overlap(this.jugador, this.distraccion, this.perdiste, null, this);
+        this.physics.arcade.overlap(this.jugador, this.twitter, this.perdiste, null, this);
+        this.physics.arcade.overlap(this.jugador, this.pareja, this.perdiste, null, this);
+        this.physics.arcade.overlap(this.jugador, this.tv, this.perdiste, null, this);
     },
 
 
@@ -332,6 +358,7 @@ estudianteEnFinales.prototype = {
         }
     },
 
+    /* Cambia de estado si gana*/
     ganaste: function () {
         /* Si el total de diplomas es 5 puede ir a la puerta y ganar */
         /* Como la posición de jugador se refiere al punto de giro, se suma 16 (ya que es la mitad del jugador)
@@ -344,6 +371,10 @@ estudianteEnFinales.prototype = {
             
     },
 
+    /* Cambia de estado si pierde */
+    perdiste: function(){
+        game.state.start('perder');
+    },
 
     render: function () {
 
@@ -371,9 +402,12 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        this.game.debug.text("Jugador x: " + this.jugador.x + " y: " + this.jugador.y, 32, 32);
-        this.game.debug.text("Salida x: " + this.distraccion.x + " y: " + this.distraccion.y, 32, 64);
-        this.game.debug.text("Contador: " + total_diplomas, 32, 128);
+        /* Debug text permite imprimir encima del ambiente. La mayoria de posiciones logradas
+        y la detección de colisiones se hicieron por medio de este debug. En este caso, se hizo para
+        detectar cuando jugador y distraccion se cruzaban*/
+        /*this.game.debug.text("Diferencia x: " + (this.jugador.x - (this.distraccion.x+16)), 32, 32);
+        this.game.debug.text("Diferencia y: " + (this.jugador.y - (this.distraccion.y+16)), 32, 64);
+        this.game.debug.text("Contador: " + total_diplomas, 32, 128);*/
 
     }
 

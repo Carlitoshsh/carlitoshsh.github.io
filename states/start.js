@@ -17,6 +17,6 @@ var inicio = {
     
     // reinicia el juego   
     start: function () {
-        game.state.start('juego');    
+        game.state.start('instruccion');    
     }	
 }

@@ -11,10 +11,14 @@ var game = new Phaser.Game(640, 480, Phaser.CANVAS, 'game');
 // Se crean los estados del juego
 // Este contiene el inicio del juego, que inicia cuando el usuario presiona ENTER
 game.state.add('iniciar', inicio);
+// Se presentan las instrucciones al usuario
+game.state.add('instruccion', instrucciones);
 // Al presionar enter lo dirige al siguiente estado
 game.state.add('juego', estudianteEnFinales);
-// Cuando se termina el juego llama a ganaste
+// Cuando ganas, llama a ganaste
 game.state.add('ganar', ganaste);
+// Y pues... cuando pierdes
+game.state.add('perder', perdiste);
 
 // Se llama al primer estado
 game.state.start('iniciar');
