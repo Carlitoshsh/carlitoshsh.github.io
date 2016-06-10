@@ -31,8 +31,8 @@ Asignatura: Gráfica Interactiva
             representantes dependiendo de la categoria. Acerca de muestra el mapa del sitio, los creditos y la fuente de la información -->
             <!-- En cada pagina se muestra cual esta activa, llamando a la clase active del estilo css -->
             <ul>
-                <li><a class = "active" href="index.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/home-24.png" title="Inicio" width="30"><br>Inicio</a></li>
-                <li><a href="game.html"><img src="hhttps://maxcdn.icons8.com/Color/PNG/24/Users/student_male-24.png" title="Juego" width="30"><br>Juego</a></li>
+                <li><a href="index.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/home-24.png" title="Inicio" width="30"><br>Inicio</a></li>
+                <li><a class = "active" href="game.html"><img src="hhttps://maxcdn.icons8.com/Color/PNG/24/Users/student_male-24.png" title="Juego" width="30"><br>Juego</a></li>
                 <li><a href="reglas.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/regular_biking-24.png" title="Cicilismo" width="30"><br>¿Cómo se juega?</a></li>
                 <li id="acercade"><a href="acerca.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/about-24.png" title="Acerca" width="30"><br>Acerca de</a></li>
             </ul>
@@ -40,7 +40,14 @@ Asignatura: Gráfica Interactiva
 
 	<div class="grupo">
         <hr>
-    	<h1> Futura implementación de AngularJS para pruebas. </h1>
+    	<div id="game"></div>
+        <!-- Archivos Javascript del juego -->
+        <script type="text/javascript" src="states/game.js"></script>
+        <script type="text/javascript" src="states/start.js"></script>
+        <script type="text/javascript" src="states/instructions.js"></script>
+        <script type="text/javascript" src="states/victory.js"></script>
+        <script type="text/javascript" src="states/loser.js"></script>
+        <script type="text/javascript" src="states/manager.js"></script>
         <br>
 	</div>
 	
