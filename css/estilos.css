@@ -125,6 +125,12 @@ canvas {
   height: 100%;
 }
 
+/* Se aplica cuando tenemos una entrada de input */
+input {
+    border: 2px solid #555;
+    border-radius: 4px; 
+}
+
 /*Se crea una linea de separacion con tamaño fijo de 350px.*/
 hr {
   max-width: 350px;
