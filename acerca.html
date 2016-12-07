@@ -9,6 +9,7 @@
 	<head>
         <!-- Se le indica al archivo la ubicación de los estilos -->
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6/css/bootstrap.min.css">
         <!-- Se usa el formato de codificación UTF-8 para que reconozca ciertos simbolos -->
         <meta charset="UTF-8">
         <!-- Este es el icono que se muestra en la pestaña del navegador junto con el titulo de la pagina -->
@@ -23,17 +24,36 @@
 
     </head>
 	<body>
-		<nav class="myNavBar">
-			<div id = "titulo">
-				<img src="images/png/titulo.png">
-			</div>
-			<ul>
-				<li><a href="index.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/home-24.png" title="Inicio" width="30"><br>Inicio</a></li>
-				<li><a href="game.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Users/student_male-24.png" title="Juego" width="30"><br>Juego</a></li>
-                <li><a href="reglas.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/cycling_road-24.png" title="Cicilismo" width="30"><br>¿Cómo se juega?</a></li>
-                <li id="acercade"><a class = "active" href="acerca.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/about-24.png" title="Acerca" width="30"><br>Acerca de</a></li>
-			</ul>
-		</nav>
+
+        <!-- Aquí se muestra la barra de navegación junto con una barra de titulo. -->
+        <nav class="myNavBar navbar navbar-inverse navbar-fixed-top">
+            <!-- Tenemos la primera sección en nuestra pagina, la cual muestra el logo, a modo de "titulo", con los atributos de bootstrap -->
+            <div id = "titulo" class="navbar-header">
+            <!-- También posee los atributos del boton que oculta -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Y contiene tambien al titulo -->
+                <img src="images/png/titulo.png">
+            </div>
+            <!-- Aquí se muestra la barra de navegación, como una lista HTML. Cada elemento importa un icono de Icons8. -->
+            <!-- En total son 6 paginas. 5 sobre glorias del deporte colombiano: una muestra noticias, y las otras muestran
+            representantes dependiendo de la categoria. Acerca de muestra el mapa del sitio, los creditos y la fuente de la información -->
+            <!-- En cada pagina se muestra cual esta activa, llamando a la clase active del estilo css -->
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class = "active" href="index.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/home-24.png" title="Inicio" width="30"><br>Inicio</a></li>
+                    <li><a href="game.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Users/student_male-24.png" title="Juego" width="30"><br>Juego</a></li>
+                    <li><a href="reglas.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/cycling_road-24.png" title="Cicilismo" width="30"><br>¿Cómo se juega?</a></li>
+                    <li id="acercade"><a href="acerca.html"><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/about-24.png" title="Acerca" width="30"><br>Acerca de</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+            
+        </nav>
+
 		<!-- Se crea una sección grupo, que contiene tres secciones: mapa del sitio, fuentes y creditos -->
 		<div class="grupo">
 		<!-- Se crea un encabezado mapa del sitio -->
