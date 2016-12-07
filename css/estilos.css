@@ -86,7 +86,7 @@ hr {
 	Se define el tipo de letra predeterminado para cada etiqueta que involucra texto.
 	La tipografia predeterminada es Exo 2. Si el navegador no la admite buscara Helvetica, y asi.
 */
-h1, h2, h3, h4, a {
+.h1, .h2, .h3, .h4, .a, h1, h2, h3, h4, a {
 	font-family: "Exo 2", Helvetica, Verdana, sans-serif;
 	color: #a9a9a9;
 }
@@ -253,9 +253,5 @@ body {
     border-radius: 0px;
 }
 
-
-.navbar-nav > li > a {
-    display: table-caption;
-}
 
 
