@@ -32,7 +32,7 @@ canvas {
     en la mitad. */
 #titulo{
 	align: center;
-	background-color: #009bcc;
+	background-color: #2C3446;
 	height: 70px;
 	vertical-align: middle;
 }
@@ -64,12 +64,10 @@ canvas {
 
 /*  Overflow controla que la forma en que los elementos se comportan en su contenedor.
     Se usa hidden para que esconda los elementos. */
-.navegacion ul {
+.myNavBar ul {
   align: center;
-  overflow: hidden;
   margin: 0;
-  padding: 15px 20px;
-  background-color: #0088b3;
+  background-color: #2C3446;
 }
 
 /*Alinea el texto de cada opcion en el menu al centro y se muestra en bloque. 
@@ -83,23 +81,6 @@ canvas {
   text-decoration: none;
 }
 
-/* Esto nos permite ver en la barra de navegacion cual es la pagina activa. El color es un azul claro
-     y la fuente se mostrara en negrita. */
-.navegacion .active {
-    background-color: #c7f1ff;
-    color: #0088b3;
-    font-weight: bold;
-}
-
-/* Si no estan activos, pero si el mouse pasa encima de la opcion, se coloreara negro*/
-.navegacion li a:hover:not(.active) {
-    background-color: #111;
-}
-
-/* Inidca que la opcion del menu acerca de aparezca a la derecha de la pagina*/
-#acercade {
-  float: right;
-}
 
 
 /* ************** */
@@ -321,3 +302,80 @@ body {
     }
 
 }
+
+
+
+/* Cambio de navbar*/
+
+/*Snippet Navbar*/
+.myNavBar {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.myNavBar * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.myNavBar li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1.5em;
+  padding: 0;
+}
+.myNavBar a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.myNavBar a:before,
+.myNavBar a:after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #fff;
+  width: 0;
+}
+.myNavBar a:before {
+  top: 0;
+  left: 0;
+}
+.myNavBar a:after {
+  bottom: 0;
+  right: 0;
+}
+.myNavBar a:hover,
+.myNavBar .current a {
+  color: #ffffff;
+}
+.myNavBar a:hover:before,
+.myNavBar .current a:before,
+.myNavBar a:hover:after,
+.myNavBar .current a:after {
+  width: 100%;
+}
+
+/* Bootstrap navbar otras configuraciones */
+/* Bootsfaces */
+.navbar-inverse .navbar-collapse{
+    background-color: #2C3446;
+    border-color: #2C3446;
+}
+
+.navbar{
+    border-radius: 0px;
+}
+
+
+.navbar-nav > li > a {
+    display: table-caption;
+
+
