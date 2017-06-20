@@ -30,6 +30,11 @@ Asignatura: Gráfica Interactiva
         <script src="js/model/pruebaApp.js" type="text/javascript"></script>
         <!-- Controladores de ANGULARJS -->
         <script src="js/controller/Controlador.js" type="text/javascript"></script>
+
+        <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
+
+      
+
     </head>
     <body ng-app="Pruebas">
 
@@ -62,15 +67,21 @@ Asignatura: Gráfica Interactiva
             
         </nav>
 
+    <section>
+        <div id="canvas">
+        </div>
+          <script src="js/d3/chart.js" type="text/javascript"></script>
+    <section>
 
-
+    <div id="chart"></div>
 	<div class="grupo" ng-controller = "Controlador">
+        
         <hr>
         <div class = "encabezado">
     	    <h1> AngularJs</h1>
             <p>Pruebas por {{ nombre + " " + apellido }} </p>
-            <p>Ingresa "Entrar" aquí:</p>
-            <p>Contraseña: <input type="password" ng-model="name"></p>
+            <p>Ingresa "Entrar" <a href="proof.html">aquí:</a></p>
+            <p>Campo de texto: <input type="password" ng-model="name"></p>
             <p> {{ name | uppercase }} </p>
         </div>
         <br>
@@ -79,7 +90,7 @@ Asignatura: Gráfica Interactiva
 	    <!-- Este es mi "footer" (fin de pagina). Se agregan reconocimiento a Icons8 por el uso de los iconos y el link al mapa del sitio -->
 	<div class="fin">
 		<br>
-		<p>Los iconos presentes en este sitio web son propiedad de Icons8. <a href="https://icons8.com">Icon pack by Icons8</a>.</p>
+		<p>Los iconos presentes en este sitio web son propiedad de Icons8. <a  >Icon pack by Icons8</a>.</p>
 		<p><a href="acerca.html">Sobre este sitio. Salvando el semestre, 2016.</p>
 	</div>
 

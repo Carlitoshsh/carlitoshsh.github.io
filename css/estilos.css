@@ -9,7 +9,7 @@
 @charset "UTF-8";
 
 /*Se importa una fuente del sitio Google Fonts*/
-@import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,300,400italic);
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
 /* *********************************** */
 /* Cambios segunda entrega */
@@ -20,7 +20,17 @@ canvas {
 }
 
 /* ****************** 
-/* TITULO Y MENU DE NAVEGACIoN */
+TITULO Y MENU DE NAVEGACIoN */
+
+.chart div{
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
 
 /* Elimina las margenes por defecto del navegador */
 * {
@@ -84,15 +94,15 @@ hr {
 
 /*
 	Se define el tipo de letra predeterminado para cada etiqueta que involucra texto.
-	La tipografia predeterminada es Exo 2. Si el navegador no la admite buscara Helvetica, y asi.
+	La tipografia predeterminada es PT Sans Narrow. Si el navegador no la admite buscara Helvetica, y asi.
 */
 .h1, .h2, .h3, .h4, .a, h1, h2, h3, h4, a {
-	font-family: "Exo 2", Helvetica, Verdana, sans-serif;
+	font-family: "PT Sans Narrow", Helvetica, Verdana, sans-serif;
 	color: #a9a9a9;
 }
 
 p {
-	font-family: "Exo 2", Helvetica, Verdana, sans-serif;
+	font-family: "PT Sans Narrow", Helvetica, Verdana, sans-serif;
 	color: #838383;
 }
 
