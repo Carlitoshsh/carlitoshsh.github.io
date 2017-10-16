@@ -7,7 +7,8 @@
 /* Fonts */
 .mdl-typography--headline, .mdl-typography--headline-color-contrast, 
 .mdl-card__supporting-text, .mdl-button, .mdl-layout__title, .mdl-textfield__input {
-	font-family: "PT Sans Narrow", Helvetica, Verdana, sans-serif;
+  font-family: "PT Sans Narrow", Helvetica, Verdana, sans-serif;
+  /* font-weight: bold;   */
 }
 
 /* Text of navbar */
@@ -15,9 +16,29 @@
   color: #cccccc;
 }
 
+/* .mdl-card__title{
+  color: #790000;
+}
+ */
 .portfolio-header {
   position: relative;
   background-image: url(images/header-bg.jpg);
+}
+
+.mdl-layout__drawer{
+  background-image: url(images/header-bg.jpg);
+  
+}
+
+.mdl-navigation__link{
+  font-size: 14px;
+  text-transform: uppercase;  
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+  background-color: rgba(200, 200, 200, 0.45);
+  color: #000000;
+  text-transform: uppercase;
 }
 
 .mdl-card__media{

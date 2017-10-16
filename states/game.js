@@ -247,15 +247,16 @@ estudianteEnFinales.prototype = {
 
         /* Un tween es una función en Phaser que permite modificar algunas propiedades de movimiento
          en un periodo de tiempo. Aquí se usa para el giro */
-        this.add.tween(this.jugador).to( { angle: this.getAngle(direction) }, this.velocidadGiro, "Linear", true);
+        //this.add.tween(this.jugador).to( { angle: this.getAngle(direction) }, this.velocidadGiro, "Linear", true);
         /* Actualiza que la direccion indicada por el usuario es la nueva actual  */
         this.actual = direction;
 
     },
 
     // Esta función muestra el cambio en la imagen debido al giro
-    getAngle: function (to) {
+/*     getAngle: function (to) {
 
+        console.log(this.actual + " <Actual | opuestos> " +this.opuestos[to])
         if (this.actual === this.opuestos[to])
         {
             return "180";
@@ -272,7 +273,7 @@ estudianteEnFinales.prototype = {
         return "90";
 
     },
-    
+     */
     /* Maneja la logica del juego */
     update: function () {
        /* Hace colisionar jugador con la capa, mediante la función arcade de Phaser */
@@ -376,11 +377,11 @@ estudianteEnFinales.prototype = {
         game.state.start('perder');
     },
 
-    render: function () {
+/*     render: function () {
 
         //  Render permite añadir texto o colores sobre el juego
 
-        /* Recorre todas las posibles direcciones */
+        // Recorre todas las posibles direcciones 
         for (var t = 1; t < 5; t++)
         {
             // Cuando no se le indica dirección que continue
@@ -402,14 +403,14 @@ estudianteEnFinales.prototype = {
         }
 
         this.game.debug.geom(this.puntoGiro, '#ffff00');
-        /* Debug text permite imprimir encima del ambiente. La mayoria de posiciones logradas
-        y la detección de colisiones se hicieron por medio de este debug. En este caso, se hizo para
-        detectar cuando jugador y distraccion se cruzaban*/
-        /*this.game.debug.text("Diferencia x: " + (this.jugador.x - (this.distraccion.x+16)), 32, 32);
-        this.game.debug.text("Diferencia y: " + (this.jugador.y - (this.distraccion.y+16)), 32, 64);
-        this.game.debug.text("Contador: " + total_diplomas, 32, 128);*/
+        //Debug text permite imprimir encima del ambiente. La mayoria de posiciones logradas
+        //y la detección de colisiones se hicieron por medio de este debug. En este caso, se hizo para
+        //detectar cuando jugador y distraccion se cruzaban
+        //this.game.debug.text("Diferencia x: " + (this.jugador.x - (this.distraccion.x+16)), 32, 32);
+        //this.game.debug.text("Diferencia y: " + (this.jugador.y - (this.distraccion.y+16)), 32, 64);
+        //this.game.debug.text("Contador: " + total_diplomas, 32, 128);
 
-    }
+    } */
 
 };
 
