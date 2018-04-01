@@ -1,0 +1,57 @@
+$mdc-theme-primary: #c8102e;
+$mdc-theme-primary-light: #7f0a1d;
+$mdc-theme-primary-dark: #ef3755;
+$mdc-theme-secundary: #407ec9;
+$mdc-theme-secundary-light: #7da7da;
+$mdc-theme-secundary-dark: #254f82;
+$mdc-theme-background: #f8fafd;
+@import "@material/theme/mdc-theme";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+
+body {
+  margin: 0px;
+}
+
+
+.foo-body {
+	@include mdc-typography-base
+}
+
+
+.foo-button {
+  @include mdc-button-ink-color(teal);
+  @include mdc-states(teal);
+}
+
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+}
+
+/*Material icons*/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

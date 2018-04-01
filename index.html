@@ -1,31 +1,120 @@
 <!doctype html>
 <html ng-app="todoApp">
-  <head>
-    <link rel="shortcut icon" type="image/png" href="https://maxcdn.icons8.com/Color/PNG/24/Files/versions-24.png" />
-    <title>Projects and test [Carlitoshsh]</title>
-    <script src="dist/bundle.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-      <a href="/Old-site/index.html">Ir a versión vieja</a>
-      <p>"Vieja" en el sentido de que está construido sin nuevos stacks de front.</p>
-    <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </label>
-        </li>
-      </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-    </div>
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="https://maxcdn.icons8.com/Color/PNG/24/Files/versions-24.png" />
+  <title>Projects and test [Carlitoshsh]</title>
+  <!-- Material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Webpack generated bundles   -->
+  <link rel="stylesheet" href="bundle.css">
+  <script src="bundle.js" async></script>
+  <style>
+    /* Logo */
+
+    .portfolio-logo {
+      background: url("images/logo.png") 50% no-repeat;
+      background-size: cover;
+      height: 64px;
+      width: auto;
+      margin: auto auto 10px;
+      /* display: block; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <body class="foo-body mdc-typography">
+    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-default-behavior">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <a href="#" class="material-icons mdc-toolbar__menu-icon">menu</a>
+          <div class="portfolio-logo"></div>
+          <span class="mdc-toolbar__title">
+            Carlitoshsh
+            <!--  -->
+          </span>
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+          <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
+          <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
+          <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+        </section>
+      </div>
+    </header>
+
+
+    <main>
+      <div class="mdc-toolbar-fixed-adjust"> </div>
+      <!-- AngulatJS testing -->
+      <a href="/Old-site/index.html">
+        <button class="foo-button mdc-button">
+          Ir a version vieja
+        </button>
+
+      </a>
+      <p>Sitio con llamados normales a scripts JS desde HTML</p>
+      <h2>A realizar</h2>
+      <div ng-controller="TodoListController as todoList">
+        <span>{{todoList.remaining()}} de {{todoList.todos.length}} restantes</span>
+        [
+        <a href="" ng-click="todoList.archive()">Archivar</a> ]
+        <ul class="unstyled">
+          <li ng-repeat="todo in todoList.todos">
+            <label class="checkbox">
+              <input type="checkbox" ng-model="todo.done">
+              <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </label>
+          </li>
+        </ul>
+        <form ng-submit="todoList.addTodo()">
+          <input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis pharetra libero, volutpat congue velit. Ut lobortis scelerisque
+        elit quis sodales. Curabitur elit turpis, vehicula eget purus vel, gravida porttitor nisi. In dapibus auctor ullamcorper.
+        In hac habitasse platea dictumst. Nunc lorem lacus, pharetra ut lacus ac, commodo ultrices dui. Mauris nec aliquam
+        tortor, a molestie eros. Maecenas tincidunt, justo in suscipit fringilla, turpis massa interdum erat, non tempor
+        augue velit nec elit. Nullam dapibus consectetur orci, sit amet placerat enim. Phasellus consequat ullamcorper lorem,
+        ac pulvinar dolor pulvinar eget. Aliquam lectus nibh, pretium id mattis ut, volutpat eu libero. Duis nec diam vitae
+        neque imperdiet mollis. Integer rutrum, sapien vel accumsan consectetur, sem lorem tristique mi, eu efficitur leo
+        magna at nunc.
+      </p>
+      <p>
+        Maecenas at maximus dolor. Maecenas blandit nisi ante, sed ullamcorper nibh consequat vitae. Proin purus nibh, pellentesque
+        eget orci vitae, tincidunt lacinia felis. Proin suscipit purus vel ipsum convallis, a blandit est semper. Suspendisse
+        quis molestie magna. Quisque volutpat laoreet purus, non gravida magna efficitur sed. Nulla est dui, aliquet a eros
+        et, vulputate elementum lacus. Aliquam vestibulum diam non ligula ultricies luctus. Etiam nec tortor non nisi pretium
+        fermentum in eu lacus. Aliquam volutpat velit elit, id ultricies mi rhoncus eu. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos. Fusce non sapien feugiat purus placerat pretium. Sed in neque
+        arcu. Nunc nisi quam, tempus ac nisi eu, pellentesque luctus arcu.
+      </p>
+      <p>
+        Maecenas vel magna congue, lobortis lacus eu, vehicula nunc. Curabitur ante leo, bibendum nec dui ac, rhoncus blandit lectus.
+        Fusce neque velit, maximus ac odio ac, vehicula ullamcorper diam. Curabitur varius nunc sed elit mattis lobortis.
+        In congue vestibulum turpis, nec varius ligula elementum vitae. Morbi tristique vestibulum diam eget interdum. Quisque
+        a neque dignissim, pulvinar orci eget, condimentum justo. Etiam sollicitudin hendrerit lacus non ultricies. Fusce
+        a tellus varius, cursus eros id, gravida massa.
+      </p>
+      <p>
+        Nulla mattis massa a nibh porta, sit amet molestie lorem consequat. Integer sed interdum diam. Morbi ac maximus mi, sed dapibus
+        quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla posuere
+        egestas consectetur. Fusce sit amet ornare tortor. Nam blandit justo vel luctus feugiat. Morbi faucibus sapien sed
+        libero porttitor laoreet. Pellentesque convallis mi leo, et dignissim eros commodo ut. Quisque at mauris eleifend,
+        rhoncus velit vitae, ultricies nibh. Sed facilisis ligula vitae orci dapibus, sed sagittis turpis pharetra. Nam sapien
+        mi, interdum et ex quis, volutpat porta arcu. Proin tempor justo quis tellus mollis suscipit.
+      </p>
+      <p>
+        Maecenas et justo nec dolor lacinia iaculis eget ut ex. Duis vitae placerat dui. Proin eros nisl, molestie non magna eget,
+        malesuada ornare nunc. Nullam ultrices aliquam pellentesque. Suspendisse finibus rhoncus arcu eu sollicitudin. Nunc
+        ac volutpat elit, vitae sodales neque. Aenean tempus vulputate est in pharetra.
+      </p>
+    </main>
+
   </body>
+
 </html>
