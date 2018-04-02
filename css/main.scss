@@ -1,6 +1,6 @@
-$mdc-theme-primary: #c8102e;
-$mdc-theme-primary-light: #7f0a1d;
-$mdc-theme-primary-dark: #ef3755;
+$mdc-theme-primary: #108ac8;
+$mdc-theme-primary-light: #094b6d;
+$mdc-theme-primary-dark: #4ab8f0;
 $mdc-theme-secundary: #407ec9;
 $mdc-theme-secundary-light: #7da7da;
 $mdc-theme-secundary-dark: #254f82;
@@ -9,11 +9,11 @@ $mdc-theme-background: #f8fafd;
 @import "@material/toolbar/mdc-toolbar";
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
+@import "@material/card/mdc-card";
 
 body {
   margin: 0px;
 }
-
 
 .foo-body {
 	@include mdc-typography-base
