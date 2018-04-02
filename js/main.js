@@ -13,9 +13,20 @@ import {
   MDCToolbarFoundation
 } from '@material/toolbar';
 
+import {
+  MDCTextField,
+  MDCTextFieldFoundation
+} from '@material/textfield';
+
+import {MDCCheckbox} from '@material/checkbox';
+
+const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 
 const ripple = new MDCRipple(document.querySelector('.foo-button'));
-const toolbar = new MDCToolbar(document.querySelector(".mdc-toolbar"))
+const toolbar = new MDCToolbar(document.querySelector(".mdc-toolbar"));
+
+// For waterfall toolbar
+const textarea = new MDCTextField(document.querySelector(".mdc-text-field"))
 toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
 
 angular.module('todoApp', [])
