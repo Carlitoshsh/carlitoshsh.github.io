@@ -524,7 +524,7 @@
  */
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
-.mdc-toolbar {
+.mdc-top-app-bar {
   background-color: #108ac8;
   /* @alternate */
   background-color: var(--mdc-theme-primary, #108ac8);
@@ -535,121 +535,59 @@
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%; }
-  .mdc-toolbar .mdc-toolbar__icon {
-    color: white; }
-    .mdc-toolbar .mdc-toolbar__icon::before, .mdc-toolbar .mdc-toolbar__icon::after {
+  .mdc-top-app-bar .mdc-top-app-bar__action-item,
+  .mdc-top-app-bar .mdc-top-app-bar__navigation-icon {
+    color: white;
+    /* @alternate */
+    color: var(--mdc-theme-text-primary-on-primary, white); }
+    .mdc-top-app-bar .mdc-top-app-bar__action-item::before, .mdc-top-app-bar .mdc-top-app-bar__action-item::after,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::before,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::after {
       background-color: white; }
-    .mdc-toolbar .mdc-toolbar__icon:hover::before {
+      @supports not (-ms-ime-align: auto) {
+        .mdc-top-app-bar .mdc-top-app-bar__action-item::before, .mdc-top-app-bar .mdc-top-app-bar__action-item::after,
+        .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::before,
+        .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::after {
+          /* @alternate */
+          background-color: var(--mdc-theme-text-primary-on-primary, white); } }
+    .mdc-top-app-bar .mdc-top-app-bar__action-item:hover::before,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:hover::before {
       opacity: 0.08; }
-    .mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):focus::before, .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded--background-focused::before {
+    .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):focus::before, .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded--background-focused::before,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):focus::before,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--background-focused::before {
       transition-duration: 75ms;
       opacity: 0.24; }
-    .mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded)::after {
+    .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded)::after,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded)::after {
       transition: opacity 150ms linear; }
-    .mdc-toolbar .mdc-toolbar__icon:not(.mdc-ripple-upgraded):active::after {
+    .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):active::after,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):active::after {
       transition-duration: 75ms;
       opacity: 0.32; }
-    .mdc-toolbar .mdc-toolbar__icon.mdc-ripple-upgraded {
+    .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded,
+    .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded {
       --mdc-ripple-fg-opacity: $opacity; }
-  .mdc-toolbar__row {
+  .mdc-top-app-bar__row {
     display: flex;
     position: relative;
-    align-items: center;
     box-sizing: border-box;
     width: 100%;
-    height: auto;
-    min-height: 64px; }
-    @media (max-width: 959px) and (orientation: landscape) {
-      .mdc-toolbar__row {
-        min-height: 48px; } }
-    @media (max-width: 599px) {
-      .mdc-toolbar__row {
-        min-height: 56px; } }
-  .mdc-toolbar__section {
+    height: 64px; }
+  .mdc-top-app-bar__section {
     display: inline-flex;
-    flex: 1;
-    align-items: start;
-    justify-content: center;
-    box-sizing: border-box;
+    flex: 1 1 auto;
+    align-items: center;
     min-width: 0;
-    height: 100%;
-    padding: 8px;
+    padding: 8px 12px;
     z-index: 1; }
-    @media (max-width: 959px) and (orientation: landscape) {
-      .mdc-toolbar__section {
-        padding: 0 0; } }
-    @media (max-width: 599px) {
-      .mdc-toolbar__section {
-        padding: 4px 0; } }
-    .mdc-toolbar__section--align-start {
-      /* @noflip */
-      padding-left: 12px;
-      /* @noflip */
-      padding-right: 0;
+    .mdc-top-app-bar__section--align-start {
       justify-content: flex-start;
       order: -1; }
-      [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {
-        /* @noflip */
-        padding-left: 0;
-        /* @noflip */
-        padding-right: 12px; }
-      @media (max-width: 959px) and (orientation: landscape) {
-        .mdc-toolbar__section--align-start {
-          /* @noflip */
-          padding-left: 4px;
-          /* @noflip */
-          padding-right: 0; }
-          [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {
-            /* @noflip */
-            padding-left: 0;
-            /* @noflip */
-            padding-right: 4px; } }
-      @media (max-width: 599px) {
-        .mdc-toolbar__section--align-start {
-          /* @noflip */
-          padding-left: 4px;
-          /* @noflip */
-          padding-right: 0; }
-          [dir="rtl"] .mdc-toolbar__section--align-start, .mdc-toolbar__section--align-start[dir="rtl"] {
-            /* @noflip */
-            padding-left: 0;
-            /* @noflip */
-            padding-right: 4px; } }
-    .mdc-toolbar__section--align-end {
-      /* @noflip */
-      padding-left: 0;
-      /* @noflip */
-      padding-right: 12px;
+    .mdc-top-app-bar__section--align-end {
       justify-content: flex-end;
       order: 1; }
-      [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {
-        /* @noflip */
-        padding-left: 12px;
-        /* @noflip */
-        padding-right: 0; }
-      @media (max-width: 959px) and (orientation: landscape) {
-        .mdc-toolbar__section--align-end {
-          /* @noflip */
-          padding-left: 0;
-          /* @noflip */
-          padding-right: 4px; }
-          [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {
-            /* @noflip */
-            padding-left: 4px;
-            /* @noflip */
-            padding-right: 0; } }
-      @media (max-width: 599px) {
-        .mdc-toolbar__section--align-end {
-          /* @noflip */
-          padding-left: 0;
-          /* @noflip */
-          padding-right: 4px; }
-          [dir="rtl"] .mdc-toolbar__section--align-end, .mdc-toolbar__section--align-end[dir="rtl"] {
-            /* @noflip */
-            padding-left: 4px;
-            /* @noflip */
-            padding-right: 0; } }
-  .mdc-toolbar__title {
+  .mdc-top-app-bar__title {
     font-family: Roboto, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -659,23 +597,20 @@
     letter-spacing: 0.02em;
     text-decoration: inherit;
     text-transform: inherit;
+    /* @noflip */
+    padding-left: 20px;
+    /* @noflip */
+    padding-right: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    /* @noflip */
-    margin-left: 24px;
-    /* @noflip */
-    margin-right: 0;
-    align-self: center;
-    padding: 12px 0;
-    line-height: 1.5rem;
     z-index: 1; }
-    [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {
+    [dir="rtl"] .mdc-top-app-bar__title, .mdc-top-app-bar__title[dir="rtl"] {
       /* @noflip */
-      margin-left: 0;
+      padding-left: 0;
       /* @noflip */
-      margin-right: 24px; }
-  .mdc-toolbar__icon, .mdc-toolbar__menu-icon {
+      padding-right: 20px; }
+  .mdc-top-app-bar__action-item, .mdc-top-app-bar__navigation-icon {
     --mdc-ripple-fg-size: 0;
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
@@ -686,10 +621,12 @@
     will-change: transform, opacity;
     display: flex;
     position: relative;
-    align-items: start;
+    flex-shrink: 0;
+    align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
     padding: 12px;
     border: none;
     outline: none;
@@ -698,136 +635,165 @@
     color: inherit;
     text-decoration: none;
     cursor: pointer; }
-    .mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {
+    .mdc-top-app-bar__action-item::before, .mdc-top-app-bar__action-item::after, .mdc-top-app-bar__navigation-icon::before, .mdc-top-app-bar__navigation-icon::after {
       position: absolute;
       border-radius: 50%;
       opacity: 0;
       pointer-events: none;
       content: ""; }
-    .mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {
+    .mdc-top-app-bar__action-item::before, .mdc-top-app-bar__navigation-icon::before {
       transition: opacity 15ms linear;
       z-index: 1; }
-    .mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded::before, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::before {
       transform: scale(var(--mdc-ripple-fg-scale, 1)); }
-    .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::after {
       top: 0;
       /* @noflip */
       left: 0;
       transform: scale(0);
       transform-origin: center center; }
-    .mdc-toolbar__icon.mdc-ripple-upgraded--unbounded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--unbounded::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded--unbounded::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--unbounded::after {
       top: var(--mdc-ripple-top, 0);
       /* @noflip */
       left: var(--mdc-ripple-left, 0); }
-    .mdc-toolbar__icon.mdc-ripple-upgraded--foreground-activation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-activation::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded--foreground-activation::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--foreground-activation::after {
       animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }
-    .mdc-toolbar__icon.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded--foreground-deactivation::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded--foreground-deactivation::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--foreground-deactivation::after {
       animation: 150ms mdc-ripple-fg-opacity-out;
       transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }
-    .mdc-toolbar__icon::before, .mdc-toolbar__icon::after, .mdc-toolbar__menu-icon::before, .mdc-toolbar__menu-icon::after {
+    .mdc-top-app-bar__action-item::before, .mdc-top-app-bar__action-item::after, .mdc-top-app-bar__navigation-icon::before, .mdc-top-app-bar__navigation-icon::after {
       top: calc(50% - 50%);
       /* @noflip */
       left: calc(50% - 50%);
       width: 100%;
       height: 100%; }
-    .mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded::before, .mdc-top-app-bar__action-item.mdc-ripple-upgraded::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::before, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::after {
       top: var(--mdc-ripple-top, calc(50% - 50%));
       /* @noflip */
       left: var(--mdc-ripple-left, calc(50% - 50%));
       width: var(--mdc-ripple-fg-size, 100%);
       height: var(--mdc-ripple-fg-size, 100%); }
-    .mdc-toolbar__icon.mdc-ripple-upgraded::after, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::after {
+    .mdc-top-app-bar__action-item.mdc-ripple-upgraded::after, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::after {
       width: var(--mdc-ripple-fg-size, 100%);
       height: var(--mdc-ripple-fg-size, 100%); }
 
-.mdc-toolbar__menu-icon + .mdc-toolbar__title {
-  /* @noflip */
-  margin-left: 8px;
-  /* @noflip */
-  margin-right: 0; }
-  [dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {
-    /* @noflip */
-    margin-left: 0;
-    /* @noflip */
-    margin-right: 8px; }
-
-@media (max-width: 599px) {
-  .mdc-toolbar__title {
-    /* @noflip */
-    margin-left: 16px;
-    /* @noflip */
-    margin-right: 0; }
-    [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {
-      /* @noflip */
-      margin-left: 0;
-      /* @noflip */
-      margin-right: 16px; } }
-
-.mdc-toolbar--fixed {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+.mdc-top-app-bar--short {
   position: fixed;
   top: 0;
+  right: auto;
   left: 0;
+  width: 100%;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 4; }
-
-.mdc-toolbar--flexible {
-  --mdc-toolbar-ratio-to-extend-flexible: 4; }
-  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {
-    height: 256px;
-    height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }
-    @media (max-width: 599px) {
-      .mdc-toolbar--flexible .mdc-toolbar__row:first-child {
-        height: 224px;
-        height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }
-    .mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {
-      position: absolute;
-      content: ""; }
-  .mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 2.125rem;
-    line-height: 2.5rem;
-    font-weight: 400;
-    letter-spacing: normal;
-    text-decoration: inherit;
-    text-transform: inherit;
-    align-self: flex-end;
-    line-height: 1.5rem; }
-  .mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity .2s ease;
+  [dir="rtl"] .mdc-top-app-bar--short, .mdc-top-app-bar--short[dir="rtl"] {
+    right: 0;
+    left: auto; }
+  .mdc-top-app-bar--short .mdc-top-app-bar__row {
+    height: 56px; }
+  .mdc-top-app-bar--short .mdc-top-app-bar__section {
+    padding: 4px; }
+  .mdc-top-app-bar--short .mdc-top-app-bar__title {
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1; }
-  .mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {
-    opacity: 0; }
-  .mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {
-    font-weight: 500; }
 
-.mdc-toolbar--waterfall.mdc-toolbar--fixed {
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: box-shadow; }
-  .mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
-  .mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
-  .mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+.mdc-top-app-bar--short-collapsed {
+  /* @noflip */
+  border-bottom-left-radius: 0;
+  /* @noflip */
+  border-bottom-right-radius: 4px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  width: 56px;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+  [dir="rtl"] .mdc-top-app-bar--short-collapsed, .mdc-top-app-bar--short-collapsed[dir="rtl"] {
+    /* @noflip */
+    border-bottom-left-radius: 4px;
+    /* @noflip */
+    border-bottom-right-radius: 0; }
+  .mdc-top-app-bar--short-collapsed .mdc-top-app-bar__title {
+    display: none; }
+  .mdc-top-app-bar--short-collapsed .mdc-top-app-bar__action-item {
+    transition: padding 150ms cubic-bezier(0.4, 0, 0.2, 1); }
 
-.mdc-toolbar-fixed-adjust {
-  margin-top: 64px; }
-  @media (max-width: 959px) and (max-height: 599px) {
-    .mdc-toolbar-fixed-adjust {
-      margin-top: 48px; } }
-  @media (max-width: 599px) {
-    .mdc-toolbar-fixed-adjust {
-      margin-top: 56px; } }
+.mdc-top-app-bar--short-collapsed.mdc-top-app-bar--short-has-action-item {
+  width: 112px; }
+  .mdc-top-app-bar--short-collapsed.mdc-top-app-bar--short-has-action-item .mdc-top-app-bar__section--align-end {
+    /* @noflip */
+    padding-left: 0;
+    /* @noflip */
+    padding-right: 12px; }
+    [dir="rtl"] .mdc-top-app-bar--short-collapsed.mdc-top-app-bar--short-has-action-item .mdc-top-app-bar__section--align-end, .mdc-top-app-bar--short-collapsed.mdc-top-app-bar--short-has-action-item .mdc-top-app-bar__section--align-end[dir="rtl"] {
+      /* @noflip */
+      padding-left: 12px;
+      /* @noflip */
+      padding-right: 0; }
 
-.mdc-toolbar__section--shrink-to-fit {
-  flex: none; }
+.mdc-top-app-bar--dense .mdc-top-app-bar__row {
+  height: 48px; }
+
+.mdc-top-app-bar--dense .mdc-top-app-bar__section {
+  padding: 0 4px; }
+
+.mdc-top-app-bar--dense .mdc-top-app-bar__title {
+  /* @noflip */
+  padding-left: 12px;
+  /* @noflip */
+  padding-right: 0; }
+  [dir="rtl"] .mdc-top-app-bar--dense .mdc-top-app-bar__title, .mdc-top-app-bar--dense .mdc-top-app-bar__title[dir="rtl"] {
+    /* @noflip */
+    padding-left: 0;
+    /* @noflip */
+    padding-right: 12px; }
+
+.mdc-top-app-bar--prominent .mdc-top-app-bar__row {
+  height: 128px; }
+
+.mdc-top-app-bar--prominent .mdc-top-app-bar__title {
+  align-self: flex-end;
+  padding-bottom: 2px; }
+
+.mdc-top-app-bar--prominent .mdc-top-app-bar__action-item,
+.mdc-top-app-bar--prominent .mdc-top-app-bar__navigation-icon {
+  align-self: flex-start; }
+
+.mdc-top-app-bar--dense.mdc-top-app-bar--prominent .mdc-top-app-bar__row {
+  height: 96px; }
+
+.mdc-top-app-bar--dense.mdc-top-app-bar--prominent .mdc-top-app-bar__section {
+  padding: 0 12px; }
+
+.mdc-top-app-bar--dense.mdc-top-app-bar--prominent .mdc-top-app-bar__title {
+  /* @noflip */
+  padding-left: 20px;
+  /* @noflip */
+  padding-right: 0;
+  padding-bottom: 9px; }
+  [dir="rtl"] .mdc-top-app-bar--dense.mdc-top-app-bar--prominent .mdc-top-app-bar__title, .mdc-top-app-bar--dense.mdc-top-app-bar--prominent .mdc-top-app-bar__title[dir="rtl"] {
+    /* @noflip */
+    padding-left: 0;
+    /* @noflip */
+    padding-right: 20px; }
+
+@media (max-width: 599px) {
+  .mdc-top-app-bar__row {
+    height: 56px; }
+  .mdc-top-app-bar__section {
+    padding: 4px; }
+  .mdc-top-app-bar--short {
+    transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-top-app-bar--short-collapsed {
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-top-app-bar--short-collapsed .mdc-top-app-bar__section--align-end {
+      /* @noflip */
+      padding-left: 0;
+      /* @noflip */
+      padding-right: 12px; }
+      [dir="rtl"] .mdc-top-app-bar--short-collapsed .mdc-top-app-bar__section--align-end, .mdc-top-app-bar--short-collapsed .mdc-top-app-bar__section--align-end[dir="rtl"] {
+        /* @noflip */
+        padding-left: 12px;
+        /* @noflip */
+        padding-right: 0; }
+  .mdc-top-app-bar--prominent .mdc-top-app-bar__title {
+    padding-bottom: 6px; } }
 
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
@@ -3499,6 +3465,531 @@
 .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background .mdc-checkbox__mixedmark {
   transform: scaleX(1) rotate(0deg);
   opacity: 1; }
+
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+.mdc-tab {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: rgba(0, 0, 0, 0.54);
+  /* @alternate */
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+  --mdc-ripple-fg-size: 0;
+  --mdc-ripple-left: 0;
+  --mdc-ripple-top: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform, opacity;
+  display: table-cell;
+  position: relative;
+  box-sizing: border-box;
+  min-width: 160px;
+  min-height: 48px;
+  padding: 0 24px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: middle; }
+  .mdc-tab .mdc-tab__icon {
+    color: rgba(0, 0, 0, 0.54);
+    /* @alternate */
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }
+  .mdc-tab::before, .mdc-tab::after {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-tab::before {
+    transition: opacity 15ms linear;
+    z-index: 1; }
+  .mdc-tab.mdc-ripple-upgraded::before {
+    transform: scale(var(--mdc-ripple-fg-scale, 1)); }
+  .mdc-tab.mdc-ripple-upgraded::after {
+    top: 0;
+    /* @noflip */
+    left: 0;
+    transform: scale(0);
+    transform-origin: center center; }
+  .mdc-tab.mdc-ripple-upgraded--unbounded::after {
+    top: var(--mdc-ripple-top, 0);
+    /* @noflip */
+    left: var(--mdc-ripple-left, 0); }
+  .mdc-tab.mdc-ripple-upgraded--foreground-activation::after {
+    animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-tab.mdc-ripple-upgraded--foreground-deactivation::after {
+    animation: 150ms mdc-ripple-fg-opacity-out;
+    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }
+  .mdc-tab::before, .mdc-tab::after {
+    background-color: black; }
+  .mdc-tab:hover::before {
+    opacity: 0.04; }
+  .mdc-tab:not(.mdc-ripple-upgraded):focus::before, .mdc-tab.mdc-ripple-upgraded--background-focused::before {
+    transition-duration: 75ms;
+    opacity: 0.12; }
+  .mdc-tab:not(.mdc-ripple-upgraded)::after {
+    transition: opacity 150ms linear; }
+  .mdc-tab:not(.mdc-ripple-upgraded):active::after {
+    transition-duration: 75ms;
+    opacity: 0.16; }
+  .mdc-tab.mdc-ripple-upgraded {
+    --mdc-ripple-fg-opacity: $opacity; }
+  .mdc-tab::before, .mdc-tab::after {
+    top: calc(50% - 100%);
+    /* @noflip */
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%; }
+  .mdc-tab.mdc-ripple-upgraded::after {
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: var(--mdc-ripple-fg-size, 100%); }
+  .mdc-tab:hover {
+    color: rgba(0, 0, 0, 0.87);
+    /* @alternate */
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+    .mdc-tab:hover .mdc-tab__icon {
+      color: rgba(0, 0, 0, 0.87);
+      /* @alternate */
+      color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+  .mdc-tab:focus {
+    outline: none; }
+  @media screen and (max-width: 600px) {
+    .mdc-tab {
+      min-width: 72px;
+      padding: 0 12px; } }
+  .mdc-tab__icon {
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px; }
+    .mdc-tab-bar--icons-with-text .mdc-tab__icon {
+      margin-top: 4px; }
+  .mdc-tab__icon-text {
+    display: block;
+    margin: 0 auto; }
+  .mdc-tab__icon + .mdc-tab__icon-text {
+    padding-top: 6px; }
+
+.mdc-tab--active {
+  color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+  .mdc-tab--active .mdc-tab__icon {
+    color: rgba(0, 0, 0, 0.87);
+    /* @alternate */
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+  .mdc-tab--active::before {
+    bottom: 0; }
+
+.mdc-tab__indicator {
+  background-color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  visibility: hidden;
+  left: 2px;
+  width: calc(100% - 4px); }
+
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab--active .mdc-tab__indicator,
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab:hover .mdc-tab__indicator,
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab:active .mdc-tab__indicator {
+  visibility: visible; }
+
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab:not(.mdc-tab--active):hover .mdc-tab__indicator {
+  opacity: .38; }
+
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab--active,
+.mdc-tab-bar:not(.mdc-tab-bar-upgraded) .mdc-tab:not(.mdc-tab--active):active .mdc-tab__indicator {
+  opacity: .87; }
+
+/**
+ * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.
+ *
+ * Usage Example:
+ * ```scss
+ * .mdc-foo {
+ *   position: absolute;
+ *   left: 0;
+ *
+ *   @include mdc-rtl {
+ *     left: auto;
+ *     right: 0;
+ *   }
+ *
+ *   &__bar {
+ *     margin-left: 4px;
+ *     @include mdc-rtl(".mdc-foo") {
+ *       margin-left: auto;
+ *       margin-right: 4px;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--mod {
+ *   padding-left: 4px;
+ *
+ *   @include mdc-rtl {
+ *     padding-left: auto;
+ *     padding-right: 4px;
+ *   }
+ * }
+ * ```
+ *
+ * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work
+ * in most cases, it will in some cases lead to false negatives, e.g.
+ *
+ * ```html
+ * <html dir="rtl">
+ *   <!-- ... -->
+ *   <div dir="ltr">
+ *     <div class="mdc-foo">Styled incorrectly as RTL!</div>
+ *   </div>
+ * </html>
+ * ```
+ *
+ * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.
+ */
+/**
+ * Takes a base box-model property - e.g. margin / border / padding - along with a default
+ * direction and value, and emits rules which apply the value to the
+ * "<base-property>-<default-direction>" property by default, but flips the direction
+ * when within an RTL context.
+ *
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, left, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 8px;
+ *     margin-left: 0;
+ *   }
+ * }
+ * ```
+ * whereas:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, right, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-right: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 0;
+ *     margin-left: 8px;
+ *   }
+ * }
+ * ```
+ *
+ * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,
+ * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.
+ *
+ * Note that this function will always zero out the original value in an RTL context. If you're
+ * trying to flip the values, use mdc-rtl-reflexive-property().
+ */
+/**
+ * Takes a base property and emits rules that assign <base-property>-left to <left-value> and
+ * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-property(margin, auto, 12px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: auto;
+ *   margin-right: 12px;
+ *
+ *   @include mdc-rtl {
+ *     margin-left: 12px;
+ *     margin-right: auto;
+ *   }
+ * }
+ * ```
+ *
+ * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.
+ */
+/**
+ * Takes an argument specifying a horizontal position property (either "left" or "right") as well
+ * as a value, and applies that value to the specified position in a LTR context, and flips it in a
+ * RTL context. For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-position(left, 0);
+ *   position: absolute;
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ *  .mdc-foo {
+ *    position: absolute;
+ *    left: 0;
+ *    right: initial;
+ *
+ *    @include mdc-rtl {
+ *      right: 0;
+ *      left: initial;
+ *    }
+ *  }
+ * ```
+ * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.
+ */
+.mdc-tab-bar__indicator,
+.mdc-tab__indicator {
+  background-color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+
+.mdc-tab-bar {
+  display: table;
+  position: relative;
+  height: 48px;
+  margin: 0 auto;
+  text-transform: uppercase; }
+
+.mdc-tab-bar__indicator {
+  background-color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  visibility: hidden;
+  left: 0;
+  width: 100%;
+  transform-origin: left top;
+  transition: transform 240ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  will-change: transform; }
+
+.mdc-tab-bar--icons-with-text {
+  height: 72px; }
+
+/**
+ * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.
+ *
+ * Usage Example:
+ * ```scss
+ * .mdc-foo {
+ *   position: absolute;
+ *   left: 0;
+ *
+ *   @include mdc-rtl {
+ *     left: auto;
+ *     right: 0;
+ *   }
+ *
+ *   &__bar {
+ *     margin-left: 4px;
+ *     @include mdc-rtl(".mdc-foo") {
+ *       margin-left: auto;
+ *       margin-right: 4px;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--mod {
+ *   padding-left: 4px;
+ *
+ *   @include mdc-rtl {
+ *     padding-left: auto;
+ *     padding-right: 4px;
+ *   }
+ * }
+ * ```
+ *
+ * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work
+ * in most cases, it will in some cases lead to false negatives, e.g.
+ *
+ * ```html
+ * <html dir="rtl">
+ *   <!-- ... -->
+ *   <div dir="ltr">
+ *     <div class="mdc-foo">Styled incorrectly as RTL!</div>
+ *   </div>
+ * </html>
+ * ```
+ *
+ * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.
+ */
+/**
+ * Takes a base box-model property - e.g. margin / border / padding - along with a default
+ * direction and value, and emits rules which apply the value to the
+ * "<base-property>-<default-direction>" property by default, but flips the direction
+ * when within an RTL context.
+ *
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, left, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 8px;
+ *     margin-left: 0;
+ *   }
+ * }
+ * ```
+ * whereas:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, right, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-right: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 0;
+ *     margin-left: 8px;
+ *   }
+ * }
+ * ```
+ *
+ * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,
+ * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.
+ *
+ * Note that this function will always zero out the original value in an RTL context. If you're
+ * trying to flip the values, use mdc-rtl-reflexive-property().
+ */
+/**
+ * Takes a base property and emits rules that assign <base-property>-left to <left-value> and
+ * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-property(margin, auto, 12px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: auto;
+ *   margin-right: 12px;
+ *
+ *   @include mdc-rtl {
+ *     margin-left: 12px;
+ *     margin-right: auto;
+ *   }
+ * }
+ * ```
+ *
+ * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.
+ */
+/**
+ * Takes an argument specifying a horizontal position property (either "left" or "right") as well
+ * as a value, and applies that value to the specified position in a LTR context, and flips it in a
+ * RTL context. For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-position(left, 0);
+ *   position: absolute;
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ *  .mdc-foo {
+ *    position: absolute;
+ *    left: 0;
+ *    right: initial;
+ *
+ *    @include mdc-rtl {
+ *      right: 0;
+ *      left: initial;
+ *    }
+ *  }
+ * ```
+ * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.
+ */
+.mdc-tab-bar-scroller {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: inherit;
+  overflow: hidden; }
+  .mdc-tab-bar-scroller__scroll-frame {
+    display: flex;
+    position: relative;
+    flex: 1;
+    justify-content: flex-start;
+    overflow: hidden; }
+    .mdc-tab-bar-scroller__scroll-frame__tabs {
+      transition: transform 240ms 0ms cubic-bezier(0, 0, 0.2, 1);
+      will-change: transform; }
+  .mdc-tab-bar-scroller__indicator {
+    color: rgba(0, 0, 0, 0.54);
+    /* @alternate */
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    cursor: pointer;
+    visibility: hidden; }
+    .mdc-tab-bar-scroller__indicator:hover {
+      color: rgba(0, 0, 0, 0.87);
+      /* @alternate */
+      color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
+    .mdc-tab-bar-scroller__indicator__inner {
+      color: inherit;
+      text-decoration: inherit;
+      cursor: inherit; }
+      .mdc-tab-bar-scroller__indicator__inner:focus {
+        outline-color: inherit; }
+      .mdc-tab-bar-scroller[dir="rtl"] .mdc-tab-bar-scroller__indicator__inner,
+      [dir="rtl"] .mdc-tab-bar-scroller .mdc-tab-bar-scroller__indicator__inner {
+        transform: rotate(180deg); }
+    .mdc-tab-bar-scroller__indicator__inner:hover {
+      color: inherit; }
+  .mdc-tab-bar-scroller__indicator--enabled {
+    visibility: visible; }
 
 body {
   margin: 0px; }
