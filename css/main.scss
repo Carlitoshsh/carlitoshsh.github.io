@@ -1,11 +1,14 @@
+// Theme
 $mdc-theme-primary: #108ac8;
-$mdc-theme-primary-light: #094b6d;
-$mdc-theme-primary-dark: #4ab8f0;
+$mdc-theme-primary-light: #4ab8f0;
+$mdc-theme-primary-dark: #094b6d;
 $mdc-theme-secundary: #407ec9;
 $mdc-theme-secundary-light: #7da7da;
 $mdc-theme-secundary-dark: #254f82;
 $mdc-theme-background: #f8fafd;
 @import "@material/theme/mdc-theme";
+
+// Another imports
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
@@ -13,6 +16,9 @@ $mdc-theme-background: #f8fafd;
 @import "@material/textfield/mdc-text-field";
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/tabs/mdc-tabs";
+
+// Variables
+$ripple-color: rgba(255, 255, 255, 0.54);
 
 // To quit agent
 body {
@@ -22,8 +28,6 @@ body {
 .foo-body {
 	@include mdc-typography-base
 }
-
-@include mdc-tab-label-ink-color($mdc-theme-background);
 
 .page-content{
   padding: 20px 28px;
@@ -63,4 +67,71 @@ body {
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+
+// MDC Tabs custom color
+.basic-tab-bar .mdc-tab:not(.mdc-tab--active){ 
+  color: $ripple-color;
+}
+
+.basic-tab-bar .mdc-tab.mdc-tab--active{
+  color: $mdc-theme-background
+}
+
+.basic-tab-bar .mdc-tab-bar__indicator{
+  background-color: $mdc-theme-background
+}
+
+.basic-tab-bar .mdc-tab:hover{
+  color: $mdc-theme-background  
+}
+
+.basic-tab-bar .mdc-tab::before, .mdc-tab::after {
+  background-color: $ripple-color;
+}
+
+// Dynamic toolbar
+.panels {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+  padding-bottom: 16px;
+}
+
+.dot {
+  margin: 0 4px;
+  border-radius: 50%;
+  border: 1px solid $mdc-theme-primary-dark;
+  width: 20px;
+  height: 20px;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot.active {
+  background-color: $mdc-theme-primary-dark;
+  border-color: $mdc-theme-primary-dark;
+}
+
+// Nav tab
+.my-nav-tab {
+  height: 48px;
+  background-color: $mdc-theme-primary-dark;
 }

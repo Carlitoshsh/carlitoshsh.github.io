@@ -1,7 +1,7 @@
 :root {
   --mdc-theme-primary: #108ac8;
-  --mdc-theme-primary-light: #094b6d;
-  --mdc-theme-primary-dark: #4ab8f0;
+  --mdc-theme-primary-light: #4ab8f0;
+  --mdc-theme-primary-dark: #094b6d;
   --mdc-theme-secondary: #018786;
   --mdc-theme-secondary-light: #02cecc;
   --mdc-theme-secondary-dark: #004040;
@@ -11,16 +11,16 @@
   --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-primary-on-primary-light: white;
-  --mdc-theme-text-secondary-on-primary-light: rgba(255, 255, 255, 0.7);
-  --mdc-theme-text-hint-on-primary-light: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-disabled-on-primary-light: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-icon-on-primary-light: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-primary-on-primary-dark: rgba(0, 0, 0, 0.87);
-  --mdc-theme-text-secondary-on-primary-dark: rgba(0, 0, 0, 0.54);
-  --mdc-theme-text-hint-on-primary-dark: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-disabled-on-primary-dark: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-icon-on-primary-dark: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-primary-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-primary-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-primary-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-primary-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-primary-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-primary-dark: white;
+  --mdc-theme-text-secondary-on-primary-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-primary-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-primary-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-primary-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-primary-on-secondary: white;
   --mdc-theme-text-secondary-on-secondary: rgba(255, 255, 255, 0.7);
   --mdc-theme-text-hint-on-secondary: rgba(255, 255, 255, 0.5);
@@ -63,14 +63,14 @@
   color: var(--mdc-theme-primary, #108ac8) !important; }
 
 .mdc-theme--primary-light {
-  color: #094b6d !important;
-  /* @alternate */
-  color: var(--mdc-theme-primary-light, #094b6d) !important; }
-
-.mdc-theme--primary-dark {
   color: #4ab8f0 !important;
   /* @alternate */
-  color: var(--mdc-theme-primary-dark, #4ab8f0) !important; }
+  color: var(--mdc-theme-primary-light, #4ab8f0) !important; }
+
+.mdc-theme--primary-dark {
+  color: #094b6d !important;
+  /* @alternate */
+  color: var(--mdc-theme-primary-dark, #094b6d) !important; }
 
 .mdc-theme--secondary {
   color: #018786 !important;
@@ -113,54 +113,54 @@
   color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-primary-on-primary-light {
-  color: white !important;
-  /* @alternate */
-  color: var(--mdc-theme-text-primary-on-primary-light, white) !important; }
-
-.mdc-theme--text-secondary-on-primary-light {
-  color: rgba(255, 255, 255, 0.7) !important;
-  /* @alternate */
-  color: var(--mdc-theme-text-secondary-on-primary-light, rgba(255, 255, 255, 0.7)) !important; }
-
-.mdc-theme--text-hint-on-primary-light {
-  color: rgba(255, 255, 255, 0.5) !important;
-  /* @alternate */
-  color: var(--mdc-theme-text-hint-on-primary-light, rgba(255, 255, 255, 0.5)) !important; }
-
-.mdc-theme--text-disabled-on-primary-light {
-  color: rgba(255, 255, 255, 0.5) !important;
-  /* @alternate */
-  color: var(--mdc-theme-text-disabled-on-primary-light, rgba(255, 255, 255, 0.5)) !important; }
-
-.mdc-theme--text-icon-on-primary-light {
-  color: rgba(255, 255, 255, 0.5) !important;
-  /* @alternate */
-  color: var(--mdc-theme-text-icon-on-primary-light, rgba(255, 255, 255, 0.5)) !important; }
-
-.mdc-theme--text-primary-on-primary-dark {
   color: rgba(0, 0, 0, 0.87) !important;
   /* @alternate */
-  color: var(--mdc-theme-text-primary-on-primary-dark, rgba(0, 0, 0, 0.87)) !important; }
+  color: var(--mdc-theme-text-primary-on-primary-light, rgba(0, 0, 0, 0.87)) !important; }
 
-.mdc-theme--text-secondary-on-primary-dark {
+.mdc-theme--text-secondary-on-primary-light {
   color: rgba(0, 0, 0, 0.54) !important;
   /* @alternate */
-  color: var(--mdc-theme-text-secondary-on-primary-dark, rgba(0, 0, 0, 0.54)) !important; }
+  color: var(--mdc-theme-text-secondary-on-primary-light, rgba(0, 0, 0, 0.54)) !important; }
+
+.mdc-theme--text-hint-on-primary-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  /* @alternate */
+  color: var(--mdc-theme-text-hint-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-disabled-on-primary-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  /* @alternate */
+  color: var(--mdc-theme-text-disabled-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-icon-on-primary-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  /* @alternate */
+  color: var(--mdc-theme-text-icon-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-primary-on-primary-dark {
+  color: white !important;
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-primary-dark, white) !important; }
+
+.mdc-theme--text-secondary-on-primary-dark {
+  color: rgba(255, 255, 255, 0.7) !important;
+  /* @alternate */
+  color: var(--mdc-theme-text-secondary-on-primary-dark, rgba(255, 255, 255, 0.7)) !important; }
 
 .mdc-theme--text-hint-on-primary-dark {
-  color: rgba(0, 0, 0, 0.38) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   /* @alternate */
-  color: var(--mdc-theme-text-hint-on-primary-dark, rgba(0, 0, 0, 0.38)) !important; }
+  color: var(--mdc-theme-text-hint-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-disabled-on-primary-dark {
-  color: rgba(0, 0, 0, 0.38) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   /* @alternate */
-  color: var(--mdc-theme-text-disabled-on-primary-dark, rgba(0, 0, 0, 0.38)) !important; }
+  color: var(--mdc-theme-text-disabled-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-icon-on-primary-dark {
-  color: rgba(0, 0, 0, 0.38) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   /* @alternate */
-  color: var(--mdc-theme-text-icon-on-primary-dark, rgba(0, 0, 0, 0.38)) !important; }
+  color: var(--mdc-theme-text-icon-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-primary-on-secondary {
   color: white !important;
@@ -318,14 +318,14 @@
   background-color: var(--mdc-theme-primary, #108ac8) !important; }
 
 .mdc-theme--primary-light-bg {
-  background-color: #094b6d !important;
-  /* @alternate */
-  background-color: var(--mdc-theme-primary-light, #094b6d) !important; }
-
-.mdc-theme--primary-dark-bg {
   background-color: #4ab8f0 !important;
   /* @alternate */
-  background-color: var(--mdc-theme-primary-dark, #4ab8f0) !important; }
+  background-color: var(--mdc-theme-primary-light, #4ab8f0) !important; }
+
+.mdc-theme--primary-dark-bg {
+  background-color: #094b6d !important;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary-dark, #094b6d) !important; }
 
 .mdc-theme--secondary-bg {
   background-color: #018786 !important;
@@ -1998,14 +1998,6 @@
   opacity: 0; }
 
 .mdc-notched-outline {
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-left: 0;
-  --mdc-ripple-top: 0;
-  --mdc-ripple-fg-scale: 1;
-  --mdc-ripple-fg-translate-end: 0;
-  --mdc-ripple-fg-translate-start: 0;
-  -webkit-tap-highlight-color: transparent;
-  will-change: transform, opacity;
   position: absolute;
   top: 0;
   left: 0;
@@ -2014,54 +2006,6 @@
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   overflow: hidden; }
-  .mdc-notched-outline::before, .mdc-notched-outline::after {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-    content: ""; }
-  .mdc-notched-outline::before {
-    transition: opacity 15ms linear;
-    z-index: 1; }
-  .mdc-notched-outline.mdc-ripple-upgraded::before {
-    transform: scale(var(--mdc-ripple-fg-scale, 1)); }
-  .mdc-notched-outline.mdc-ripple-upgraded::after {
-    top: 0;
-    /* @noflip */
-    left: 0;
-    transform: scale(0);
-    transform-origin: center center; }
-  .mdc-notched-outline.mdc-ripple-upgraded--unbounded::after {
-    top: var(--mdc-ripple-top, 0);
-    /* @noflip */
-    left: var(--mdc-ripple-left, 0); }
-  .mdc-notched-outline.mdc-ripple-upgraded--foreground-activation::after {
-    animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards; }
-  .mdc-notched-outline.mdc-ripple-upgraded--foreground-deactivation::after {
-    animation: 150ms mdc-ripple-fg-opacity-out;
-    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }
-  .mdc-notched-outline::before, .mdc-notched-outline::after {
-    top: calc(50% - 100%);
-    /* @noflip */
-    left: calc(50% - 100%);
-    width: 200%;
-    height: 200%; }
-  .mdc-notched-outline.mdc-ripple-upgraded::after {
-    width: var(--mdc-ripple-fg-size, 100%);
-    height: var(--mdc-ripple-fg-size, 100%); }
-  .mdc-notched-outline::before, .mdc-notched-outline::after {
-    background-color: rgba(0, 0, 0, 0.87); }
-    @supports not (-ms-ime-align: auto) {
-      .mdc-notched-outline::before, .mdc-notched-outline::after {
-        /* @alternate */
-        background-color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); } }
-  .mdc-notched-outline:not(.mdc-ripple-upgraded)::after {
-    transition: opacity 150ms linear; }
-  .mdc-notched-outline:not(.mdc-ripple-upgraded):active::after {
-    transition-duration: 75ms;
-    opacity: 0.16; }
-  .mdc-notched-outline.mdc-ripple-upgraded {
-    --mdc-ripple-fg-opacity: $opacity; }
   .mdc-notched-outline svg {
     position: absolute;
     width: 100%;
@@ -2081,6 +2025,12 @@
   stroke-width: 1px;
   transition: stroke 180ms cubic-bezier(0.4, 0, 0.2, 1), stroke-width 180ms cubic-bezier(0.4, 0, 0.2, 1), opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: transparent; }
+
+.mdc-notched-outline--notched {
+  opacity: 1; }
+
+.mdc-notched-outline--notched ~ .mdc-notched-outline__idle {
+  opacity: 0; }
 
 /**
  * Creates a rule that will be applied when an MDC Web component is within the context of an RTL layout.
@@ -2445,13 +2395,6 @@
   .mdc-text-field--box:not(.mdc-ripple-upgraded):focus::before, .mdc-text-field--box:not(.mdc-ripple-upgraded):focus-within::before, .mdc-text-field--box.mdc-ripple-upgraded--background-focused::before {
     transition-duration: 75ms;
     opacity: 0.12; }
-  .mdc-text-field--box:not(.mdc-ripple-upgraded)::after {
-    transition: opacity 150ms linear; }
-  .mdc-text-field--box:not(.mdc-ripple-upgraded):active::after {
-    transition-duration: 75ms;
-    opacity: 0.16; }
-  .mdc-text-field--box.mdc-ripple-upgraded {
-    --mdc-ripple-fg-opacity: $opacity; }
   .mdc-text-field--box::before, .mdc-text-field--box::after {
     top: calc(50% - 100%);
     /* @noflip */
@@ -2848,12 +2791,6 @@
     border: 1px solid transparent; }
   .mdc-text-field--textarea.mdc-text-field--disabled .mdc-floating-label {
     background-color: #f9f9f9; }
-
-.mdc-floating-label--float-above ~ .mdc-notched-outline__idle {
-  opacity: 0; }
-
-.mdc-floating-label--float-above ~ .mdc-notched-outline {
-  opacity: 1; }
 
 @keyframes mdc-floating-label-shake-float-above-text-field-box {
   0% {
@@ -4000,7 +3937,6 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 .page-content {
-  margin: 0px;
   padding: 20px 28px; }
 
 .foo-button:not(:disabled) {
@@ -4052,3 +3988,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga'; }
+
+.basic-tab-bar .mdc-tab:not(.mdc-tab--active) {
+  color: rgba(255, 255, 255, 0.54); }
+
+.basic-tab-bar .mdc-tab.mdc-tab--active {
+  color: #f8fafd; }
+
+.basic-tab-bar .mdc-tab-bar__indicator {
+  background-color: #f8fafd; }
+
+.basic-tab-bar .mdc-tab:hover {
+  color: #f8fafd; }
+
+.basic-tab-bar .mdc-tab::before, .mdc-tab::after {
+  background-color: rgba(255, 255, 255, 0.54); }
+
+.panels {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px; }
+
+.panel {
+  display: none; }
+
+.panel.active {
+  display: block; }
+
+.dots {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+  padding-bottom: 16px; }
+
+.dot {
+  margin: 0 4px;
+  border-radius: 50%;
+  border: 1px solid #094b6d;
+  width: 20px;
+  height: 20px; }
+
+.dot:last-child {
+  margin-right: 0; }
+
+.dot.active {
+  background-color: #094b6d;
+  border-color: #094b6d; }
+
+.my-nav-tab {
+  height: 48px;
+  background-color: #094b6d; }
