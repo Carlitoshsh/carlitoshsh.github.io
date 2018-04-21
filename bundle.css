@@ -1,4 +1,4 @@
-:root {
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700);:root {
   --mdc-theme-primary: #108ac8;
   --mdc-theme-primary-light: #4ab8f0;
   --mdc-theme-primary-dark: #094b6d;
@@ -588,7 +588,7 @@
       justify-content: flex-end;
       order: 1; }
   .mdc-top-app-bar__title {
-    font-family: Roboto, sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-size: 1.25rem;
@@ -800,12 +800,12 @@
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
 .mdc-typography {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
 .mdc-typography--display4 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 7rem;
@@ -819,7 +819,7 @@
   margin: -1rem 0 3.5rem -0.085em; }
 
 .mdc-typography--display3 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 3.5rem;
@@ -833,7 +833,7 @@
   margin: -8px 0 64px -0.07em; }
 
 .mdc-typography--display2 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 2.8125rem;
@@ -847,7 +847,7 @@
   margin: -0.5rem 0 4rem -0.07em; }
 
 .mdc-typography--display1 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 2.125rem;
@@ -861,7 +861,7 @@
   margin: -0.5rem 0 4rem -0.07em; }
 
 .mdc-typography--headline {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 1.5rem;
@@ -875,7 +875,7 @@
   margin: -0.5rem 0 1rem -0.06em; }
 
 .mdc-typography--title {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 1.25rem;
@@ -889,7 +889,7 @@
   margin: -0.5rem 0 1rem -0.05em; }
 
 .mdc-typography--subheading2 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
@@ -903,7 +903,7 @@
   margin: -0.5rem 0 1rem -0.06em; }
 
 .mdc-typography--subheading1 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.938rem;
@@ -917,7 +917,7 @@
   margin: -0.313rem 0 0.813rem -0.06em; }
 
 .mdc-typography--body2 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -931,7 +931,7 @@
   margin: -0.25rem 0 0.75rem 0; }
 
 .mdc-typography--body1 {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -945,7 +945,7 @@
   margin: -0.25rem 0 0.75rem 0; }
 
 .mdc-typography--caption {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.75rem;
@@ -959,7 +959,7 @@
   margin: -0.5rem 0 1rem -0.04em; }
 
 .mdc-typography--button {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -1182,7 +1182,7 @@
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
 .mdc-button {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -2243,7 +2243,7 @@
     color: black; }
 
 .mdc-text-field__input {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.04em;
@@ -3406,7 +3406,7 @@
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
 .mdc-tab {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;
@@ -3932,7 +3932,7 @@ body {
   margin: 0px; }
 
 .foo-body {
-  font-family: Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 

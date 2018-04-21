@@ -7,8 +7,9 @@ $mdc-theme-secundary-light: #7da7da;
 $mdc-theme-secundary-dark: #254f82;
 $mdc-theme-background: #f8fafd;
 @import "@material/theme/mdc-theme";
-
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700');
 // Another imports
+$mdc-typography-font-family:  'Josefin Sans', sans-serif;
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
