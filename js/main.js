@@ -63,6 +63,10 @@ import { MDCTabBar, MDCTabBarFoundation } from '@material/tabs';
 
 const tabBar = new MDCTabBar(document.querySelector('.basic-tab-bar'));
 
+import {MDCTabBarScroller, MDCTabBarScrollerFoundation} from '@material/tabs';
+
+const tabBarScroller = new MDCTabBarScroller(document.querySelector('#tab-bar-scroller'));
+
 // Dynamic tabs
 var dynamicTabBar = new MDCTabBar(document.querySelector('#dynamic-tab-bar'));
 var dots = document.querySelector('.dots');

@@ -1,9 +1,8 @@
 /* Custom MDC Card */
 
-.demo-card {
-  /* height: 350px; */
+/* .demo-card { 
   width: 350px;
-}
+} */
 
 .demo-card__media {
   background-image: url("./../images/header-bg.jpg");

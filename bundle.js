@@ -5831,6 +5831,8 @@ if (page === "index.html") {
 
 var tabBar = new _tabs.MDCTabBar(document.querySelector('.basic-tab-bar'));
 
+var tabBarScroller = new _tabs.MDCTabBarScroller(document.querySelector('#tab-bar-scroller'));
+
 // Dynamic tabs
 var dynamicTabBar = new _tabs.MDCTabBar(document.querySelector('#dynamic-tab-bar'));
 var dots = document.querySelector('.dots');

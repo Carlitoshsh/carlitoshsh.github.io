@@ -37,13 +37,30 @@
             <div class="page-content">
                 <!-- Dynamic toolbar -->
                 <section id="dynamic-demo-toolbar">
-                    <nav id="dynamic-tab-bar" class="mdc-tab-bar" role="tablist">
-                        <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Información personal</a>
-                        <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Experiencia</a>
-                        <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Habilidades</a>
-                        <span class="mdc-tab-bar__indicator"></span>
-                    </nav>
-                </section>
+                        <div id="tab-bar-scroller" class="mdc-tab-bar-scroller">
+                          <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+                            <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+                              navigate_before
+                            </a>
+                          </div>
+                          <div class="mdc-tab-bar-scroller__scroll-frame">
+                            <nav id="dynamic-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"  role="tablist">
+                              <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Información personal</a>
+                              <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Experiencia</a>
+                              <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Habilidades</a>
+                              <span class="mdc-tab-bar__indicator"></span>
+                            </nav>
+                          </div>
+                          <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+                            <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+                              navigate_next
+                            </a>
+                          </div>
+                        </div>
+              
+              
+              
+                      </section>
                 <section>
                     <div class="panels">
                         <div class="panel active" id="panel-1" role="tabpanel" aria-hidden="false">

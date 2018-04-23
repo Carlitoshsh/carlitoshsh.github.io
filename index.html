@@ -2,7 +2,7 @@
 <html ng-app="todoApp">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="https://maxcdn.icons8.com/Color/PNG/24/Files/versions-24.png" />
   <title>Projects and test [Carlitoshsh]</title>
   <!-- Material icons -->
@@ -38,12 +38,29 @@
       <div class="page-content">
         <!-- Dynamic toolbar -->
         <section id="dynamic-demo-toolbar">
-          <nav id="dynamic-tab-bar" class="mdc-tab-bar" role="tablist">
-            <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Test de AngularJS</a>
-            <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Proyectos</a>
-            <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Descripción</a>
-            <span class="mdc-tab-bar__indicator"></span>
-          </nav>
+          <div id="tab-bar-scroller" class="mdc-tab-bar-scroller">
+            <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+              <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+                navigate_before
+              </a>
+            </div>
+            <div class="mdc-tab-bar-scroller__scroll-frame">
+              <nav id="dynamic-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"  role="tablist">
+                <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Test de AngularJS</a>
+                <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Proyectos</a>
+                <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Descripción</a>
+                <span class="mdc-tab-bar__indicator"></span>
+              </nav>
+            </div>
+            <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+              <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+                navigate_next
+              </a>
+            </div>
+          </div>
+
+
+
         </section>
         <section>
           <div class="panels">
@@ -85,24 +102,33 @@
               </div>
             </div>
             <div class="panel" id="panel-2" role="tabpanel" aria-hidden="true">
-              <!-- Second tab element -->
-              <div class="mdc-card demo-card">
-                <a class="mdc-card__primary-action" href="/Old-site/index.html">
-                  <div class="mdc-card__media mdc-card__media--16-9 demo-card__media demo-card__media--16-9"></div>
-                  <div class="demo-card__primary">
-                    <h2 class="demo-card__title mdc-typography--title">Versión antigua</h2>
-                    <h3 class="demo-card__subtitle mdc-typography--subheading1">Realizado con Material Design Lite</h3>
+              <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell">
+
+                    <!-- Second tab element -->
+                    <div class="mdc-card demo-card">
+                      <a class="mdc-card__primary-action" href="/Old-site/index.html">
+                        <div class="mdc-card__media mdc-card__media--16-9 demo-card__media demo-card__media--16-9"></div>
+                        <div class="demo-card__primary">
+                          <h2 class="demo-card__title mdc-typography--title">Versión antigua</h2>
+                          <h3 class="demo-card__subtitle mdc-typography--subheading1">Realizado con Material Design Lite</h3>
+                        </div>
+                        <div class="demo-card__secondary mdc-typography--body1">
+                          Se usó el modo clásico de desarrollo en front-end, es decir, sin framework.
+                        </div>
+                      </a>
+                      <div class="mdc-card__actions">
+                        <div class="mdc-card__action-buttons">
+                          <a href="/Old-site/index.html">
+                            <button class="foo-button mdc-button mdc-card__action mdc-card__action--button">Ir a sitio</button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="demo-card__secondary mdc-typography--body1">
-                    Se usó el modo clásico de desarrollo en front-end, es decir, sin framework.
-                  </div>
-                </a>
-                <div class="mdc-card__actions">
-                  <div class="mdc-card__action-buttons">
-                    <a href="/Old-site/index.html">
-                      <button class="foo-button mdc-button mdc-card__action mdc-card__action--button">Ir a sitio</button>
-                    </a>
-                  </div>
+                  <div class="mdc-layout-grid__cell"></div>
+                  <div class="mdc-layout-grid__cell"></div>
                 </div>
               </div>
             </div>
