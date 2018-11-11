@@ -8,6 +8,10 @@
   background-image: url("./../images/header-bg.jpg");
 }
 
+.demo-card__media2 {
+  background-image: url("./../images/header-bg2.jpg");
+}
+
 .demo-card__primary{
   padding: 1rem;
 }
