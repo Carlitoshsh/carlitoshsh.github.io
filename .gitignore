@@ -1,1 +1,10 @@
+#node modules folder
 node_modules
+
+# build folders
+build
+.cache
+dist
+
+# yarn error file
+yarn-error.log
