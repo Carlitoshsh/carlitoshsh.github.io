@@ -8,213 +8,161 @@
   <!-- Material icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Webpack generated bundles   -->
-  <link rel="stylesheet" href="css/card.css">
   <link rel="stylesheet" href="bundle.css">
   <script src="bundle.js" defer async></script>
 </head>
 
-<body>
 
-  <body class="foo-body mdc-typography">
-    <header class="mdc-top-app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <!-- <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a> -->
-          <span class="mdc-top-app-bar__title">Carlitoshsh</span>
-        </section>
-      </div>
-      <div class="my-nav-tab mdc-top-app-bar__row">
-        <nav class="basic-tab-bar mdc-tab-bar">
-          <a class="mdc-tab mdc-tab--active" href="index.html">Inicio</a>
-          <a class="mdc-tab" href="contact.html">Contacto</a>
-          <span class="mdc-tab-bar__indicator"></span>
-        </nav>
-      </div>
+<body class="ex5 foo-body mdc-typography">
+  <div class="parent">
+    <header class="pink section">
+      <h2>Carlitoshsh's projects</h2>
     </header>
+    <main class="section coral">
+      <h3>Página en construcción</h3>
+      <p>Algún día llenaré esta sección</p>
 
-
-    <main>
-
-      <div class="page-content">
-        <!-- Dynamic toolbar -->
-        <section id="dynamic-demo-toolbar">
-          <div id="tab-bar-scroller" class="mdc-tab-bar-scroller">
-            <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
-              <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
-                navigate_before
-              </a>
-            </div>
-            <div class="mdc-tab-bar-scroller__scroll-frame">
-              <nav id="dynamic-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"  role="tablist">
-                <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Proyectos</a>
-                <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Test de AngularJS</a>
-                <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Descripción</a>
-                <span class="mdc-tab-bar__indicator"></span>
-              </nav>
-            </div>
-            <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
-              <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
-                navigate_next
-              </a>
-            </div>
-          </div>
-
-
-
-        </section>
-        <section>
-          <div class="panels">
-
-            <div class="panel active" id="panel-1" role="tabpanel" aria-hidden="false">
-              <div class="mdc-layout-grid">
-                <div class="mdc-layout-grid__inner">
-                  <div class="mdc-layout-grid__cell">
-
-                    <!-- Second tab element -->
-                    <div class="mdc-card demo-card">
-                      <a class="mdc-card__primary-action" href="/Old-site/index.html">
-                        <div class="mdc-card__media mdc-card__media--16-9 demo-card__media demo-card__media--16-9"></div>
-                        <div class="demo-card__primary">
-                          <h2 class="demo-card__title mdc-typography--title">Versión antigua</h2>
-                          <h3 class="demo-card__subtitle mdc-typography--subheading1">Realizado con Material Design Lite</h3>
-                        </div>
-                        <div class="demo-card__secondary mdc-typography--body1">
-                          Se usó el modo clásico de desarrollo en front-end, es decir, sin framework.
-                        </div>
-                      </a>
-                      <div class="mdc-card__actions">
-                        <div class="mdc-card__action-buttons">
-                          <a href="/Old-site/index.html">
-                            <button class="foo-button mdc-button mdc-card__action mdc-card__action--button">Ir a sitio</button>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                  <div class="mdc-layout-grid__cell">
-                    <div class="mdc-card demo-card">
-                      <a class="mdc-card__primary-action">
-                        <div class="mdc-card__media mdc-card__media--16-9 demo-card__media2 demo-card__media--16-9"></div>
-                        <div class="demo-card__primary">
-                          <h2 class="demo-card__title mdc-typography--title">2018-III-UNAL</h2>
-                          <h3 class="demo-card__subtitle mdc-typography--subheading1">Actividades en las asignaturas vistas en los estudios de maestría</h3>
-                        </div>
-                        <div class="demo-card__secondary mdc-typography--body1">
-                          Cursando...
-                        </div>
-                      </a>
-                      <div class="mdc-card__actions">
-                        <div class="mdc-card__action-buttons">
-                          <a href="/2018-III-UNAL">
-                            <button class="foo-button mdc-button mdc-card__action mdc-card__action--button">Ir a sitio</button>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mdc-layout-grid__cell"></div>
-                </div>
-              </div>
-            </div>
-            <div class="panel" id="panel-2" role="tabpanel" aria-hidden="true">
-              <!-- First tab element -->
-              <h2>A realizar</h2>
-              <div ng-controller="TodoListController as todoList">
-                <span>{{todoList.remaining()}} de {{todoList.todos.length}} restantes</span>
-                <a href="" ng-click="todoList.archive()">
-                  <button class="foo-button mdc-button mdc-card__action mdc-card__action--button">
-                    Archivar
-                  </button>
-                </a>
-
-                <div ng-repeat="todo in todoList.todos">
-                  <div class="mdc-checkbox">
-                    <input type="checkbox" id="my-checkbox-{{todo.text}}" class="mdc-checkbox__native-control" ng-model="todo.done" />
-                    <div class="mdc-checkbox__background">
-                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                      </svg>
-                      <div class="mdc-checkbox__mixedmark"></div>
-                    </div>
-                  </div>
-                  <label class="done-{{todo.done}}" for="my-checkbox-{{todo.text}}">{{todo.text}}</label>
-                </div>
-
-                <form ng-submit="todoList.addTodo()">
-                  <div class="mdc-text-field mdc-text-field--box">
-                    <input type="text" ng-model="todoList.todoText" size="30" id="my-text-field" class="mdc-text-field__input">
-                    <label class="mdc-floating-label" for="my-text-field">Agregar nuevo</label>
-                    <div class="mdc-line-ripple"></div>
-                  </div>
-                  <label for="input" id="customInput">
-                    <i class="material-icons">note_add</i> Agregar a la lista
-                  </label>
-                  <input id="input" class="btn-primary" type="submit" value="add">
-                </form>
-              </div>
-            </div>
-            <div class="panel" id="panel-3" role="tabpanel" aria-hidden="true">
-              <!-- Third tab element -->
-              <h5>Descripción</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis pharetra libero, volutpat congue velit. Ut lobortis scelerisque
-                elit quis sodales. Curabitur elit turpis, vehicula eget purus vel, gravida porttitor nisi. In dapibus auctor
-                ullamcorper. In hac habitasse platea dictumst. Nunc lorem lacus, pharetra ut lacus ac, commodo ultrices dui.
-                Mauris nec aliquam tortor, a molestie eros. Maecenas tincidunt, justo in suscipit fringilla, turpis massa
-                interdum erat, non tempor augue velit nec elit. Nullam dapibus consectetur orci, sit amet placerat enim.
-                Phasellus consequat ullamcorper lorem, ac pulvinar dolor pulvinar eget. Aliquam lectus nibh, pretium id mattis
-                ut, volutpat eu libero. Duis nec diam vitae neque imperdiet mollis. Integer rutrum, sapien vel accumsan consectetur,
-                sem lorem tristique mi, eu efficitur leo magna at nunc.
-              </p>
-              <p>
-                Maecenas at maximus dolor. Maecenas blandit nisi ante, sed ullamcorper nibh consequat vitae. Proin purus nibh, pellentesque
-                eget orci vitae, tincidunt lacinia felis. Proin suscipit purus vel ipsum convallis, a blandit est semper.
-                Suspendisse quis molestie magna. Quisque volutpat laoreet purus, non gravida magna efficitur sed. Nulla est
-                dui, aliquet a eros et, vulputate elementum lacus. Aliquam vestibulum diam non ligula ultricies luctus. Etiam
-                nec tortor non nisi pretium fermentum in eu lacus. Aliquam volutpat velit elit, id ultricies mi rhoncus eu.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce non sapien
-                feugiat purus placerat pretium. Sed in neque arcu. Nunc nisi quam, tempus ac nisi eu, pellentesque luctus
-                arcu.
-              </p>
-              <p>
-                Maecenas vel magna congue, lobortis lacus eu, vehicula nunc. Curabitur ante leo, bibendum nec dui ac, rhoncus blandit lectus.
-                Fusce neque velit, maximus ac odio ac, vehicula ullamcorper diam. Curabitur varius nunc sed elit mattis lobortis.
-                In congue vestibulum turpis, nec varius ligula elementum vitae. Morbi tristique vestibulum diam eget interdum.
-                Quisque a neque dignissim, pulvinar orci eget, condimentum justo. Etiam sollicitudin hendrerit lacus non
-                ultricies. Fusce a tellus varius, cursus eros id, gravida massa.
-              </p>
-              <p>
-                Nulla mattis massa a nibh porta, sit amet molestie lorem consequat. Integer sed interdum diam. Morbi ac maximus mi, sed dapibus
-                quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla
-                posuere egestas consectetur. Fusce sit amet ornare tortor. Nam blandit justo vel luctus feugiat. Morbi faucibus
-                sapien sed libero porttitor laoreet. Pellentesque convallis mi leo, et dignissim eros commodo ut. Quisque
-                at mauris eleifend, rhoncus velit vitae, ultricies nibh. Sed facilisis ligula vitae orci dapibus, sed sagittis
-                turpis pharetra. Nam sapien mi, interdum et ex quis, volutpat porta arcu. Proin tempor justo quis tellus
-                mollis suscipit.
-              </p>
-              <p>
-                Maecenas et justo nec dolor lacinia iaculis eget ut ex. Duis vitae placerat dui. Proin eros nisl, molestie non magna eget,
-                malesuada ornare nunc. Nullam ultrices aliquam pellentesque. Suspendisse finibus rhoncus arcu eu sollicitudin.
-                Nunc ac volutpat elit, vitae sodales neque. Aenean tempus vulputate est in pharetra.
-              </p>
-            </div>
-          </div>
-          <div class="dots">
-            <a class="dot active" data-trigger="panel-1" href="#panel-1"></a>
-            <a class="dot" data-trigger="panel-2" href="#panel-2"></a>
-            <a class="dot" data-trigger="panel-3" href="#panel-3"></a>
-          </div>
-        </section>
-        <!-- End dynamic toolbar -->
-
-
-
-      </div>
-      </div>
-
+      <h3>
+        Lorem ipsum dolor sit.
+      </h3>
+      <p>
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, officia explicabo ipsa reiciendis
+          error cumque, eaque ipsum commodi debitis veniam praesentium esse at, enim iste. Iste cupiditate corporis
+          dicta voluptate.</span>
+        <span>Minima eaque repellat deleniti expedita sed rem quos ad aliquam quasi illo ut iure incidunt, tempora
+          adipisci, nisi eius laboriosam saepe suscipit nostrum corrupti dicta beatae. Esse rerum vitae ullam.</span>
+        <span>Dolorum ratione itaque dignissimos enim blanditiis iusto accusamus non deleniti repellat vitae, nemo vero
+          aperiam, debitis, quasi asperiores suscipit et saepe? Quos omnis dignissimos officiis consequuntur doloremque
+          numquam praesentium ratione!</span>
+        <span>Temporibus culpa tempore laudantium, iure ipsa nesciunt et, ullam voluptatibus ad cumque repellat autem
+          tempora maiores odit adipisci consectetur recusandae delectus, ea nihil libero accusantium sed dolorem ducimus
+          voluptate! Molestias?</span>
+        <span>Reprehenderit placeat ducimus dignissimos nulla saepe sint consequatur rerum quae odit nisi quo cumque
+          odio voluptatem aperiam vel, dolorem ex fugit repudiandae iusto vitae eveniet! Quae nihil possimus quisquam
+          hic.</span>
+        <span>Quas enim maiores quidem sed deleniti hic at accusamus unde, eveniet, aperiam possimus eos, debitis
+          tempora voluptatem quod! Ad dolores iusto unde nostrum. Velit unde cupiditate, iure modi in
+          repellendus.</span>
+        <span>Reprehenderit omnis nesciunt laboriosam, minima consequatur id totam animi eveniet distinctio accusamus
+          numquam quasi iste voluptatibus, quam ipsum ducimus odio laudantium explicabo vitae molestias corporis!
+          Aliquam distinctio rem quia soluta?</span>
+        <span>Vitae sit ea odit illum dolore necessitatibus numquam fugit, expedita, deserunt, aliquam esse nobis. Non
+          laudantium minima quis autem harum soluta impedit qui sequi. Beatae itaque similique animi nobis
+          reprehenderit?</span>
+        <span>Possimus esse, repudiandae dolorem dolorum cum laudantium? Ex fugiat repellat, fugit saepe, sint magnam
+          quae voluptatem quibusdam illo dicta itaque accusantium dolorum id. Molestiae sapiente accusantium distinctio
+          neque labore qui.</span>
+        <span>Sequi ex dolorem, debitis tenetur quae illo deleniti veniam natus nesciunt recusandae. Voluptate soluta
+          maxime ea doloremque corporis, sunt dolores? Sequi, alias? Aspernatur fuga sunt assumenda repudiandae officiis
+          quis perspiciatis?</span>
+        <span>Molestias mollitia consequatur cum esse. Repellat obcaecati est, sed similique asperiores saepe unde amet
+          quis odio eveniet, nemo mollitia aspernatur suscipit quisquam velit? Eum cupiditate mollitia, fuga modi neque
+          consequatur!</span>
+        <span>Culpa nulla a delectus veniam similique laboriosam voluptatem officia quae quia suscipit at distinctio
+          assumenda, deleniti itaque expedita! Perferendis, iure ex. Nemo sequi recusandae deserunt ipsam, doloremque
+          fugit fuga nostrum?</span>
+        <span>Dolorem exercitationem at magnam minima totam asperiores facere. Tempora dolorem temporibus incidunt velit
+          soluta facilis. Eaque mollitia nostrum saepe similique ducimus sed architecto consectetur, quisquam laborum
+          voluptatum debitis perspiciatis? Tempora!</span>
+        <span>Similique aperiam numquam earum excepturi quo adipisci tenetur impedit modi cum pariatur rerum minima
+          blanditiis quia reiciendis tempora, sequi eligendi accusantium? Praesentium quo est eaque officia amet dolorem
+          mollitia magnam.</span>
+        <span>Debitis eaque, eum neque dolorem harum velit libero, provident suscipit delectus enim at perspiciatis illo
+          et. Expedita incidunt in magni voluptatem laborum! Aperiam ab fugit voluptate quidem, obcaecati reprehenderit
+          reiciendis.</span>
+        <span>Reiciendis delectus quam deleniti accusamus veniam, libero animi possimus autem soluta praesentium sequi
+          vel, voluptatem dolorem voluptates alias quos excepturi labore repellendus natus saepe expedita dolor modi sed
+          ab! Alias!</span>
+        <span>Consectetur voluptas, laboriosam nulla excepturi dolores aliquam laudantium quaerat odit pariatur
+          voluptates, possimus recusandae ad sed distinctio repudiandae et sunt perspiciatis voluptatem voluptatum
+          maxime sapiente quasi nemo? Consequuntur, obcaecati ad!</span>
+        <span>Quia itaque, aut, cum quas, voluptas amet quaerat doloremque asperiores fugiat molestias accusamus autem?
+          Voluptatum, ullam suscipit tenetur delectus nobis incidunt, nam eveniet at a ea illum, nesciunt alias
+          dolorum!</span>
+        <span>Dolore officia mollitia quod dignissimos tenetur! Quae beatae aperiam aspernatur sunt, ad, voluptas ipsam
+          itaque laboriosam fugiat culpa porro veritatis, tenetur harum! Culpa animi omnis est debitis, assumenda quam
+          quo!</span>
+        <span>Quasi ipsam praesentium recusandae accusantium deleniti nemo magni omnis, ut, autem optio consectetur esse
+          cumque expedita eius rem et culpa, consequuntur molestias! Iste excepturi aspernatur rerum pariatur cumque,
+          nemo deserunt.</span>
+        <span>At, saepe tempora? Vitae aliquam voluptatibus atque! Minima rerum itaque, facilis sapiente a libero
+          quaerat possimus culpa error, rem impedit. Quas vel, repudiandae libero doloribus asperiores earum consequatur
+          fugiat numquam.</span>
+        <span>Repellendus unde odio doloribus esse explicabo doloremque error neque in nemo eveniet nesciunt illum,
+          minus vel magni sequi, a id, aliquid aperiam cumque? Officiis reiciendis nesciunt reprehenderit cupiditate
+          saepe. Earum!</span>
+        <span>Id minima necessitatibus adipisci vitae repudiandae totam amet corporis ad rem ipsam commodi, repellat
+          eligendi molestiae exercitationem reprehenderit sint nisi distinctio quam obcaecati tenetur consectetur dolor
+          voluptatum? Iste, tempora id?</span>
+        <span>Voluptatem accusantium, quidem tenetur eius hic, soluta neque iure sapiente aut maxime obcaecati quia vel
+          doloribus! Qui quaerat facere eligendi, distinctio, aut vitae nostrum, eos porro exercitationem sint dolorem
+          id.</span>
+        <span>Suscipit, enim. Quam quasi molestiae aliquam aspernatur. Eaque ut, praesentium ad, enim vel explicabo
+          neque quod eos quia odio mollitia dolore tempora quam reiciendis suscipit quis deserunt iusto vitae
+          optio?</span>
+        <span>Dolore architecto nobis laudantium quo, itaque magnam id suscipit mollitia aspernatur. Dicta odit sint
+          quis, commodi enim soluta repellendus neque vero aliquam incidunt sequi nihil fuga officiis debitis
+          perspiciatis. Molestiae?</span>
+        <span>Eveniet ea tempora doloremque ipsam laborum harum, quam sunt fugit quo debitis ex earum ab, voluptas,
+          soluta facilis. Magni reiciendis corrupti inventore rerum accusantium similique veritatis aliquam ad ea
+          maiores.</span>
+        <span>Quae at molestias earum nulla quam eligendi? Obcaecati sequi voluptate ducimus! Unde fugit commodi hic
+          laudantium inventore dolore, reiciendis nesciunt distinctio odit excepturi nemo harum consectetur esse.
+          Beatae, iusto doloremque?</span>
+        <span>At voluptatem officiis earum beatae blanditiis, dolor facilis. Deserunt perferendis officiis cumque minus!
+          Magni error explicabo ad molestiae quod debitis rem temporibus, fugit totam nostrum optio! Corporis culpa
+          commodi quasi?</span>
+        <span>Magni, aliquid modi perferendis molestias saepe ipsum, quibusdam, alias ut nemo illo libero fugit! Rerum,
+          corrupti est dolorem, exercitationem magnam quibusdam molestias earum eveniet velit ab assumenda provident
+          voluptatibus officia.</span>
+        <span>Dolorum corporis quisquam alias, voluptatum unde nihil minima maxime praesentium non. Totam soluta
+          aspernatur omnis cupiditate nam velit dolor optio obcaecati adipisci, dignissimos quam numquam repudiandae,
+          ducimus excepturi sit tenetur?</span>
+        <span>Ex animi qui, iure incidunt enim fugiat illum aliquid saepe recusandae excepturi dolorum ad voluptatum et
+          maiores quibusdam, fuga sapiente. Temporibus, repellendus! Porro fugit perferendis nostrum, corporis
+          voluptatum libero molestiae.</span>
+        <span>Itaque, sequi eum aliquam laborum dolorem nam quasi quos vitae repudiandae, esse officiis mollitia
+          deserunt quibusdam illum cupiditate, laudantium eveniet quod dicta eos soluta aspernatur. Sequi repellendus
+          deleniti expedita error.</span>
+        <span>Quo, nobis laboriosam, excepturi ea ab beatae sapiente quam culpa animi illo quis ducimus nihil soluta
+          aliquam aperiam. Sed aspernatur rem a eveniet minima, nemo enim accusantium nihil obcaecati repellat.</span>
+        <span>Rem aspernatur illum, unde non ut maiores earum impedit harum sunt cum voluptate necessitatibus asperiores
+          explicabo quo minus eveniet blanditiis quos illo id rerum molestiae ipsa? Omnis laborum fugiat eius.</span>
+        <span>Iste voluptatem facilis autem maxime, aut nihil suscipit magnam quidem id commodi fugit totam dolor labore
+          nisi praesentium. Quod at ut cumque ducimus, vero similique. Repellat aut tempore totam rem!</span>
+        <span>Eos quaerat eius recusandae, vero quasi aut magni. Nulla harum repudiandae voluptatem, blanditiis animi
+          libero eos quisquam alias et? Repellat obcaecati quaerat doloribus rerum eaque impedit rem consequuntur
+          explicabo sapiente.</span>
+        <span>Corporis, sit saepe aliquid reiciendis sunt architecto rerum delectus fuga quo natus nesciunt
+          exercitationem, ad voluptatem, laudantium placeat amet expedita numquam ab. Deserunt magni maxime qui ullam
+          autem quibusdam expedita?</span>
+        <span>Id at rem beatae quae error cumque quos commodi quasi totam similique, maxime debitis, nesciunt aut nobis
+          perspiciatis illum suscipit tempore eveniet voluptatibus quod? Assumenda illo ipsam autem qui
+          accusamus?</span>
+        <span>Ipsum excepturi quis assumenda nihil officia, eius fuga dicta impedit sint voluptatibus qui illo, in quo
+          hic? Ab eaque quidem, voluptate explicabo nisi velit inventore minus porro. Ipsum, culpa iusto?</span>
+        <span>Ipsum, quibusdam blanditiis numquam eaque velit aliquid. Quisquam tempore, asperiores rerum assumenda
+          molestiae excepturi accusantium, omnis laboriosam repellendus a illum nemo! Dolores, corrupti accusamus
+          tempora necessitatibus distinctio sit quidem praesentium?</span>
+        <span>Autem tenetur quibusdam maiores esse expedita atque sint labore. Consectetur dolorem unde error repellat
+          eum, officiis non numquam autem qui ratione, expedita vel! Nisi nemo et non odio sint dolorum.</span>
+        <span>Nobis quia quas ad ut commodi consequatur fugiat similique quis quasi, doloribus illo nemo sapiente
+          voluptates hic totam ipsa ab in labore esse, suscipit expedita eligendi veritatis earum dolore?
+          Temporibus.</span>
+        <span>Tenetur necessitatibus tempora dolorem officia rerum fugit repellat excepturi nostrum ratione aliquid
+          quidem, voluptatum hic nihil nisi facilis veritatis maxime assumenda reiciendis non nulla quaerat minus ullam
+          quia aspernatur. Voluptates!</span>
+        <span>Aut quos consequatur eum officiis veritatis dolor odit non? Ipsum, commodi saepe aperiam quidem harum
+          repellat porro voluptatibus praesentium tenetur eius? Quos accusantium eaque culpa eveniet? Suscipit eaque
+          unde aspernatur.</span>
+      </p>
     </main>
-
-  </body>
+    <footer class="green section">
+      <div class="design-by">
+        <small>Design by: Carlitoshsh</small>
+      </div>
+    </footer>
+  </div>
+</body>
 
 </html>
