@@ -8,6 +8,7 @@ import {
     Footer,
 } from '.'
 import { MainContent } from '../MainContent'
+import { HeaderComponent, FooterComponent } from '..'
 
 
 const GridLayout = styled.div`
@@ -19,7 +20,7 @@ const GridLayout = styled.div`
 export const Page: React.FC = () => (
     <GridLayout>
         <Header>
-            <h2>Projects!</h2>
+            <HeaderComponent />
         </Header>
         <Left></Left>
         <Main>
@@ -27,7 +28,7 @@ export const Page: React.FC = () => (
         </Main>
         <Right></Right>
         <Footer>
-            <small>Designed by Carlos</small>
+            <FooterComponent />
         </Footer>
     </GridLayout>
 )

@@ -1,3 +1,6 @@
 export { Page } from './Layout/Page'
 export { MainContent } from './MainContent'
 export * from './Theme'
+export * from './Card'
+export * from './Header'
+export * from './Footer'
