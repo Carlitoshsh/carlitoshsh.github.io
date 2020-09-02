@@ -9,15 +9,18 @@ const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid ${
+  ({ theme }: PropsTheme) => theme.colors.secondary
+};
+    padding: 1em 2em;
 `
 
-export const HeaderComponent = () => (
-    <>
-        <HeaderWrapper>
-            <Brand>
+export const HeaderComponent: React.FC = () => (
+  <>
+    <HeaderWrapper>
+      <Brand>
                 CAGH
-            </Brand>
-        </HeaderWrapper>
-    </>
+      </Brand>
+    </HeaderWrapper>
+  </>
 )

@@ -7,12 +7,18 @@ const HeaderWrapper = styled.div`
     align-items: center;
     border-top: 1px solid ${({ theme }: PropsTheme) => theme.colors.secondary};
     height: 30px;
+    padding: 1em 2em;
 `
 
-export const FooterComponent = () => (
-    <>
-        <HeaderWrapper>
-            <small>Designed by Carlos</small>
-        </HeaderWrapper>
-    </>
+const DesignedBy = styled.small`
+    margin-left: auto;   
+`
+
+export const FooterComponent: React.FC = () => (
+  <>
+    <HeaderWrapper>
+      <small>{new Date().getFullYear()}</small>
+      <DesignedBy>Designed by CAGH</DesignedBy>
+    </HeaderWrapper>
+  </>
 )

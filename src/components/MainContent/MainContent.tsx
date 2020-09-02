@@ -6,38 +6,39 @@ import { projects } from './projects'
 const CustomMain = styled.div`
     max-width: 70vh;
     margin: 1em auto;
+    padding: 0 1rem;
 `
 
-const ProjectsCards = styled.div `
+const ProjectsCards = styled.div`
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 `
 
 
-export const MainContent: React.FC = () => 
-{
-    const ProjectCard = projects.map((project, index) => 
-        <React.Fragment key={index}>
-           <CustomCard
-                name={project.name}
-                description={project.description}
-           />
-        </React.Fragment>
-    )
+export const MainContent: React.FC = () => {
+  const ProjectCard = projects.map((project, index) =>
+    <React.Fragment key={index}>
+      <CustomCard
+        name={project.name}
+        description={project.description}
+      />
+    </React.Fragment>,
+  )
 
-    return (
-        <>
-            <CustomMain>
-                <h3>༼ つ ◕_◕ ༽つ Wait for it!</h3>
-                <p>
+  return (
+    <>
+      <CustomMain>
+        <h3>༼ つ ◕_◕ ༽つ</h3>
+        <h3>Wait for it!</h3>
+        <p>
                     Hi, basically, this is my main page.
-                </p>
-                <h3>Projects!</h3>
-                <ProjectsCards>
-                    {ProjectCard}
-                </ProjectsCards>
-            </CustomMain>
-        </>
-    )
+        </p>
+        <h3>Projects!</h3>
+        <ProjectsCards>
+          {ProjectCard}
+        </ProjectsCards>
+      </CustomMain>
+    </>
+  )
 }
