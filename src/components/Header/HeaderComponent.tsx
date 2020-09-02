@@ -6,20 +6,20 @@ const Brand = styled.h2`
 `
 
 const HeaderWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid ${
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid ${
   ({ theme }: PropsTheme) => theme.colors.secondary
 };
-    padding: 1em 2em;
+  padding: 1em 2em;
 `
 
 export const HeaderComponent: React.FC = () => (
   <>
     <HeaderWrapper>
       <Brand>
-                CAGH
+        CAGH
       </Brand>
     </HeaderWrapper>
   </>
