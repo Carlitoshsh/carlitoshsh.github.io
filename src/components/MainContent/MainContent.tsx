@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { CustomCard, Menu } from '..'
+import { CustomCard, Menu, Table } from '..'
 import { projects } from './projects'
 import { skills } from './skills'
 import {
@@ -58,6 +58,8 @@ export const MainContent: React.FC = () => {
         <List twoLine>
           {Skills}
         </List>
+        <br />
+        <Table />
       </CustomMain>
     </>
   )
