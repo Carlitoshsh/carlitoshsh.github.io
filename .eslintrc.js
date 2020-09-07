@@ -9,7 +9,7 @@ module.exports = {
   },
   settings: {
     react: {
-      // Tells eslint-plugin-react to automatically
+      // Tells eslint-plugin-react to automatically 
       // detect the version of React to use
       version: 'detect',
     },
@@ -23,17 +23,19 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-explicit-any': 2, // No any
-    semi: [2, 'never'], // Removing semicolon
-    quotes: [2, 'single', { avoidEscape: true }], // Single quotes over double
-    indent: ['error', 2], // Tab width 2 spaces
+    'semi': [2, 'never'], // Removing semicolon
+    'quotes': [2, 'single', { avoidEscape: true }], // Single quotes over double
+    'indent': ['error', 2], // Tab width 2 spaces
     'eol-last': ['error', 'always'], // end of line required
-    'no-trailing-spaces': ['error', { ignoreComments: true }],
-    'max-len': ['error', { code: 80 }], // Max line length 80
+    'no-trailing-spaces': [
+      'error', { 'ignoreComments': true },
+    ], // No traling whitespaces
+    'max-len': ['error', { 'code': 80 }], // Max line length 80
     'no-debugger': 'error',
     'comma-dangle': ['error', 'always-multiline'],
     'no-multi-spaces': 'error',
-    'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 0 }],
-    curly: ['error', 'multi-or-nest'],
+    'no-multiple-empty-lines': ['error', { 'max': 2, 'maxEOF': 0 }],
+    'curly': ['error', 'multi-or-nest'],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-empty-function': 'off',
   },

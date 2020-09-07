@@ -8,16 +8,17 @@ interface CustomCardProps {
 }
 
 export const CustomCard = (
-    {name, description}: CustomCardProps
-) => (
+  { name, description }: CustomCardProps,
+) =>
+  (
     <>
-        <Card
-            style={{
-            border: '1px solid',
-            padding: '0.5rem 1rem',
-            }}>
-            <h4>{name}</h4>
-            <p>{description}</p>
-        </Card>
+      <Card
+        style={{
+          border: '1px solid',
+          padding: '0.5rem 1rem',
+        }}>
+        <h4>{name}</h4>
+        <p>{description}</p>
+      </Card>
     </>
-)
+  )
