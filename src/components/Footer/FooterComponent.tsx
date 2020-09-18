@@ -5,7 +5,10 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid ${({ theme }: PropsTheme) => theme.colors.secondary};
+  color: white;
+  background: ${
+  ({ theme }: PropsTheme) => theme.colors.secondary
+};
   height: 30px;
   padding: 1em 2em;
 `

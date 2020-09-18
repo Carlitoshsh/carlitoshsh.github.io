@@ -25,46 +25,38 @@ export const Table: React.FC = () => {
   const [word, setWord] = useState('')
 
   const handleValueChanges =
-   (e: React.ChangeEvent<HTMLInputElement>) => {
-     setWord(e.target.value)
-   }
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setWord(e.target.value)
+    }
 
   return (
     <>
       <Input
         type="text"
         placeholder='Filter by id or name'
-        value={ word }
+        value={word}
         onChange={handleValueChanges} />
       <br />
-      <CenteredTable>
-        <DataTable>
-          <DataTableContent>
-            <DataTableBody>
-              {
-                mockData
-                  .filter(obj =>
-                    (obj.name).includes(word)
-                    || (obj.id.toString()).includes(word),
-                  )
-                  .map((obj, i) => {
-                    return (
-                      <DataTableRow key={i}>
-                        <DataTableCell >{obj.id}
-                        </DataTableCell>
-                        <DataTableCell >{obj.name}
-                        </DataTableCell>
-                        <DataTableCell>
-                          {obj.description}
-                        </DataTableCell>
-                      </DataTableRow>
-                    )
-                  })
-              }
-            </DataTableBody>
-          </DataTableContent>
-        </DataTable>
-      </CenteredTable>
+      {
+        mockData
+          .filter(obj =>
+            (obj.name).includes(word)
+            || (obj.id.toString()).includes(word),
+          )
+          .map((obj, i) => {
+            return (
+              <DataTableRow key={i}>
+                <DataTableCell >{obj.id}
+                </DataTableCell>
+                <DataTableCell >{obj.name}
+                </DataTableCell>
+                <DataTableCell>
+                  {obj.description}
+                </DataTableCell>
+              </DataTableRow>
+            )
+          })
+      }
     </>
   )
 }

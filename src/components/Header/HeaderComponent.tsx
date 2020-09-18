@@ -9,7 +9,8 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid ${
+  color: white;
+  background: ${
   ({ theme }: PropsTheme) => theme.colors.secondary
 };
   padding: 1em 2em;

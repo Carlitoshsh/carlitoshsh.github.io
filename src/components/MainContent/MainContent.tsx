@@ -33,9 +33,9 @@ export const MainContent: React.FC = () => {
 
   const Skills = skills.map((skill, index) =>
     <React.Fragment key={index}>
-      <SimpleListItem
-        text={skill.name}
-        secondaryText={skill.description}
+      <CustomCard
+        name={skill.name}
+        description={skill.description}
       />
       <ListDivider />
     </React.Fragment>,
@@ -55,9 +55,7 @@ export const MainContent: React.FC = () => {
         </ProjectsCards>
         <br />
         <h3>Skills</h3>
-        <List twoLine>
-          {Skills}
-        </List>
+        {Skills}
         <br />
         <Table />
       </CustomMain>
