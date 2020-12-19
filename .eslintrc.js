@@ -24,13 +24,13 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 2, // No any
     'semi': [2, 'never'], // Removing semicolon
-    'quotes': [2, 'single', { avoidEscape: true }], // Single quotes over double
+    // 'quotes': [2, 'single', { avoidEscape: true }], // Single quotes over double
     'indent': ['error', 2], // Tab width 2 spaces
     'eol-last': ['error', 'always'], // end of line required
     'no-trailing-spaces': [
       'error', { 'ignoreComments': true },
     ], // No traling whitespaces
-    'max-len': ['error', { 'code': 80 }], // Max line length 80
+    // 'max-len': ['error', { 'code': 80 }], // Max line length 80
     'no-debugger': 'error',
     'comma-dangle': ['error', 'always-multiline'],
     'no-multi-spaces': 'error',
