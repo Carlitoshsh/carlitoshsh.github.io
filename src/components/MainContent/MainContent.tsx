@@ -16,6 +16,11 @@ const ProjectsCards = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 `
 
+const SkillsContainer = styled.div`
+    display: grid;
+    grid-gap: 1rem;
+`
+
 export const MainContent: React.FC = () => {
   const ProjectCard = projects.map((project, index) =>
     <React.Fragment key={index}>
@@ -31,6 +36,7 @@ export const MainContent: React.FC = () => {
       <CustomCard
         name={skill.name}
         description={skill.description}
+        icon={skill.icon}
       />
     </React.Fragment>,
   )
@@ -49,9 +55,11 @@ export const MainContent: React.FC = () => {
         </ProjectsCards>
         <br />
         <h3>Skills</h3>
-        {Skills}
+        <SkillsContainer>
+          {Skills}
+        </SkillsContainer>
         <br />
-        <Table />
+        {/* <Table /> */}
       </CustomMain>
     </>
   )

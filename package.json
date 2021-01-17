@@ -34,7 +34,6 @@
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^16.3.x",
     "react-helmet": "^6.1.0",
-    "react-spring": "^8.0.27",
     "recharts": "^1.8.5",
     "styled-components": "^5",
     "styled-reset": "^4.2.1",

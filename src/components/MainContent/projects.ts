@@ -15,4 +15,4 @@ export const projects = [
         name: "Notarias digitales",
         description: "A Blazor app to help notaries with digital signatures"
     }
-]
+];
