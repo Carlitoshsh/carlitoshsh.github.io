@@ -3,11 +3,6 @@ import styled from 'styled-components'
 import { CustomCard, Menu, Table } from '..'
 import { projects } from './projects'
 import { skills } from './skills'
-import {
-  List,
-  SimpleListItem,
-  ListDivider,
-} from '@rmwc/list'
 
 const CustomMain = styled.div`
     max-width: 70vh;
@@ -37,17 +32,16 @@ export const MainContent: React.FC = () => {
         name={skill.name}
         description={skill.description}
       />
-      <ListDivider />
     </React.Fragment>,
   )
 
   return (
     <>
       <CustomMain>
-        <h3>༼ つ ◕_◕ ༽つ</h3>
-        <h3>Wait for it!</h3>
+        <h3>Hi, my name is Carlos!</h3>
+        <h3>Wait for it! (Yes, I'm a HIMYM fan!)</h3>
         <p>
-            Hi, basically, this is my main page.
+          Well, basically, this is my main page.
         </p>
         <h3>Projects!</h3>
         <ProjectsCards>

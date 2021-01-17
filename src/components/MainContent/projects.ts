@@ -10,5 +10,9 @@ export const projects = [
     {
         name: "Remote devices",
         description: "Using WCF, execute processes in a lot of devices, to recover results"
+    },
+    {
+        name: "Notarias digitales",
+        description: "A Blazor app to help notaries with digital signatures"
     }
 ]
