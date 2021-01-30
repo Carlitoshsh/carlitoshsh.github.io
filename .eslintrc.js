@@ -22,10 +22,10 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 2, // No any
+    // '@typescript-eslint/no-explicit-any': 2, // No any
     'semi': [2, 'never'], // Removing semicolon
     // 'quotes': [2, 'single', { avoidEscape: true }], // Single quotes over double
-    'indent': ['error', 2], // Tab width 2 spaces
+    // 'indent': ['error', 2], // Tab width 2 spaces
     'eol-last': ['error', 'always'], // end of line required
     'no-trailing-spaces': [
       'error', { 'ignoreComments': true },

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { CustomCard, Menu, Table } from '..'
+import { CustomCard, Menu, Table, GiphyTest } from '..'
 import { projects } from './projects'
 import { skills } from './skills'
 
@@ -45,7 +45,7 @@ export const MainContent: React.FC = () => {
     <>
       <CustomMain>
         <h3>Hi, my name is Carlos!</h3>
-        <h3>Wait for it! (Yes, I'm a HIMYM fan!)</h3>
+        <h3>Wait for it! (Yes, I&apos;m a HIMYM fan!)</h3>
         <p>
           Well, basically, this is my main page.
         </p>
@@ -59,7 +59,7 @@ export const MainContent: React.FC = () => {
           {Skills}
         </SkillsContainer>
         <br />
-        {/* <Table /> */}
+        <GiphyTest />
       </CustomMain>
     </>
   )
