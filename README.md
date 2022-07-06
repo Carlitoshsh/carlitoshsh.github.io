@@ -1,2 +1,0 @@
-# ReactTest
-Test React purposes
