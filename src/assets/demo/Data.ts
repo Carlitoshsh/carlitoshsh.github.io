@@ -24,5 +24,15 @@ export const programmingLanguages: Data[] = [
         icon: 'devicon-typescript-plain',
         name: 'TypeScript',
         description: 'TypeScript'
+    },
+    {
+        icon: 'devicon-angularjs-plain',
+        name: 'Angular',
+        description: 'Angular'
+    },
+    {
+        icon: 'devicon-java-plain',
+        name: 'Java',
+        description: 'Java'
     }
 ]

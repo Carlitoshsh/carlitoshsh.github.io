@@ -1,24 +1,12 @@
 <script>
   import Header from "./components/layout/Header.svelte";
   import Footer from "./components/layout/Footer.svelte";
-  import LinkedIn from "./lib/LinkedIn.svelte";
+  import Social from "./lib/Social.svelte";
   import Main from "./components/layout/Main.svelte";
   import Card from "./components/visual/Card.svelte";
   import Section from "./components/layout/Section.svelte";
 
   import { programmingLanguages } from "./assets/demo/Data";
-
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  let theme = prefersDarkScheme.matches ? "dark" : "light";
-  function handleClick() {
-    theme =
-      document.body.classList.toString() === "light-theme" ? "light" : "dark";
-    if (prefersDarkScheme.matches) {
-      document.body.classList.toggle("light-theme");
-    } else {
-      document.body.classList.toggle("dark-theme");
-    }
-  }
 </script>
 
 <svelte:head>
@@ -29,9 +17,11 @@
 </svelte:head>
 
 <main class="parent">
-  <Header {theme} {prefersDarkScheme} {handleClick} />
+  <Header />
   <Main>
-    <LinkedIn {theme} />
+    <Section>
+      <Social />
+    </Section>
     <Section>
       <div class="cards">
         {#each programmingLanguages as lang}

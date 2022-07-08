@@ -8,4 +8,8 @@
     padding: var(--padding);
     border-radius: var(--border-radius);
   }
+
+  section:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 </style>

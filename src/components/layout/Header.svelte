@@ -1,8 +1,15 @@
 <script>
-  export let theme;
-  export let prefersDarkScheme;
-
-  export let handleClick;
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  let theme = prefersDarkScheme.matches ? "dark" : "light";
+  function handleClick() {
+    theme =
+      document.body.classList.toString() === "light-theme" ? "light" : "dark";
+    if (prefersDarkScheme.matches) {
+      document.body.classList.toggle("light-theme");
+    } else {
+      document.body.classList.toggle("dark-theme");
+    }
+  }
 </script>
 
 <header>
