@@ -21,7 +21,6 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 2px solid var(--primary-color);
     padding: 0.8rem;
     border-radius: 0.3rem;
     background-image: linear-gradient(
@@ -41,5 +40,8 @@
   }
   .cagh-icon {
     font-size: 2rem;
+  }
+  .description {
+    text-overflow: ellipsis;
   }
 </style>

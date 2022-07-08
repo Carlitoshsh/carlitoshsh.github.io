@@ -8,7 +8,9 @@
   --padding-layout: 1rem 2rem;
   --padding: 0.8rem 1.6rem;
   --border-radius: 10px;
-  --main-lateral-padding: 10%;
+  --border-radius-small: 10px;
+  --main-lateral-padding: 2rem 10%;
+  --padding-small: 0.5rem 1rem;
 }
 
 body {

@@ -14,7 +14,7 @@
   class="badge-base LI-profile-badge"
   data-locale="en_US"
   data-size="medium"
-  data-theme={theme}
+  data-theme={theme === "light" ? "light" : "dark"}
   data-type="VERTICAL"
   data-vanity="carlos-alfonso-gómez-hernández-01292b157"
   data-version="v1"
@@ -25,3 +25,5 @@
     >Carlos Alfonso Gómez Hernández</a
   >
 </div>
+
+<p>{theme}</p>

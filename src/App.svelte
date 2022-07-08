@@ -8,7 +8,17 @@
 
   import { programmingLanguages } from "./assets/demo/Data";
 
-  $: theme = "";
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  let theme = prefersDarkScheme.matches ? "dark" : "light";
+  function handleClick() {
+    theme =
+      document.body.classList.toString() === "light-theme" ? "light" : "dark";
+    if (prefersDarkScheme.matches) {
+      document.body.classList.toggle("light-theme");
+    } else {
+      document.body.classList.toggle("dark-theme");
+    }
+  }
 </script>
 
 <svelte:head>
@@ -19,9 +29,9 @@
 </svelte:head>
 
 <main class="parent">
-  <Header bind:theme />
+  <Header {theme} {prefersDarkScheme} {handleClick} />
   <Main>
-    <LinkedIn bind:theme />
+    <LinkedIn {theme} />
     <Section>
       <div class="cards">
         {#each programmingLanguages as lang}
@@ -41,5 +51,6 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
   }
 </style>
