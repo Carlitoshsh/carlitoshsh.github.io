@@ -26,6 +26,11 @@ export const programmingLanguages: Data[] = [
         description: 'TypeScript'
     },
     {
+        icon: 'devicon-dotnetcore-plain',
+        name: '.NET',
+        description: '.NET Core'
+    },
+    {
         icon: 'devicon-angularjs-plain',
         name: 'Angular',
         description: 'Angular'

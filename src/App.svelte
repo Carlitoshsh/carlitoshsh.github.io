@@ -19,16 +19,17 @@
 <main class="parent">
   <Header />
   <Main>
+    <h2>⚠️ Site under construction</h2>
     <Section>
       <Social />
     </Section>
-    <Section>
+    <Section title="Skills">
       <div class="cards">
         {#each programmingLanguages as lang}
           <Card
             icon={lang.icon}
             name={lang.name}
-            description={lang.description}
+            description={lang.description != lang.name ? lang.description : ""}
           />
         {/each}
       </div>

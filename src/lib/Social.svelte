@@ -6,6 +6,7 @@
 
 <div class="profile">
   <img
+    fetchpriority="low"
     src="https://media-exp2.licdn.com/dms/image/C4E03AQEw82g5bgYrlQ/profile-displayphoto-shrink_800_800/0/1633659774537?e=1662595200&v=beta&t=5OfHFmjhKhiWn7JXLuvayj2jW7JC23sMjsbO36YnDGw"
     alt="Carlos"
   />
@@ -52,6 +53,7 @@
     border-radius: 50%;
     height: inherit;
     height: 10rem;
+    border: 3px solid var(--secondary-color);
   }
   @media (max-width: 500px) {
     .profile {
