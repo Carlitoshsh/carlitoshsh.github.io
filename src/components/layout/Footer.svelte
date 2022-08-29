@@ -1,6 +1,9 @@
 <footer>
   <span>{new Date().getFullYear()}</span>
-  <span class="by-cagh">Designed by CAGH</span>
+  <span>
+    Svelte, Render and MongoDB
+  </span>
+  <span class="by-cagh">Designed and built with &hearts by CAGH</span>
 </footer>
 
 <style>

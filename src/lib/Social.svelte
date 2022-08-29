@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   let profile = "Carlitoshsh";
 </script>
 
