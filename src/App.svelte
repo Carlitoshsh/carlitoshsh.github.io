@@ -6,7 +6,7 @@
   import Card from "./components/visual/Card.svelte";
   import Section from "./components/layout/Section.svelte";
 
-  import { programmingLanguages } from "./assets/demo/Data";
+  import { programmingLanguages, projects } from "./assets/demo/Data";
 </script>
 
 <svelte:head>
@@ -36,7 +36,7 @@
     </Section>
     <Section title="Projects">
       <div class="cards">
-        {#each programmingLanguages as lang}
+        {#each projects as lang}
           <Card
             icon={lang.image}
             name={lang.name}
