@@ -1,7 +1,8 @@
 export interface Data {
-    icon: string;
+    icon?: string;
     name: string;
     description: string;
+    image?: string;
 }
 
 export const programmingLanguages: Data[] = [
@@ -39,5 +40,13 @@ export const programmingLanguages: Data[] = [
         icon: 'devicon-java-plain',
         name: 'Java',
         description: 'Java'
+    }
+]
+
+export const projects: Data[] = [
+    {
+        image: 'assets/images/projects/1.jpg',
+        name: 'Project 1',
+        description: 'This is a project description'
     }
 ]

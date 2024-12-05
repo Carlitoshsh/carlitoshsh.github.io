@@ -34,6 +34,17 @@
         {/each}
       </div>
     </Section>
+    <Section title="Projects">
+      <div class="cards">
+        {#each programmingLanguages as lang}
+          <Card
+            icon={lang.image}
+            name={lang.name}
+            description={lang.description != lang.name ? lang.description : ""}
+          />
+        {/each}
+      </div>
+    </Section>
   </Main>
   <Footer />
 </main>
