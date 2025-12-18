@@ -1,0 +1,149 @@
+{
+  "Personal_Details": {
+    "Name": "Carlos Alfonso Gómez Hernández",
+    "LinkedIn": "https://www.linkedin.com/in/carlitoshsh/"
+  },
+  "Intro": "Senior Front-End Engineer with 7+ years of experience building high-performance, interactive user interfaces using Angular, React, Vue, and TypeScript. Proven expertise in optimizing large-scale applications for speed, accessibility, and engagement, with hands-on experience in device integration, hardware input handling, and real-time interactivity. Strong background in AWS/Azure cloud development, testing automation, and scalable UI architecture. Passionate about delivering immersive digital experiences that empower millions of users.",
+  "Education": [
+    {
+      "University": "Universidad Nacional de Colombia - Sede Bogotá",
+      "Degree": "Diplomado en Aplicaciones Web y Moviles | Diploma in Web and Mobile Applications",
+      "Year_Obtained": 2021
+    },
+    {
+      "University": "Universidad Nacional de Colombia - Sede Bogotá",
+      "Degree": "Ingeniería de Sistemas y Computación | Systems and Computing Engineering",
+      "Year_Obtained": 2018
+    }
+  ],
+  "Work_Experiences": [
+    {
+      "Period": "July 2024 - Present",
+      "Position": "Senior Software Engineer",
+      "Company": "Wizeline (Client: The Washington Post – ArcXP)",
+      "Description": [
+        "Migrated smoke test suite from Mocha/Chai to Jest, aligning with company-wide testing standards and ensuring consistency across ArcXP projects.",
+        "Designed and executed a unit testing plan, achieving 99% code coverage and improving reliability for critical services.",
+        "Built AWS infrastructure to support a dedicated Performance Testing environment, including EC2 setup for large-scale load testing.",
+        "Collaborated with the Conversation Team to improve user engagement features in article comments, including performance optimizations and new interaction capabilities.",
+        "Developed and integrated authentication and serverless workflows for the *From The Source* program, enabling sources to reply to articles via text or video; implemented AWS Lambdas, Next.js, and Python-based serverless functions to support scalable and secure content contribution."
+      ]
+    },
+    {
+      "Period": "September 2022 - May 2024",
+      "Position": "Senior Software Engineer",
+      "Company": "Optum Global Solutions Colombia S.A.S.",
+      "Description": [
+        "Led the UI team in creating new features for a healthcare analytics platform, ensuring alignment with project goals and client requirements.",
+        "Migrated the client management reporting system (Impact Pro) from legacy ASP.NET to Angular and .NET Core, improving performance and maintainability.",
+        "Designed and implemented custom Angular components (tree view, autocomplete filter) that optimized navigation and data handling for large datasets.",
+        "Built an advanced authentication and authorization system integrating multiple Identity Providers, Windows authentication, and internal systems to ensure secure multi-tenant access.",
+        "Conducted code reviews and implemented testing practices that raised reliability and coverage across the UI stack."
+      ]
+    },
+    {
+      "Period": "June 2022 - September 2022",
+      "Position": ".NET Developer",
+      "Company": "Globant",
+      "Description": [
+        "Developed a Proof of Concept (PoC) integrating React Native, Flask, and Lit-Elements to validate cross-platform UI capabilities."
+      ]
+    },
+    {
+      "Period": "December 2021 - May 2022",
+      "Position": "Software Developer",
+      "Company": "Acciones y Valores S.A.",
+      "Description": [
+        "Led a team of interns for UI development, mentoring and delegating tasks effectively.",
+        "Developed front-end features with Angular, including publishing reusable Angular libraries in Azure DevOps Artifacts.",
+        "Implemented APIs in .NET Core to support real-time financial operations."
+      ]
+    },
+    {
+      "Period": "October 2021 - December 2021",
+      "Position": "Solution Consultant",
+      "Company": "Sophos Solutions",
+      "Description": [
+        "Integrated a payment gateway (Kushki) into a .NET Core WebApi and Vue.js frontend, improving reliability and user flow for transactions."
+      ]
+    },
+    {
+      "Period": "May 2021 - December 2021, April 2022 - August 2022",
+      "Position": "Formador Mision Tic",
+      "Company": "Universidad Nacional de Colombia",
+      "Description": [
+        "Taught Vue.js, Python, Java, and SQL fundamentals to beneficiaries of MinTic's Mision Tic program, supporting digital literacy and workforce development."
+      ]
+    },
+    {
+      "Period": "May 2018 - October 2021",
+      "Position": "Software Developer",
+      "Company": "Olimpia IT",
+      "Description": [
+        "Integrated medical devices into software systems using JavaScript and C#, managing hardware inputs such as mouse and keyboard and ensuring reliable real-time interaction.",
+        "Developed Windows applications and services with .NET Framework and .NET Core to support secure and efficient medical workflows.",
+        "Built user interfaces with Angular, React, ASP.NET, and Blazor, streamlining usability for medical staff handling critical tasks.",
+        "Mentored new hires in device integration and UI development best practices, accelerating onboarding and productivity.",
+        "Collaborated with vendor teams to align device integration with strict compliance and performance requirements."
+      ]
+    }
+  ],
+  "Skills": {
+    "Programming_Languages": [
+      "JavaScript/TypeScript",
+      "Angular",
+      "React",
+      "Vue.js",
+      "Svelte",
+      "HTML/CSS/Sass",
+      "C#/.NET Core",
+      "Node.js",
+      "Python",
+      "Java"
+    ],
+    "Testing_and_Quality": [
+      "Jest",
+      "Mocha",
+      "Chai",
+      "Jasmine",
+      "Cypress"
+    ],
+    "Cloud_and_Backend": [
+      "AWS (EC2, Lambda, S3)",
+      "Azure DevOps",
+      "Docker",
+      "Express",
+      "Blazor"
+    ],
+    "Tools_and_Environments": [
+      "Git",
+      "TFS",
+      "Visual Studio / VS Code",
+      "IntelliJ",
+      "Rider",
+      "UNIX bash",
+      "Windows Server",
+      "VMware",
+      "Hadoop Administrator (Cloudera Manager)"
+    ],
+    "Soft_Skills": [
+      "Analysis",
+      "Creativity",
+      "Team-building",
+      "Detail-oriented",
+      "Curiosity",
+      "Ambitious",
+      "Adaptability"
+    ]
+  },
+  "Languages": [
+    {
+      "Language": "English",
+      "Proficiency": "Professional Working Proficiency"
+    },
+    {
+      "Language": "Spanish",
+      "Proficiency": "Native"
+    }
+  ]
+}

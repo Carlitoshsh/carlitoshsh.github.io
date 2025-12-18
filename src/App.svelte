@@ -6,7 +6,7 @@
   import Card from "./components/visual/Card.svelte";
   import Section from "./components/layout/Section.svelte";
 
-  import { programmingLanguages, projects } from "./assets/demo/Data";
+  import { programmingLanguages, projects, resume } from "./assets/demo/Data";
 </script>
 
 <svelte:head>
@@ -23,6 +23,9 @@
     <Section>
       <Social />
     </Section>
+    <Section title="About">
+      <p>{resume.Intro}</p>
+    </Section>
     <Section title="Skills">
       <div class="cards">
         {#each programmingLanguages as lang}
@@ -35,7 +38,7 @@
       </div>
     </Section>
     <Section title="Projects">
-      <div class="cards">
+      <div class="cards projects">
         {#each projects as lang}
           <Card
             icon={lang.image}
@@ -54,5 +57,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
+  }
+
+  /* Make Projects show one per row */
+  .cards.projects {
+    grid-template-columns: 1fr;
   }
 </style>

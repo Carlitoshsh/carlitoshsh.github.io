@@ -23,18 +23,12 @@
     gap: 1rem;
     padding: 0.8rem;
     border-radius: 0.3rem;
-    background-image: linear-gradient(
-      45deg,
-      var(--secondary-color) 50%,
-      transparent 50%
-    );
     background-position: 100%;
     background-size: 400%;
-    transition: background 100ms ease-in-out;
     user-select: none;
   }
   .card:hover {
-    background-position: 0;
+    background-color: var(--secondary-color);
     color: var(--primary-color);
     cursor: pointer;
   }
