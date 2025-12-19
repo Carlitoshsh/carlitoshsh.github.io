@@ -17,18 +17,18 @@
     <h4>Carlos Gomez</h4>
     <h5>{profile}</h5>
     <a
-      href="https://linkedin.com/in/{profile}"
+      href={"https://linkedin.com/in/" + profile}
       rel="noopener noreferrer"
       target="_blank"
     >
-      <i class="devicon-linkedin-plain" />
+      <i class="devicon-linkedin-plain"></i>
     </a>
     <a
-      href="https://github.com/{profile}"
+      href={"https://github.com/" + profile}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="devicon-github-original" />
+      <i class="devicon-github-original"></i>
     </a>
   </div>
 </div>

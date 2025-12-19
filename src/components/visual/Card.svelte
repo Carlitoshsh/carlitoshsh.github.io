@@ -7,7 +7,7 @@
 <div class="card">
   <div class="icon">
     {#if icon != ""}
-      <i class="cagh-icon {icon}" />
+      <i class="cagh-icon {icon}"></i>
     {/if}
   </div>
   <div class="description">
