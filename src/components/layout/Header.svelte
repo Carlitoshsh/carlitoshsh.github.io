@@ -14,7 +14,7 @@
 
 <header>
   <h2 id="my-site-brand">CAGH</h2>
-  <div id="color-switch" on:click={handleClick}>🌓</div>
+  <div id="color-switch" onclick={handleClick}>🌓</div>
 </header>
 
 <style>

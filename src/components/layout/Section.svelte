@@ -1,12 +1,12 @@
 <script>
-  export let title = undefined;
+  let { title = undefined, children } = $props();
 </script>
 
 <section>
   {#if title}
     <h4>{title}</h4>
   {/if}
-  <slot />
+  {@render children?.()}
 </section>
 
 <style>

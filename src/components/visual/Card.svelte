@@ -1,7 +1,5 @@
 <script>
-  export let icon;
-  export let name;
-  export let description;
+  let { icon, name, description } = $props();
 </script>
 
 <div class="card">
