@@ -1,5 +1,5 @@
 export const Header = () => {
-    const title = "Welcome, from Carlos!"
+    const title = "Carlos welcomes you!"
     return <header>
         {title}
     </header>
