@@ -26,9 +26,12 @@ jobs:
       - name: Build Next.js 🏗️
         run: npm run build
 
+      - name: Disable Jekyll 🚫
+        # This is the magic fix for Next.js 404s on GitHub Pages
+        run: touch out/.nojekyll
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out # Next.js static exports default to 'out', not 'dist'
+          folder: out
           branch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
